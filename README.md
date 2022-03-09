@@ -1,1 +1,1 @@
-# Be-Gorgeous
+# BeGorgeous
