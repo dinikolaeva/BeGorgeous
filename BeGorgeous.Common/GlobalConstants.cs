@@ -6,7 +6,7 @@
 
         public const string AdministratorRoleName = "Administrator";
 
-        public const string CloudName = "dfmfy6rrg"/*"be-gorgeous"*/;
+        public const string CloudName = "be-gorgeous";
 
         public static class StringLengthValidations
         {
@@ -46,6 +46,8 @@
             public const string BlowDry = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646687498/images/istockphoto-622521378-612x612_xyknx1.jpg";
 
             public const string LadiesHairColoring = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646687638/images/depositphotos_10685520-stock-photo-hair-colors-palette_df78bi.jpg";
+
+
         }
 
         public static class Prices
