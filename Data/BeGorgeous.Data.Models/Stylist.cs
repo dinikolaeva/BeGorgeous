@@ -21,6 +21,12 @@
 
         public Category Category { get; set; }
 
+        [MaxLength(GlobalConstants.StringLengthValidations.ShortAutobiographyMaxLength)]
+        public string ShortAutobiography { get; set; }
+
+        [Required]
+        public string ImageUrl { get; set; }
+
         public ICollection<Treatment> Treatments { get; set; } = new HashSet<Treatment>();
 
         public ICollection<Appointment> Appointment { get; set; } = new HashSet<Appointment>();

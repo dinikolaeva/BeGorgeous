@@ -380,6 +380,10 @@ namespace BeGorgeous.Data.Migrations
                         .HasMaxLength(40)
                         .HasColumnType("nvarchar(40)");
 
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -388,6 +392,10 @@ namespace BeGorgeous.Data.Migrations
 
                     b.Property<string>("SalonId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ShortAutobiography")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.HasKey("Id");
 

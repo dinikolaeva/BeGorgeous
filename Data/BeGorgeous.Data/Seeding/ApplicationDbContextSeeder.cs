@@ -27,10 +27,11 @@
             var seeders = new List<ISeeder>
                           {
                               new RolesSeeder(),
-                              new CountrySeeder(),
-                              new CitySeeder(),
+                              new CountriesSeeder(),
+                              new CitiesSeeder(),
                               new CategoriesSeeder(),
                               new TreatmentsSeeder(),
+                              new SalonsSeeder(),
                           };
 
             foreach (var seeder in seeders)
