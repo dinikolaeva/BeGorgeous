@@ -13,7 +13,7 @@
 
         public string FullName { get; set; }
 
-        public string SalonId { get; set; }
+        public int SalonId { get; set; }
 
         public Salon Salon { get; set; }
 

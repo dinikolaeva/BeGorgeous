@@ -72,7 +72,8 @@
                 name: "Salons",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CityId = table.Column<int>(type: "int", nullable: false),
@@ -109,7 +110,7 @@
                 columns: table => new
                 {
                     CategoriesId = table.Column<int>(type: "int", nullable: false),
-                    SalonsId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    SalonsId = table.Column<int>(type: "int", nullable: false),
                 },
                 constraints: table =>
                 {
@@ -135,7 +136,7 @@
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FullName = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false),
-                    SalonId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    SalonId = table.Column<int>(type: "int", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -166,7 +167,7 @@
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     DateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    SalonId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    SalonId = table.Column<int>(type: "int", nullable: false),
                     Confirmed = table.Column<bool>(type: "bit", nullable: true),
                     IsSalonRatedByTheUser = table.Column<bool>(type: "bit", nullable: true),
                     StylistId = table.Column<int>(type: "int", nullable: true),
@@ -210,7 +211,7 @@
                     Duration = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     AppointmentId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    SalonId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    SalonId = table.Column<int>(type: "int", nullable: true),
                     StylistId = table.Column<int>(type: "int", nullable: true),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),

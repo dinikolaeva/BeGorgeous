@@ -17,11 +17,14 @@
             public const int AddressMinLength = 5;
             public const int AddressMaxLength = 100;
             public const int ShortAutobiographyMixLength = 20;
-            public const int ShortAutobiographyMaxLength = 200;
+            public const int ShortAutobiographyMaxLength = 300;
         }
 
         public static class Images
         {
+            // Main
+            public const string Background = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646932729/images/maxresdefault_nmgzv2.jpg";
+
             // Categories
             public const string Hairdressing = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646671723/images/2892083_wzhfzc.jpg";
 
@@ -82,7 +85,6 @@
             public const string DiamondDermabrasion = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646843598/images/istockphoto-803164436-612x612_vhp3th.jpg";
 
             // Salons
-
             public const string BeGorgeousInSofia = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646846412/images/photo-1633681926022-84c23e8cb2d6_iztazu.jpg";
 
             public const string BeGorgeousInPlovdiv = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646846166/images/d40be0_0b71b6a562334139b030947914befa5d_mv2_zjtcsx.jpg";
@@ -96,10 +98,101 @@
             public const string BeGorgeousInBarcelona = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646847618/images/salon1_gywyc9.jpg";
 
             // Stylists
-            // 1. Sofia/Hair
+            // Hair
+            // Sofia
+            public const string MilaUzunova = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646905533/images/Depositphotos_11884169_original_dlzxah.jpg";
+
+            public const string SvilenDimitrov = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646906610/images/barber_barbershop_hair_stylist_haircut_hairdo_hairdresser_hairstylist_men-994115_cpxoe2.jpg";
+
+            // Plovdiv
             public const string EvaIvanova = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646857820/images/photo-1562322140-8baeececf3df_y2ijnl.jpg";
 
             public const string AnnaNikolova = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646857657/images/istockphoto-853924196-170667a_khqvaz.jpg";
+
+            // London, UK
+            public const string EmilBern = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646914901/images/8e6f29eb0089434ab338_me11qr.jpg";
+
+            public const string JessieWallis = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646915068/images/istockphoto-1321545990-170667a_zkjdyo.jpg";
+
+            // Birmingham, UK
+            public const string AnthonyLouis = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646916089/images/istockphoto-1270950948-170667a_qklqe6.jpg";
+
+            public const string VivianHaris = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646916017/images/25d41b6d8357fdf512e8665c3571f982_lxl9u4.jpg";
+
+            // Madrid, Spain
+            public const string OliviaPerez = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646917323/images/istockphoto-1271712634-612x612_v71eny.jpg";
+
+            public const string RenataLopez = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646917480/images/stock-photo-beautiful-young-hairstylist-looking-handsome_zxrjsj.jpg";
+
+            // Barcelona, Spain
+            public const string ZoeDeLeon = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646918735/images/istockphoto-1136599956-612x612_lykikh.jpg";
+
+            public const string AlanaRodriguez = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646918958/images/bigstock-Beautiful-woman-in-hair-salon-83907503-837x558_o2etne.jpg";
+
+            // Nails
+            // Sofia
+            public const string TanyaDimova = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646906558/images/istockphoto-1167657805-612x612_kbypvb.jpg";
+
+            public const string VanyaPapazova = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646906531/images/istockphoto-1296156275-170667a_udhkbi.jpg";
+
+            // Plovdiv
+            public const string DarinaVaseva = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646903192/images/istockphoto-519546165-612x612_siusfm.jpg";
+
+            public const string EmiMarinova = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646903359/images/www.usnews_h8qlys.jpg";
+
+            // London, UK
+            public const string KatieAddyson = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646915446/images/istockphoto-1167657829-170667a_zfjf2i.jpg";
+
+            // Birmingham, UK
+            public const string TanyaGoody = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646916496/images/Jessica-Harris-Nails-by-Jessica-1200_cadoom.jpg";
+
+            // Madrid, Spain
+            public const string JulietaGarcia = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646917692/images/bigstock-Friendly-Nail-Technician-Apply-367193176_zbjxbu.jpg";
+
+            // Barcelona, Spain
+            public const string RomaRomero = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646919117/images/13439816-0-image-a-96_1557752886858_cf06yg.jpg";
+
+            // Wax
+            // Sofia
+            public const string MariaYordanova = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646903665/images/istockphoto-937117716-612x612_nxqtaw.jpg";
+
+            // Plovdiv
+            public const string PepiHristova = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646906968/images/waxing-hair-removal-1024x681_qplupo.jpg";
+
+            // Birmingham, UK
+            public const string MariaGutenberg = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646916799/images/images1858-5c7e6ec1b0326-1024x683_km7mnq.jpg";
+
+            // Barcelona, Spain
+            public const string ClaraMartin = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646919246/images/Waxing-Vs-Laser-Hair-Removal-Treatment-MedLinks_r0sfi4.jpg";
+
+            // Makeup
+            // Sofia
+            public const string SlavaNaidenova = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646914126/images/istockphoto-681346362-612x612_mvlygq.jpg";
+
+            // Plovdiv
+            public const string IvanSlavov = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646904971/images/istockphoto-970023818-612x612_wn3nji.jpg";
+
+            // London, UK
+            public const string AlexLogan = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646915758/images/maxresdefault_au3pho.jpg";
+
+            // Madrid, Spain
+            public const string SaraMorales = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646917874/images/06_14_MakeupArtist_aufmacher_1200x672_acf_cropped_v1mnjj.jpg";
+
+            // Barcelona, Spain
+            public const string PaulinaDiaz = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646919411/images/1_ausbildung_makeup_artist_wissenswertes_mfj7ze.jpg";
+
+            // Facial
+            // Sofia
+            public const string GerganaKostova = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646905251/images/istockphoto-1280387268-612x612_ltf8fc.jpg";
+
+            // Plovdiv
+            public const string ZuziTomova = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646914452/images/istockphoto-1181270504-612x612_h8szh9.jpg";
+
+            // Birmingham, UK
+            public const string SvetlanaStoke = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646917119/images/cosmetic-dermatologist-botox-600x400_x3bfyb.jpg";
+
+            // Madrid, Spain
+            public const string AlmaHernandez = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646917969/images/laser-skin-treatments_v2kzsk.jpg";
         }
 
         public static class Prices

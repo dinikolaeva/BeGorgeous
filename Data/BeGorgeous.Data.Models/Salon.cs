@@ -6,7 +6,7 @@
     using BeGorgeous.Common;
     using BeGorgeous.Data.Common.Models;
 
-    public class Salon : BaseDeletableModel<string>
+    public class Salon : BaseDeletableModel<int>
     {
         [Required]
         [MaxLength(GlobalConstants.StringLengthValidations.AddressMaxLength)]
