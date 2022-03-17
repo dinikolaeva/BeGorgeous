@@ -1,58 +1,139 @@
 ﻿@using BeGorgeous.Common
 <!DOCTYPE html>
 <html lang="en">
+<!-- Head -->
 <head>
+    <!-- Meta -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@this.ViewData["Title"] - @GlobalConstants.SystemName</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@GlobalConstants.SystemName</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Settings" asp-action="Index">Settings</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <!-- <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" /> -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 
-    <div class="container">
-        <partial name="_CookieConsentPartial" />
-        <main role="main" class="pb-3">
-            @this.RenderBody()
-        </main>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap Styles -->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" asp-append-version="true">
+
+    <!-- Vendor Styles -->
+    <script src="https://kit.fontawesome.com/eedcfd73b3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="~assets/vendors/slick-carousel/slick.css" asp-append-version="true" />
+    <link rel="stylesheet" type="text/css" href="~assets/fonts/themify-icons.css" asp-append-version="true" />
+    <link rel="stylesheet" type="text/css" href="~assets/vendors/magnific-popup/magnific-popup.css" asp-append-version="true" />
+    <link rel="stylesheet" type="text/css" href="~assets/css/hovereffects.css" asp-append-version="true" />
+
+    <!-- Theme Styles -->
+    <link href="assets/css/scrolling-nav.css" rel="stylesheet" asp-append-version="true" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" asp-append-version="true" />
+    <link rel="stylesheet" type="text/css" href="assets/css/theme.css" asp-append-version="true" />
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css" asp-append-version="true" />
+
+    @this.RenderSection("Styles", required: false)
+</head>
+<!-- End Head -->
+<body>
+
+    <partial name="_CookieConsentPartial" />
+
+    <div class="super_container">
+
+        <!-- Header -->
+        <header id="top">
+
+            <!-- Navbar -->
+
+            <partial name="_HeaderPartial" />
+
+            <!-- End Navbar -->
+
+        </header>
+        <!-- End Header -->
+        <section class="hero-large hero">
+            <div id="demo" class="carousel slide" data-ride="carousel">
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="assets/img/intro/banner-bg1.png">
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h2>Be Gorgeous</h2>
+                                <p>Adding Care to your beauty</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/intro/banner-bg2.png">
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h2>Come and feel beautiful</h2>
+                                <p>Bring out the best in you</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/intro/banner-bg3.png">
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h2>Give yourself the best services</h2>
+                                <p>You deserve to be spoiled</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </section>
+
+        <div class="m-5">
+            <main role="main">
+                @this.RenderBody()
+            </main>
+        </div>
+
+        <!-- Footer -->
+        <partial name="_FooterPartial" />
+        <!-- End Footer -->
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; @DateTime.Now.Year - @GlobalConstants.SystemName - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+    <!-- JS Script Files -->
+    <script src="assets/vendors/jquery.min.js"></script>
+    <script src="assets/vendors/jquery.migrate.min.js"></script>
+    <script src="assets/vendors/popper.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/vendors/jquery-easing/jquery.easing.min.js"></script>
 
-    <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
-    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js" asp-append-version="true"></script>
-    <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js" asp-append-version="true"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js" asp-append-version="true"></script>
-    <script src="~/js/site.min.js" asp-append-version="true"></script>
-    @await this.RenderSectionAsync("Scripts", required: false)
+    <!-- Components Vendor  -->
+    <script src="assets/vendors/slick-carousel/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script>
+    <script src="assets/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="assets/vendors/counters/waypoint.min.js"></script>
+    <script src="assets/vendors/counters/counterup.min.js"></script>
+
+    <script src="assets/contact/jqBootstrapValidation.js"></script>
+    <script src="assets/contact/contact_me.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/scrolling-nav.js"></script>
+    <!--Plugin Initialize-->
+    <script src="assets/js/global.js"></script>
+
+    <!-- Theme Components and Settings -->
+    <script src="assets/vendors/carousel.js"></script>
+    <script src="assets/vendors/counters.js"></script>
+
+    <!-- END JAVASCRIPTS -->
+    @this.RenderSection("Scripts", required: false)
 </body>
+<!-- End Body -->
 </html>

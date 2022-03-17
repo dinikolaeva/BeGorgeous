@@ -30,6 +30,13 @@ html {
     font-size: 14px;
 }
 
+.trans_500 {
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+
 @media (min-width: 768px) {
     html {
         font-size: 16px;
@@ -72,3 +79,94 @@ body {
     white-space: nowrap;
     line-height: 60px; /* Vertically center the text there */
 }
+
+#mainNav {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+#navbarResponsive {
+    padding: 6px;
+    background-color: #f150bf;
+}
+
+@media all and (min-width: 992px) {
+    #navbarResponsive {
+        display: flex !important;
+        justify-content: center !important;
+    }
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+    color: #700a58;
+    font-size: 0.937rem;
+    font-weight: 600;
+    padding: 0.625rem 1.25rem;
+    border-radius: 50px;
+    font-family: 'Rubik', sans-serif;
+    letter-spacing: 1px;
+}
+
+/*
+.navbar .navbar-nav .nav-item .nav-link.active {
+    background: #552882 !important;
+    border-radius: 50px;
+}
+*/
+.header {
+    padding: 0 0 100px;
+}
+
+.navbar-expand-lg .navbar-nav {
+    align-items: center;
+}
+
+.carousel-indicators li {
+    height: 7px;
+    border-radius: 0;
+    overflow: hidden;
+    width: 52px;
+    background: #f150bf;
+    padding: 0;
+    margin: 0 2px;
+    border: 0 solid #333;
+}
+
+.button {
+    border-radius: 4px;
+    background-color: #f150bf;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+    .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+    .button:hover span {
+        padding-right: 25px;
+    }
+
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }

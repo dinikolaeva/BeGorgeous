@@ -229,5 +229,10 @@
             public const decimal AntiAcneFacial = 50.00M;
             public const decimal DiamondDermabrasion = 70.00M;
         }
+
+        public static class SeededDataCounts
+        {
+            public const int Countries = 3;
+        }
     }
 }

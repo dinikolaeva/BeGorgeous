@@ -10,6 +10,7 @@
     using BeGorgeous.Data.Repositories;
     using BeGorgeous.Data.Seeding;
     using BeGorgeous.Services.Cloudinary;
+    using BeGorgeous.Services.Data.Countries;
     using BeGorgeous.Services.Mapping;
     using BeGorgeous.Services.Messaging;
     using BeGorgeous.Web.ViewModels;
@@ -73,6 +74,7 @@
             // Application services
             services.AddTransient<IEmailSender, NullMessageSender>();
             services.AddTransient<ICloudinaryService, CloudinaryService>();
+            services.AddTransient<ICountriesService, CountriesService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

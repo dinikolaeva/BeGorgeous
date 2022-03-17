@@ -1,16 +1,32 @@
 ﻿namespace BeGorgeous.Web.Controllers
 {
     using System.Diagnostics;
+    using System.Threading.Tasks;
 
+    using BeGorgeous.Common;
+    using BeGorgeous.Services.Data.Countries;
     using BeGorgeous.Web.ViewModels;
-
+    using BeGorgeous.Web.ViewModels.Home;
     using Microsoft.AspNetCore.Mvc;
 
     public class HomeController : BaseController
     {
-        public IActionResult Index()
+        private readonly ICountriesService countriesService;
+
+        public HomeController(ICountriesService countriesService)
         {
-            return this.View();
+            this.countriesService = countriesService;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var viewModel = new IndexViewModel
+            {
+                Countries =
+                     await this.countriesService.GetAllAsync<IndexCountryViewModel>(),
+            };
+
+            return this.View(viewModel);
         }
 
         public IActionResult Privacy()
