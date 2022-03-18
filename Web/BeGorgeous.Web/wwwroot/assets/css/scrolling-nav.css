@@ -1,0 +1,99 @@
+.navbar {
+	background-image: linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.3)), url('https://res.cloudinary.com/be-gorgeous/image/upload/v1647259764/images/cover-bg_nnwh6d_cui4dr.jpg');
+	background-attachment: fixed;
+	background-position: center top;
+}
+
+.bgimg {
+	height: 600px;
+	/*background-image: url('https://res.cloudinary.com/be-gorgeous/image/upload/v1647259764/images/cover-bg_nnwh6d_cui4dr.jpg')*/;
+	background-attachment: fixed;
+	background-position: center top;
+}
+
+.navbar a.nav-link{
+	color:#fff;
+	padding: 5px 15px !important;
+}
+.navbar .nav-link:hover{
+	color:#fff;
+}
+.navbar .nav-link.active{
+	color:#fff;
+}
+.navbar.navbar-bg-onscroll a.nav-link{
+	color:rgba(255,255,255,.5);
+}
+.navbar.navbar-bg-onscroll a.nav-link:hover{
+	color:#fff;
+}
+.navbar.navbar-bg-onscroll a.nav-link.active{
+	color:#fff;
+}
+.navbar-bg-onscroll {
+	background-image: url('https://res.cloudinary.com/be-gorgeous/image/upload/v1647259764/images/cover-bg_nnwh6d_cui4dr.jpg');
+	background-attachment: fixed;
+	background-position: center top;
+}
+
+.text-primary{
+	    color: #868686!important;
+}
+
+.navbar-dark .navbar-brand, .navbar-dark .navbar-brand:hover {
+    color: #868686;
+	font-weight:bolder;
+}
+ .navbar-dark .navbar-brand {
+    color: #fff !important;
+}
+
+.navbar .navbar-nav .nav-item .nav-link { 
+    padding: 0.625rem 1.25rem;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s; 
+}
+.navbar .navbar-nav .nav-item .nav-link.active {
+    background: #552882 !important;
+    border-radius: 50px;
+}
+.navbar-brand b{
+	font-family: 'Rubik', sans-serif;
+	  font-size: 24px;
+}
+/*----------------------------------
+  Header
+------------------------------------*/
+@media (max-width: 767px) {
+  .navbar-expand-sm.fixed-top {
+    background-color: rgba(27, 30, 36, 0.3); 
+  }
+  .hero-img {
+    background-repeat: no-repeat;
+		background-position: 83% 50%;
+		background-size: cover;
+	}
+}
+
+@media (max-width: 991px) {
+  .navbar-expand-md.fixed-top {
+    background-color: rgba(27, 30, 36, 0.3); 
+  }
+  .onCollapse{
+	  background:#fff;
+	  padding:0 20px;
+  }
+  .inner-page .onCollapse a {
+		color: #211f1f !important;
+	}
+}
+
+@media (max-width: 1199px) {
+  .navbar-expand-lg.fixed-top {
+    background-color: #ffffff !important;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+} 

@@ -1,0 +1,226 @@
+/*  
+Author: WebThemez.com
+License: https://webthemez.com/license 
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap'); 
+@import url('https://fonts.googleapis.com/css?family=Coda+Caption:800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
+.h1, .h2, .h3, .h4, .h5, .h6, .h7,
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.6;
+  font-weight:600;
+}
+h1, h2{
+	font-family: 'Rubik', sans-serif;
+	font-family: 'Coda Caption', sans-serif;
+	font-family: 'Courgette', cursive;
+}
+ 
+.navbar-dark .navbar-brand {
+    /* color: #303030 !important; */
+    font-family: 'Coda Caption', sans-serif;
+}
+.navbar-dark .navbar-brand span{
+    color: #f150bf !important;
+}
+.bg-primary{
+	color:#fff !important;
+	background-color: #180729 !important;
+}
+.btn-primary{
+	color: #242121 !important;
+	border-color: #f150bf !important;
+	background: #f150bf !important;
+}
+.text-primary{
+	color: #f150bf !important;
+}
+.bg-dark{
+	 /* background-color: #f1ad50 !important; */
+}
+header{
+  /* padding: 70px 0 100px; */
+}
+.trans_500 {
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+.navbar .navbar-nav .nav-item .nav-link {
+    color: #ffffff;
+    font-size: 0.937rem;
+    font-weight: 600;
+    padding: 0.625rem 1.25rem;
+    border-radius: 50px;
+    font-family: 'Rubik', sans-serif;
+    letter-spacing: 1px;
+}
+::-moz-selection {
+  color: #fff;
+  background-color: #490bf9;
+}
+
+::selection {
+  color: #fff;
+  background-color: #490bf9;
+}
+
+.bg-primary ::-moz-selection {
+  color: #490bf9;
+  background-color: #fff;
+}
+
+.bg-primary ::selection {
+  color: #490bf9;
+  background-color: #fff;
+}
+  
+.bg-overlay, .hero-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.text-primary{
+	color: #f150bf !important;
+}
+.hero-img {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+}
+.hero-content{
+	
+}
+.inner-page{
+    background: #006bdf;
+}  
+
+.price-card .card-body ul li{
+	line-height:38px;
+}
+.contact-info i{
+	font-size:24px;
+}
+.team-dp ul{
+	display:bock;
+	margin:0 auto;
+	padding:0;
+}
+.team-dp{
+	text-align:center;
+	display:bock;
+}
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  .carousel-caption {
+    position: absolute;
+    left: 10px;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: left;
+    top: 40%;
+    max-width: 500px;
+}
+  .carousel-indicators li {
+    height: 7px;
+    border-radius: 0;
+    overflow: hidden;
+    width: 52px;
+    background: #f150bf;
+    padding: 0;
+    margin: 0 2px;
+    border: 0 solid #333;
+}
+  .carousel-caption h2{
+	  font-size: 56px;
+	  color: #f150bf;
+	 }
+   .carousel-caption p{
+	  font-size:22px;
+	  text-transform: uppercase;
+	  color: #c3aeff;
+	  letter-spacing: 2px;
+	 }
+  .carousel-item .container{ 
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+  }
+  .btn-outline-primary {
+    color: #552882;
+    border-color: #552882;
+}
+.btn-outline-primary:hover {
+    color: #333;
+    background-color: #f150bf;
+    border-color: #f150bf;
+}
+.card-body {
+    background-color: transparent;
+}
+.card-body h5{
+	font-size:15px;
+	color: #f150bf;
+}
+.card{
+	    border: 3px solid rgba(0, 0, 0, 0.6);
+	    background: transparent;
+}
+.card-body p{
+	font-size:13px;
+}
+.price-card {
+    /* color: #fff; */
+}
+.bg-dark {
+    /*background-color: #552882 !important;*/
+    height: 100px;
+    background-image: url('https://res.cloudinary.com/be-gorgeous/image/upload/v1647259764/images/cover-bg_nnwh6d_cui4dr.jpg');
+    background-attachment: fixed;
+    background-position: center top;
+}
+.header {
+    background-image: url('https://res.cloudinary.com/be-gorgeous/image/upload/v1647259764/images/cover-bg_nnwh6d_cui4dr.jpg');
+}
+.navbar-dark .navbar-toggler {
+    color: #3c3c3c;
+    border-color: #f1ad50;
+}
+.wt-blockquote-v2::before { 
+    color: #f1ad50; 
+}
+.navbar-collapse { 
+    padding: 25px 0;
+}
+
+@media only screen and (max-width: 600px) {
+.carousel-caption h2 {
+    font-size: 19px;
+    color: #f1ad50;
+}
+.carousel-caption p {
+    font-size: 14px; 
+	font-weight:bold;
+}
+}
+#services h4.h5 {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ef3db7;
+}
+.portfolio-menu ul li {  
+    padding: 5px 25px; 
+    border-radius: 16px;
+    font-size: 14px;
+} 

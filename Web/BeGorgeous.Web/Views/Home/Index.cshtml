@@ -3,13 +3,14 @@
 @{
     this.ViewData["Title"] = "Home Page";
 }
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <section class="wt-section" id="services">
     <div class="container">
         <div class="row justify-content-md-center text-center pb-lg-4 mb-lg-5 mb-4">
             <div class="col-md-8 text-center w-md-50 mx-auto mb-0">
-                <h2 class="mb-md-2">Choose a country</h2>
-                <p class="lead text-muted">Where you want to BE GORGEOUS</p>
+                <h2 class="mb-md-2">Countries where you may find us</h2>
+                <p class="lead text-muted">BE GORGEOUS waiting for you here:</p>
             </div>
         </div>
     </div>
@@ -18,73 +19,14 @@
         {
             <div class="col-lg-4 mb-5 mb-lg-0 text-center" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="100">
                 <div class="d-block mb-4">
-                    @*<img src="assets/img/intro/logo-of-city.png">*@
+                    <img src="assets/img/intro/city.png" width="250" class="pr-4" alt="">
                 </div>
                 <h4 class="h5">@country.Name</h4>
-                <div class="row">
-                    <div class="col">
-                        <button class="button">
-                            <a asp-area="" asp-controller="Cities" asp-action="Index"><span>View cities</span></a>
-                        </button>
-                    </div>
-                </div>
             </div>
         }
     </div>
-
-    @*<div class="row">
-        <div class="col-lg-4 mb-5 mb-lg-0 text-center" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="100">
-        <div class="d-block mb-4">
-        <img src="assets/img/services/4.svg" width="85px" class="pr-4" alt="">
-        </div>
-        <h4 class="h5">Home Interior</h4>
-        <p>Achieve virtually any look and layout design within one UI Kit solution.</p>
-        </div>
-
-        <div class="col-lg-4 mb-5 mb-lg-0 text-center" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="200">
-        <div class="d-block mb-4">
-        <img src="assets/img/services/1.svg" width="85px" class="pr-4" alt="">
-        </div>
-        <h4 class="h5">Custom Design</h4>
-        <p>We strive to figure out ways to help your audience grow through all platforms.</p>
-        </div>
-
-        <div class="col-lg-4 mb-5 mb-lg-0 text-center" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="300">
-        <div class="d-block mb-4">
-        <img src="assets/img/services/5.svg" width="85px" class="pr-4" alt="">
-        </div>
-        <h4 class="h5">Business Interior</h4>
-        <p>Find what you need in one template and combine features at will.</p>
-        </div>
-        </div>
-
-        <hr class="my-5">
-
-        <div class="row">
-        <div class="col-lg-4 mb-5 mb-lg-0 text-center" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="400">
-        <div class="d-block mb-4">
-        <img src="assets/img/services/3.svg" width="85px" class="pr-4" alt="">
-        </div>
-        <h4 class="h5">Security Setup</h4>
-        <p>Easy and fast adjustments of elements are possible with WenTo UI Kit.</p>
-        </div>
-
-        <div class="col-lg-4 mb-5 mb-lg-0 text-center" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="500">
-        <div class="d-block mb-4">
-        <img src="assets/img/services/6.svg" width="85px" class="pr-4" alt="">
-        </div>
-        <h4 class="h5">Custom Paint</h4>
-        <p>Our React Powered App will save you tons of time and cost in your projects.</p>
-        </div>
-
-        <div class="col-lg-4 mb-5 mb-lg-0 text-center" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="600">
-        <div class="d-block mb-4">
-        <img src="assets/img/services/2.svg" width="85px" class="pr-4" alt="">
-        </div>
-        <h4 class="h5">Home Decor</h4>
-        <p>Power your app with Angular components for no cost within one stop solution.</p>
-        </div>
-        </div>
-        <!-- End Feature Blocks -->
-        </div>*@
 </section>
+
+<button class="center-block">
+    <a asp-area="" asp-controller="Salons" asp-action="Index"><span>Choose a Salon</span></a>
+</button>

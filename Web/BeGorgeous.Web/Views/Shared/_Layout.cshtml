@@ -39,62 +39,59 @@
 
     <div class="super_container">
 
-        <!-- Header -->
-        <header id="top">
 
-            <!-- Navbar -->
+        <!-- Navbar -->
+        <partial name="_HeaderPartial" />
+        <!-- End Navbar -->
 
-            <partial name="_HeaderPartial" />
+        @if (this.ViewData["Title"].ToString() == "Home Page")
+        {
+            <section class="hero-large hero">
+                <div id="demo" class="carousel slide" data-ride="carousel">
+                    <ul class="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        <li data-target="#demo" data-slide-to="2"></li>
+                    </ul>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="assets/img/intro/banner-bg1.png" alt="Los Angeles" width="1100" height="500">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <h2>Be Gorgeous</h2>
+                                    <p>Adding Care to your beauty</p>
+                                </div>
+                            </div>
 
-            <!-- End Navbar -->
-
-        </header>
-        <!-- End Header -->
-        <section class="hero-large hero">
-            <div id="demo" class="carousel slide" data-ride="carousel">
-                <ul class="carousel-indicators">
-                    <li data-target="#demo" data-slide-to="0" class="active"></li>
-                    <li data-target="#demo" data-slide-to="1"></li>
-                    <li data-target="#demo" data-slide-to="2"></li>
-                </ul>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="assets/img/intro/banner-bg1.png">
-                        <div class="container">
-                            <div class="carousel-caption">
-                                <h2>Be Gorgeous</h2>
-                                <p>Adding Care to your beauty</p>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/img/intro/banner-bg2.png" alt="Chicago" width="1100" height="500">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <h2>Come and feel beautiful</h2>
+                                    <p>Bring out the best in you</p>
+                                </div>
                             </div>
                         </div>
-
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/img/intro/banner-bg2.png">
-                        <div class="container">
-                            <div class="carousel-caption">
-                                <h2>Come and feel beautiful</h2>
-                                <p>Bring out the best in you</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/img/intro/banner-bg3.png">
-                        <div class="container">
-                            <div class="carousel-caption">
-                                <h2>Give yourself the best services</h2>
-                                <p>You deserve to be spoiled</p>
+                        <div class="carousel-item">
+                            <img src="assets/img/intro/banner-bg3.png" alt="New York" width="1100" height="500">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <h2>Give yourself the best services</h2>
+                                    <p>You deserve to be spoiled</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
                 </div>
-                <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#demo" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </a>
-            </div>
-        </section>
+            </section>
+        }
 
         <div class="m-5">
             <main role="main">

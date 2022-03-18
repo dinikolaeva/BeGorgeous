@@ -1,0 +1,185 @@
+﻿@using BeGorgeous.Web.ViewModels.Salons
+@model SalonsListViewModel
+@{
+    this.ViewData["Title"] = "Salons";
+}
+
+<partial name="_HeaderPartial" />
+
+<section class="bg-light wt-section" id="team">
+    <div class="container">
+        <div class="row justify-content-md-center text-center mb-lg-5 mb-4 pb-lg-5">
+            <div class="col-md-12">
+                <h2 class="h1">Salons</h2>
+                <p>See the information about our salons and choose where is your place to BE GORGEOUS</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            @foreach (var salon in Model.Salons)
+            {
+                <div class="col-lg-4 col-sm-6 mb-5">
+                    <figure data-aos="fade-up" data-aos-easing="linear" data-aos-delay="100">
+                        <img class="w-100 rounded-top" src=@salon.ImageUrl alt="Image Description">
+                        <div class="wt-box-shadow-sm bg-white text-center rounded p-4">
+                            <div class="mb-3">
+                                <h5 class="mb-1">@salon.Name</h5>
+                                <small class="d-block font-style-normal text-uppercase text-primary wt-letter-spacing-xs">@salon.Description</small>
+                                <div class="team-dp">
+                                    <ul>
+                                        <li class="list-inline-item mx-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
+                                            <a class="text-primary" target="_blank" href="https://www.facebook.com">
+                                                <i class="fab fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item mx-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Instagram">
+                                            <a class="text-primary" target="_blank" href="https://www.instagram.com">
+                                                <i class="fab fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item mx-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter">
+                                            <a class="text-primary" target="_blank" href="https://twitter.com">
+                                                <i class="fab fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                    </figure>
+                </div>
+            }
+        </div>
+    </div>
+    }
+</section>
+@*
+    <div class="row">
+    <div class="col-lg-3 col-sm-6 mb-5">
+    <figure data-aos="fade-up" data-aos-easing="linear" data-aos-delay="100">
+    <img class="w-100 rounded-top" src="assets/img/team/img1.jpg" alt="Image Description">
+    <div class="wt-box-shadow-sm bg-white text-center rounded p-4">
+    <div class="mb-3">
+    <h5 class="mb-1">James Rally</h5>
+    <small class="d-block font-style-normal text-uppercase text-primary wt-letter-spacing-xs">CEO</small>
+    </div>
+    <div class="team-dp">
+    <ul>
+    <li class="list-inline-item mx-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
+    <a class="text-primary" target="_blank" href="https://www.facebook.com/Maxi">
+    <i class="fab fa-facebook"></i>
+    </a>
+    </li>
+    <li class="list-inline-item mx-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Instagram">
+    <a class="text-primary" target="_blank" href="https://www.instagram.com/Maxi">
+    <i class="fab fa-instagram"></i>
+    </a>
+    </li>
+    <li class="list-inline-item mx-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter">
+    <a class="text-primary" target="_blank" href="https://twitter.com/Maxi">
+    <i class="fab fa-twitter"></i>
+    </a>
+    </li>
+    </ul>
+    </div>
+    </div>
+    </figure>
+    </div>
+
+    <div class="col-lg-3 col-sm-6 mb-5">
+    <figure data-aos="fade-up" data-aos-easing="linear" data-aos-delay="200">
+    <img class="w-100 rounded-top" src="assets/img/team/img2.jpg" alt="Image Description">
+    <div class="wt-box-shadow-sm bg-white text-center rounded p-4">
+    <div class="mb-3">
+    <h5 class="mb-1">Kristen Viller</h5>
+    <small class="d-block font-style-normal text-uppercase text-primary wt-letter-spacing-xs">Trainer</small>
+    </div>
+    <div class="team-dp">
+    <ul>
+    <li class="list-inline-item mx-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
+    <a class="text-primary" target="_blank" href="https://www.facebook.com/Maxi">
+    <i class="fab fa-facebook"></i>
+    </a>
+    </li>
+    <li class="list-inline-item mx-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Instagram">
+    <a class="text-primary" target="_blank" href="https://www.instagram.com/Maxi">
+    <i class="fab fa-instagram"></i>
+    </a>
+    </li>
+    <li class="list-inline-item mx-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter">
+    <a class="text-primary" target="_blank" href="https://twitter.com/Maxi">
+    <i class="fab fa-twitter"></i>
+    </a>
+    </li>
+    </ul>
+    </div>
+    </div>
+    </figure>
+    </div>
+
+    <div class="col-lg-3 col-sm-6 mb-5">
+    <figure data-aos="fade-up" data-aos-easing="linear" data-aos-delay="300">
+    <img class="w-100 rounded-top" src="assets/img/team/img3.jpg" alt="Image Description">
+
+    <div class="wt-box-shadow-sm bg-white text-center rounded p-4">
+    <div class="mb-3">
+    <h5 class="mb-1">Johanna Care</h5>
+    <small class="d-block font-style-normal text-uppercase text-primary wt-letter-spacing-xs">Trainer</small>
+    </div>
+    <div class="team-dp">
+    <ul>
+    <li class="list-inline-item mx-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
+    <a class="text-primary" target="_blank" href="https://www.facebook.com/Maxi">
+    <i class="fab fa-facebook"></i>
+    </a>
+    </li>
+    <li class="list-inline-item mx-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Instagram">
+    <a class="text-primary" target="_blank" href="https://www.instagram.com/Maxi">
+    <i class="fab fa-instagram"></i>
+    </a>
+    </li>
+    <li class="list-inline-item mx-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter">
+    <a class="text-primary" target="_blank" href="https://twitter.com/Maxi">
+    <i class="fab fa-twitter"></i>
+    </a>
+    </li>
+    </ul>
+    </div>
+    </div>
+    </figure>
+    </div>
+
+    <div class="col-lg-3 col-sm-6 mb-5">
+    <figure data-aos="fade-up" data-aos-easing="linear" data-aos-delay="400">
+    <img class="w-100 rounded-top" src="assets/img/team/img4.jpg" alt="Image Description">
+    <div class="wt-box-shadow-sm bg-white text-center rounded p-4">
+    <div class="mb-3">
+    <h5 class="mb-1">Bruce Willamson</h5>
+    <small class="d-block font-style-normal text-uppercase text-primary wt-letter-spacing-xs">Trainer</small>
+    </div>
+    <div class="team-dp">
+    <ul>
+    <li class="list-inline-item mx-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
+    <a class="text-primary" target="_blank" href="https://www.facebook.com/Maxi">
+    <i class="fab fa-facebook"></i>
+    </a>
+    </li>
+    <li class="list-inline-item mx-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Instagram">
+    <a class="text-primary" target="_blank" href="https://www.instagram.com/Maxi">
+    <i class="fab fa-instagram"></i>
+    </a>
+    </li>
+    <li class="list-inline-item mx-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter">
+    <a class="text-primary" target="_blank" href="https://twitter.com/Maxi">
+    <i class="fab fa-twitter"></i>
+    </a>
+    </li>
+    </ul>
+    </div>
+    </div>
+    </figure>
+    </div>
+    </div>
+    </div>
+*@

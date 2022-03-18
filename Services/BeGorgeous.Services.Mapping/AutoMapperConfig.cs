@@ -1,4 +1,4 @@
-﻿namespace BeGorgeous.Services.Mapping
+﻿namespace BeGorgeous.Services
 {
     using System;
     using System.Collections.Generic;
@@ -7,6 +7,7 @@
 
     using AutoMapper;
     using AutoMapper.Configuration;
+    using BeGorgeous.Services.Mapping;
 
     public static class AutoMapperConfig
     {
