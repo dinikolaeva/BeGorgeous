@@ -11,6 +11,7 @@
     using BeGorgeous.Data.Seeding;
     using BeGorgeous.Services;
     using BeGorgeous.Services.Cloudinary;
+    using BeGorgeous.Services.Data.Categories;
     using BeGorgeous.Services.Data.Cities;
     using BeGorgeous.Services.Data.Countries;
     using BeGorgeous.Services.Messaging;
@@ -77,6 +78,7 @@
             services.AddTransient<ICloudinaryService, CloudinaryService>();
             services.AddTransient<ICountriesService, CountriesService>();
             services.AddTransient<ICitiesService, CitiesService>();
+            services.AddTransient<ICategoriesService, CategoriesService>();
             services.AddTransient<ISalonsService, SalonsService>();
         }
 

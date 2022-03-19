@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-
-namespace BeGorgeous.Data.Migrations
+﻿namespace BeGorgeous.Data.Migrations
 {
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class AddNewPropertiesInStylistsTable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)

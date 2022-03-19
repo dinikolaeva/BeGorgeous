@@ -1,9 +1,11 @@
 ﻿@using BeGorgeous.Common
+
+@await Component.InvokeAsync("CategoriesSimpleList");
 <footer class="bg-dark py-5">
     <div class="container">
         <div class="row">
             <div class="col-md-8 text-center text-md-left mb-3 mb-md-0">
-                <small class="text-white"><a class="text-white" href="">Be Gorgeous</a> everywhere, every day! <br>© All Rights Reserved</small>
+                <small class="text-white"><a class="text-white" href="">@GlobalConstants.SystemName</a> everywhere, every day! <br>© All Rights Reserved</small>
             </div>
 
             <div class="col-md-4 align-self-center">

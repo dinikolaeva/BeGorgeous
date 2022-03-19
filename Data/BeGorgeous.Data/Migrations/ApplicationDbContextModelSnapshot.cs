@@ -394,8 +394,8 @@ namespace BeGorgeous.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ShortAutobiography")
-                        .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.HasKey("Id");
 

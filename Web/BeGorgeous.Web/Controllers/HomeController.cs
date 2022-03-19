@@ -4,18 +4,22 @@
     using System.Threading.Tasks;
 
     using BeGorgeous.Common;
+    using BeGorgeous.Services.Data.Categories;
     using BeGorgeous.Services.Data.Countries;
     using BeGorgeous.Web.ViewModels;
+    using BeGorgeous.Web.ViewModels.Categories;
     using BeGorgeous.Web.ViewModels.Home;
     using Microsoft.AspNetCore.Mvc;
 
     public class HomeController : BaseController
     {
         private readonly ICountriesService countriesService;
+        private readonly ICategoriesService categoriesService;
 
-        public HomeController(ICountriesService countriesService)
+        public HomeController(ICountriesService countriesService, ICategoriesService categoriesService)
         {
             this.countriesService = countriesService;
+            this.categoriesService = categoriesService;
         }
 
         public async Task<IActionResult> Index()
