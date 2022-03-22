@@ -1219,7 +1219,7 @@ img.wt-block-image {
 ------------------------------------*/
 .wt-section {
   padding-top: 8.25rem;
-  padding-bottom: 8.25rem;
+  padding-bottom: 3rem;
 }
 
 .wt-section-top {
@@ -1227,7 +1227,7 @@ img.wt-block-image {
 }
 	
 .wt-section-bottom {
-  padding-bottom: 8.25rem;
+  padding-bottom: 3rem;
 }
 
 /*----------------------------------

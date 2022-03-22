@@ -15,7 +15,7 @@
             this.salonsService = salonsService;
         }
 
-        public async Task<IActionResult> Index(int sortId)
+        public async Task<IActionResult> Index()
         {
             var viewModel = new SalonsListViewModel
             {

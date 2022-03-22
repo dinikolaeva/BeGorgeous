@@ -1,0 +1,46 @@
+﻿@using BeGorgeous.Web.ViewModels.Categories
+@model CategoriesListViewModel
+@{
+    this.ViewData["Title"] = "Categories";
+}
+
+<partial name="_HeaderPartial" />
+
+<section class="bg-light wt-section" id="team">
+    <div class="container">
+        <div class="row justify-content-md-center text-center mb-lg-5 mb-4 pb-lg-5">
+            <div class="col-md-12">
+                <h2 class="h1">Categories</h2>
+                <p>See the information about our categories and choose where is your place to BE GORGEOUS</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            @foreach (var category in Model.Categories)
+            {
+                <div class="col-lg-12 col-sm-12 mb-12">
+                    <figure data-aos="fade-up" data-aos-easing="linear" data-aos-delay="100">
+                        <img class="w-100 rounded-top" src=@category.ImageUrl alt="Image Description">
+                        <div class="wt-box-shadow-sm bg-white text-center rounded p-4">
+                            <div class="mb-3">
+                                <h5 class="dept_title">@category.Name</h5>
+                                <small class="d-block font-style-normal text-primary wt-letter-spacing-xs">@category.Description</small>
+                                <div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="button services_button ml-auto mr-auto">
+                                                <a asp-area="" asp-controller="Salons" asp-action="Index"><span>Choose a Salon</span><span>Choose a Salon</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+            }
+        </div>
+    </div>
+</section>

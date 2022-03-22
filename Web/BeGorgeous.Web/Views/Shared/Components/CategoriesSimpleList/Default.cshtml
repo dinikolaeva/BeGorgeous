@@ -1,7 +1,10 @@
 ﻿@using BeGorgeous.Web.ViewModels.Categories
 @model CategoriesListViewModel
 
+<hr class="bg-dark mx-3" style="height: 6px;" />
+
 <section class="wt-section bg-primary">
+
     <div class="container">
         <div class="row justify-content-md-center text-center pb-lg-4 mb-lg-5 mb-4">
             <div class="col-md-8 text-center w-md-50 mx-auto mb-0 ">
@@ -9,21 +12,60 @@
                 <p>We provide services that make you amazing. Taking care of all of your needs.</p>
             </div>
         </div>
-        <!-- Feature Blocks -->
-        <div class="row">
-            @foreach (var category in Model.Categories)
-            {
-                <div class="col-md-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="@category.ImageUrl" class="card-img-top" alt="img">
-                        <div class="card-body">
-                            <h5>@category.Name</h5>
-                            <p class="card-text">@category.Description</p>
+
+<div class="departments">
+    
+        <div class="row dept_row">
+            <div class="col">
+                <div class="dept_slider_container_outer">
+                    <div class="dept_slider_container">
+
+                        <!-- Slider -->
+                        <div class="owl-carousel owl-theme dept_slider">
+
+                            @foreach (var category in Model.Categories)
+                            {
+                                <!-- Slide -->
+                                <div class="owl-item dept_item">
+                                    <div class="dept_image"><img src="@category.ImageUrl" alt=""></div>
+                                    <div class="dept_content">
+                                        <div class="dept_title">@category.Name</div>
+                                        <div class="dept_link"><a>@category.Description</a></div>
+                                    </div>
+                                </div>
+                            }
+
                         </div>
                     </div>
+                    <!-- Dept Slider Nav -->
+                    <div class="dept_slider_nav"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
                 </div>
-            }
+            </div>
         </div>
-        <!-- End Feature Blocks -->
+        <div class="row">
+            <div class="col">
+                <div class="button services_button ml-auto mr-auto">
+                    <a asp-area="" asp-controller="Categories" asp-action="Index"><span>see all</span><span>see all</span></a>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 </section>
+
+<hr class="bg-dark mx-3" style="height: 6px;" />
+
+@*<div class="row">
+    @foreach (var category in Model.Categories)
+    {
+    <div class="col-md-4">
+    <div class="card" style="width: 18rem;">
+    <img src="@category.ImageUrl" class="card-img-top" alt="img">
+    <div class="card-body">
+    <h5>@category.Name</h5>
+    <p class="card-text">@category.Description</p>
+    </div>
+    </div>
+    </div>
+    }
+    </div>*@

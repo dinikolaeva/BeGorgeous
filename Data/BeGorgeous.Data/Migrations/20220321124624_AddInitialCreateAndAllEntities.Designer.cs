@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BeGorgeous.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220307203155_ChangeTypeOfDurationOfTreatments")]
-    partial class ChangeTypeOfDurationOfTreatments
+    [Migration("20220321124624_AddInitialCreateAndAllEntities")]
+    partial class AddInitialCreateAndAllEntities
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -167,9 +167,8 @@ namespace BeGorgeous.Data.Migrations
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("SalonId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("SalonId")
+                        .HasColumnType("int");
 
                     b.Property<int?>("StylistId")
                         .HasColumnType("int");
@@ -300,8 +299,10 @@ namespace BeGorgeous.Data.Migrations
 
             modelBuilder.Entity("BeGorgeous.Data.Models.Salon", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("CityId")
                         .HasColumnType("int");
@@ -382,14 +383,22 @@ namespace BeGorgeous.Data.Migrations
                         .HasMaxLength(40)
                         .HasColumnType("nvarchar(40)");
 
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("SalonId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("SalonId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ShortAutobiography")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
 
                     b.HasKey("Id");
 
@@ -446,8 +455,8 @@ namespace BeGorgeous.Data.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("SalonId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int?>("SalonId")
+                        .HasColumnType("int");
 
                     b.Property<int?>("StylistId")
                         .HasColumnType("int");
@@ -472,8 +481,8 @@ namespace BeGorgeous.Data.Migrations
                     b.Property<int>("CategoriesId")
                         .HasColumnType("int");
 
-                    b.Property<string>("SalonsId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("SalonsId")
+                        .HasColumnType("int");
 
                     b.HasKey("CategoriesId", "SalonsId");
 
@@ -595,7 +604,7 @@ namespace BeGorgeous.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("BeGorgeous.Data.Models.Stylist", null)
-                        .WithMany("Appointment")
+                        .WithMany("Appointments")
                         .HasForeignKey("StylistId");
 
                     b.HasOne("BeGorgeous.Data.Models.ApplicationUser", "User")
@@ -645,7 +654,9 @@ namespace BeGorgeous.Data.Migrations
 
                     b.HasOne("BeGorgeous.Data.Models.Salon", "Salon")
                         .WithMany("Stylists")
-                        .HasForeignKey("SalonId");
+                        .HasForeignKey("SalonId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Category");
 
@@ -783,7 +794,7 @@ namespace BeGorgeous.Data.Migrations
 
             modelBuilder.Entity("BeGorgeous.Data.Models.Stylist", b =>
                 {
-                    b.Navigation("Appointment");
+                    b.Navigation("Appointments");
 
                     b.Navigation("Treatments");
                 });
