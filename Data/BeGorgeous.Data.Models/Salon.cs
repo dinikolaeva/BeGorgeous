@@ -19,6 +19,10 @@
 
         public virtual City City { get; set; }
 
+        public int CountryId { get; set; }
+
+        public virtual Country Country { get; set; }
+
         [Required]
         [MaxLength(GlobalConstants.StringLengthValidations.AddressMaxLength)]
         public string StreetAddress { get; set; }

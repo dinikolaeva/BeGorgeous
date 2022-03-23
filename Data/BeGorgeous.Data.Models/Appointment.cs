@@ -27,6 +27,6 @@
         // But rating can be given only once for each appointment
         public bool? IsSalonRatedByTheUser { get; set; }
 
-        public ICollection<Treatment> Treatments { get; set; } = new HashSet<Treatment>();
+        public virtual ICollection<Treatment> Treatments { get; set; } = new HashSet<Treatment>();
     }
 }

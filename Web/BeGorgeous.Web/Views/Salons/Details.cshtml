@@ -1,0 +1,13 @@
+﻿@using BeGorgeous.Web.ViewModels.Salons
+@model SalonWithStylistsAndTreatmentsViewModel
+@{
+    this.ViewData["Title"] = @Model.Name;
+}
+
+<partial name="_HeaderPartial" />
+
+<div>@Model.Name</div>
+
+@*@section Scripts {
+<script src="~/js/rating-static.js" asp-append-version="true"></script>
+}*@

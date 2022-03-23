@@ -24,5 +24,18 @@
 
             return this.View(viewModel);
         }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            var viewModel = await this.salonsService
+                                      .GetByIdAsync<SalonWithStylistsAndTreatmentsViewModel>(id);
+
+            if (viewModel == null)
+            {
+                return new StatusCodeResult(404);
+            }
+
+            return this.View(viewModel);
+        }
     }
 }

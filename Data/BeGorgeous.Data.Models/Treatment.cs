@@ -1,6 +1,7 @@
 ﻿namespace BeGorgeous.Data.Models
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
     using BeGorgeous.Common;
@@ -26,5 +27,7 @@
         public TimeSpan Duration { get; set; }
 
         public decimal Price { get; set; }
+
+        public virtual ICollection<Salon> Salons { get; set; } = new HashSet<Salon>();
     }
 }

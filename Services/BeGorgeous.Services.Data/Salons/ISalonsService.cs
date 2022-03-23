@@ -6,5 +6,7 @@
     public interface ISalonsService
     {
         Task<IEnumerable<T>> GetAllAsync<T>();
+
+        Task<T> GetByIdAsync<T>(int id);
     }
 }

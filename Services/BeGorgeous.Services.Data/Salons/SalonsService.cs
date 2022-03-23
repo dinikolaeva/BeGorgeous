@@ -24,5 +24,13 @@
 
             return await query.To<T>().ToListAsync();
         }
+
+        public async Task<T> GetByIdAsync<T>(int id)
+        {
+            IQueryable<Salon> query = this.salonsRepository.All()
+                                                           .Where(s => s.Id == id);
+
+            return await query.To<T>().FirstOrDefaultAsync();
+        }
     }
 }

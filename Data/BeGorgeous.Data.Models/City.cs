@@ -16,6 +16,6 @@
 
         public virtual Country Country { get; set; }
 
-        public ICollection<Salon> Salons { get; set; } = new HashSet<Salon>();
+        public virtual ICollection<Salon> Salons { get; set; } = new HashSet<Salon>();
     }
 }

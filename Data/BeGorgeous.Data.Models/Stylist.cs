@@ -27,8 +27,8 @@
         [Required]
         public string ImageUrl { get; set; }
 
-        public ICollection<Treatment> Treatments { get; set; } = new HashSet<Treatment>();
+        public virtual ICollection<Treatment> Treatments { get; set; } = new HashSet<Treatment>();
 
-        public ICollection<Appointment> Appointments { get; set; } = new HashSet<Appointment>();
+        public virtual ICollection<Appointment> Appointments { get; set; } = new HashSet<Appointment>();
     }
 }

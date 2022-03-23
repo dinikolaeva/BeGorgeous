@@ -305,7 +305,7 @@ namespace BeGorgeous.Data.Migrations
                     b.Property<int>("CityId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CountryId")
+                    b.Property<int>("CountryId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedOn")
@@ -453,9 +453,6 @@ namespace BeGorgeous.Data.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int?>("SalonId")
-                        .HasColumnType("int");
-
                     b.Property<int?>("StylistId")
                         .HasColumnType("int");
 
@@ -466,8 +463,6 @@ namespace BeGorgeous.Data.Migrations
                     b.HasIndex("CategoryId");
 
                     b.HasIndex("IsDeleted");
-
-                    b.HasIndex("SalonId");
 
                     b.HasIndex("StylistId");
 
@@ -593,6 +588,21 @@ namespace BeGorgeous.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("SalonTreatment", b =>
+                {
+                    b.Property<int>("SalonsId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TreatmentsId")
+                        .HasColumnType("int");
+
+                    b.HasKey("SalonsId", "TreatmentsId");
+
+                    b.HasIndex("TreatmentsId");
+
+                    b.ToTable("SalonTreatment");
+                });
+
             modelBuilder.Entity("BeGorgeous.Data.Models.Appointment", b =>
                 {
                     b.HasOne("BeGorgeous.Data.Models.Salon", "Salon")
@@ -635,11 +645,15 @@ namespace BeGorgeous.Data.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("BeGorgeous.Data.Models.Country", null)
+                    b.HasOne("BeGorgeous.Data.Models.Country", "Country")
                         .WithMany("Salons")
-                        .HasForeignKey("CountryId");
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("City");
+
+                    b.Navigation("Country");
                 });
 
             modelBuilder.Entity("BeGorgeous.Data.Models.Stylist", b =>
@@ -672,10 +686,6 @@ namespace BeGorgeous.Data.Migrations
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.HasOne("BeGorgeous.Data.Models.Salon", null)
-                        .WithMany("Treatments")
-                        .HasForeignKey("SalonId");
 
                     b.HasOne("BeGorgeous.Data.Models.Stylist", null)
                         .WithMany("Treatments")
@@ -750,6 +760,21 @@ namespace BeGorgeous.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("SalonTreatment", b =>
+                {
+                    b.HasOne("BeGorgeous.Data.Models.Salon", null)
+                        .WithMany()
+                        .HasForeignKey("SalonsId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("BeGorgeous.Data.Models.Treatment", null)
+                        .WithMany()
+                        .HasForeignKey("TreatmentsId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("BeGorgeous.Data.Models.ApplicationUser", b =>
                 {
                     b.Navigation("Claims");
@@ -786,8 +811,6 @@ namespace BeGorgeous.Data.Migrations
                     b.Navigation("Appointments");
 
                     b.Navigation("Stylists");
-
-                    b.Navigation("Treatments");
                 });
 
             modelBuilder.Entity("BeGorgeous.Data.Models.Stylist", b =>

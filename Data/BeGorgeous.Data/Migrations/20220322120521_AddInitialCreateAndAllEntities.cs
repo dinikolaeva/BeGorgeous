@@ -230,12 +230,12 @@
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CityId = table.Column<int>(type: "int", nullable: false),
+                    CountryId = table.Column<int>(type: "int", nullable: false),
                     StreetAddress = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Rating = table.Column<double>(type: "float", nullable: false),
                     RatersCount = table.Column<int>(type: "int", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(700)", maxLength: 700, nullable: false),
-                    CountryId = table.Column<int>(type: "int", nullable: true),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
@@ -367,7 +367,6 @@
                     Duration = table.Column<TimeSpan>(type: "time", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     AppointmentId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    SalonId = table.Column<int>(type: "int", nullable: true),
                     StylistId = table.Column<int>(type: "int", nullable: true),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -390,15 +389,33 @@
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Treatments_Salons_SalonId",
-                        column: x => x.SalonId,
+                        name: "FK_Treatments_Stylists_StylistId",
+                        column: x => x.StylistId,
+                        principalTable: "Stylists",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SalonTreatment",
+                columns: table => new
+                {
+                    SalonsId = table.Column<int>(type: "int", nullable: false),
+                    TreatmentsId = table.Column<int>(type: "int", nullable: false),
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SalonTreatment", x => new { x.SalonsId, x.TreatmentsId });
+                    table.ForeignKey(
+                        name: "FK_SalonTreatment_Salons_SalonsId",
+                        column: x => x.SalonsId,
                         principalTable: "Salons",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Treatments_Stylists_StylistId",
-                        column: x => x.StylistId,
-                        principalTable: "Stylists",
+                        name: "FK_SalonTreatment_Treatments_TreatmentsId",
+                        column: x => x.TreatmentsId,
+                        principalTable: "Treatments",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -513,6 +530,11 @@
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
+                name: "IX_SalonTreatment_TreatmentsId",
+                table: "SalonTreatment",
+                column: "TreatmentsId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Stylists_CategoryId",
                 table: "Stylists",
                 column: "CategoryId");
@@ -543,11 +565,6 @@
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Treatments_SalonId",
-                table: "Treatments",
-                column: "SalonId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Treatments_StylistId",
                 table: "Treatments",
                 column: "StylistId");
@@ -574,10 +591,13 @@
                 name: "CategorySalon");
 
             migrationBuilder.DropTable(
-                name: "Treatments");
+                name: "SalonTreatment");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "Treatments");
 
             migrationBuilder.DropTable(
                 name: "Appointments");
