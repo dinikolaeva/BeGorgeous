@@ -29,10 +29,12 @@
                               new RolesSeeder(),
                               new CountriesSeeder(),
                               new CitiesSeeder(),
-                              new CategoriesSeeder(),
-                              new TreatmentsSeeder(),
                               new SalonsSeeder(),
+                              new CategoriesSeeder(),
                               new StylistsSeeder(),
+                              new TreatmentsSeeder(),
+                              new CategoriesSalonsSeeder(),
+                              new SalonsTreatmentsSeeder(),
                           };
 
             foreach (var seeder in seeders)

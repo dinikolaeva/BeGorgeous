@@ -21,6 +21,6 @@
 
         public virtual ICollection<Treatment> Treatments { get; set; } = new HashSet<Treatment>();
 
-        public virtual ICollection<Salon> Salons { get; set; } = new HashSet<Salon>();
+        public virtual ICollection<CategorySalon> CategoriesSalons { get; set; } = new HashSet<CategorySalon>();
     }
 }

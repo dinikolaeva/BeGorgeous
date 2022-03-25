@@ -15,10 +15,13 @@
 
         public virtual ApplicationUser User { get; set; }
 
-        [Required]
         public int SalonId { get; set; }
 
-        public Salon Salon { get; set; }
+        public virtual Salon Salon { get; set; }
+
+        public int StylistId { get; set; }
+
+        public Stylist Stylist { get; set; }
 
         // The salon can confirm or decline an appointment
         public bool? Confirmed { get; set; }

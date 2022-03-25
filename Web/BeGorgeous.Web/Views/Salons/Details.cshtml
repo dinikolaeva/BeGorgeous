@@ -6,8 +6,68 @@
 
 <partial name="_HeaderPartial" />
 
-<div>@Model.Name</div>
+<section class="bg-light wt-section" id="team">
+    <div class="row row-eq-height">
+        <!-- Info Box -->
+        <div class="col-lg-4 info_box_col">
+            <div class="info_box">
+                <div class="info_image"><img src="@Model.ImageUrl" alt=""></div>
+                <div class="info_content">
+                    <div class="info_title">@Model.Name</div>
+                    <div class="info_text">City: <strong>@Model.City.Name, @Model.Country.Name</strong></div>
+                    <div class="info_text">Address: <strong>@Model.StreetAddress</strong></div>
+                    <div class="info_text">Phone number: <strong>@Model.PhoneNumber</strong></div>
+                    <div class="info_text">
+                        Rating: &nbsp;&nbsp;
+                        <span class="star-rating">
+                            <span class="fa fa-star-o" data-rating="1"></span>
+                            <span class="fa fa-star-o" data-rating="2"></span>
+                            <span class="fa fa-star-o" data-rating="3"></span>
+                            <span class="fa fa-star-o" data-rating="4"></span>
+                            <span class="fa fa-star-o" data-rating="5"></span>
+                            <input type="hidden" name="whatever1" class="rating-value" value="@Model.Rating">
+                        </span>
+                        <span>&nbsp; ( @Model.Rating.ToString("F") / 5.00 ) from @Model.RatersCount votes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Panel -->
+        <div class="col-lg-7" id="info">
+            <h2>@Model.Name:</h2>
+            <div class="tab_panel active">
+                <div class="tab_panel_content">
+                    <div class="tab_list">
+                        <div class="info_text"><strong>@Model.Description</strong></div>
+                        <div class="row">
+                                <div class="col">
+                                    <div class="button ml-auto mr-auto">
+                                        <a asp-area="" asp-controller="Stylists" asp-action="Team" asp-route-salonId="@Model.Id"><span>Our Team</span><span>Our Team</span></a>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="button ml-auto mr-auto">
+                                        <a asp-area="" asp-controller="Treatments" asp-action="All" asp-route-salonId="@Model.Id"><span>Our Treatments</span><span>Our Treatments</span></a>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="button ml-auto mr-auto">
+                                        <a asp-area="" asp-controller="Appointments" asp-action="BookAppointment" asp-route-salonId="@Model.Id"><span>Book Appointment</span><span>Book Appointment</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-@*@section Scripts {
+    <div class="row" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="100">
+        <iframe id="map" src=@Model.StreetMapUrl width="97%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+
+</section>
+
+@section scripts {
 <script src="~/js/rating-static.js" asp-append-version="true"></script>
-}*@
+}

@@ -37,17 +37,17 @@
 
         [Required]
         [MaxLength(GlobalConstants.StringLengthValidations.DescriptionMaxLength)]
-
-        //// every Salon has 'about us' information
-
         public string Description { get; set; }
+
+        [Required]
+        public string StreetMapUrl { get; set; }
 
         public virtual ICollection<Stylist> Stylists { get; set; } = new HashSet<Stylist>();
 
-        public virtual ICollection<Category> Categories { get; set; } = new HashSet<Category>();
-
-        public virtual ICollection<Treatment> Treatments { get; set; } = new HashSet<Treatment>();
-
         public virtual ICollection<Appointment> Appointments { get; set; } = new HashSet<Appointment>();
+
+        public virtual ICollection<CategorySalon> CategoriesSalons { get; set; } = new HashSet<CategorySalon>();
+
+        public virtual ICollection<SalonTreatment> SalonsTreatments { get; set; } = new HashSet<SalonTreatment>();
     }
 }

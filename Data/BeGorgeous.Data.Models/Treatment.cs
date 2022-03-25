@@ -28,6 +28,8 @@
 
         public decimal Price { get; set; }
 
-        public virtual ICollection<Salon> Salons { get; set; } = new HashSet<Salon>();
+        public virtual ICollection<SalonTreatment> SalonsTreatments { get; set; } = new HashSet<SalonTreatment>();
+
+        public virtual ICollection<Appointment> Appointments { get; set; }
     }
 }

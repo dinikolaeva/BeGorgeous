@@ -195,6 +195,21 @@
             public const string AlmaHernandez = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646917969/images/laser-skin-treatments_v2kzsk.jpg";
         }
 
+        public static class StreetMapUrl
+        {
+            public const string Sofia = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2932.8959906402165!2d23.31145021533323!3d42.68474547916646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa8510675b310d%3A0xf75472294d673f60!2sul.%20%22Tsar%20Asen%22%20125%2C%201463%20Sofia%20Center%2C%20Sofia!5e0!3m2!1sen!2sbg!4v1648110830864!5m2!1sen!2sbg";
+
+            public const string Plovdiv = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2958.1913474849853!2d24.75862181531497!3d42.14619197920188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14acd1a089cf86d7%3A0xf95946d42239d3df!2sboulevard%20%22Knyaginya%20Maria%20Luiza%22%2040%2C%204000%20Kamenitsa%201%2C%20Plovdiv!5e0!3m2!1sen!2sbg!4v1648111028934!5m2!1sen!2sbg";
+
+            public const string London = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.2404905422018!2d-0.15062588434289256!3d51.50880377963535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876052e973daecb%3A0xe01e4853680233fd!2s20%20Hill%20St%2C%20London%20W1J%205NJ%2C%20UK!5e0!3m2!1sen!2sbg!4v1648113793249!5m2!1sen!2sbg";
+
+            public const string Birmingham = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2429.7156948432184!2d-1.9050480843043371!3d52.48428317980745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870bc8d8103d94f%3A0x51d0d45c0412b6f9!2s40%20Lionel%20St%2C%20Birmingham%2C%20UK!5e0!3m2!1sen!2sbg!4v1648111288148!5m2!1sen!2sbg";
+
+            public const string Madrid = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.775112705588!2d-3.7064513847430343!3d40.391676579368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4227b569b45e3d%3A0x82fca4c657bc5d95!2sC.%20Mariblanca%2C%205%2C%2028026%20Madrid%2C%20Spain!5e0!3m2!1sen!2sbg!4v1648111402107!5m2!1sen!2sbg";
+
+            public const string Barcelona = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.2069020153062!2d2.1715777152898212!3d41.39131287926379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2efe50971f9%3A0x6a4a6d7e86463c5e!2sCarrer%20del%20Bruc%2C%2038%2C%2008010%20Barcelona%2C%20Spain!5e0!3m2!1sen!2sbg!4v1648114077550!5m2!1sen!2sbg";
+        }
+
         public static class Prices
         {
             // Treatments

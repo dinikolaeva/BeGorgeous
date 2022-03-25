@@ -13,6 +13,8 @@
 
         public string ImageUrl { get; set; }
 
+        public Country Country { get; set; }
+
         public City City { get; set; }
 
         public string StreetAddress { get; set; }
@@ -24,6 +26,8 @@
         public int RatersCount { get; set; }
 
         public string Description { get; set; }
+
+        public string StreetMapUrl { get; set; }
 
         public virtual ICollection<Stylist> Stylists { get; set; }
 

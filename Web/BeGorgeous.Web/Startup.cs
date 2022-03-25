@@ -14,6 +14,8 @@
     using BeGorgeous.Services.Data.Categories;
     using BeGorgeous.Services.Data.Cities;
     using BeGorgeous.Services.Data.Countries;
+    using BeGorgeous.Services.Data.Stylists;
+    using BeGorgeous.Services.Data.Treatments;
     using BeGorgeous.Services.Messaging;
     using BeGorgeous.Web.ViewModels;
     using CloudinaryDotNet;
@@ -80,6 +82,8 @@
             services.AddTransient<ICitiesService, CitiesService>();
             services.AddTransient<ICategoriesService, CategoriesService>();
             services.AddTransient<ISalonsService, SalonsService>();
+            services.AddTransient<IStylistsService, StylistsService>();
+            services.AddTransient<ITreatmentsService, TreatmentsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

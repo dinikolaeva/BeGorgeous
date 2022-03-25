@@ -28,7 +28,8 @@
                     PhoneNumber = "0888888888",
                     RatersCount = 0,
                     Rating = 0.0,
-                    StreetAddress = "St. Jozef 135",
+                    StreetAddress = "Tsar Asen 125",
+                    StreetMapUrl = GlobalConstants.StreetMapUrl.Sofia,
                 },
                 new Salon
                 {
@@ -40,7 +41,8 @@
                     PhoneNumber = "0888888881",
                     RatersCount = 0,
                     Rating = 0.0,
-                    StreetAddress = "Maria Luiza 450",
+                    StreetAddress = "Maria Luiza 40",
+                    StreetMapUrl = GlobalConstants.StreetMapUrl.Plovdiv,
                 },
                 new Salon
                 {
@@ -52,7 +54,8 @@
                     PhoneNumber = "+442045777777",
                     RatersCount = 0,
                     Rating = 0.0,
-                    StreetAddress = "78 Grange Road",
+                    StreetAddress = "20 Hill St",
+                    StreetMapUrl = GlobalConstants.StreetMapUrl.London,
                 },
                 new Salon
                 {
@@ -64,7 +67,8 @@
                     PhoneNumber = "+442045565656",
                     RatersCount = 0,
                     Rating = 0.0,
-                    StreetAddress = "568 Elize Lopen",
+                    StreetAddress = "40 Lionel St",
+                    StreetMapUrl = GlobalConstants.StreetMapUrl.Birmingham,
                 },
                 new Salon
                 {
@@ -76,7 +80,8 @@
                     PhoneNumber = "+34919930316",
                     RatersCount = 0,
                     Rating = 0.0,
-                    StreetAddress = "Calle de Raimundo Fernández Villaverde 9",
+                    StreetAddress = "C. Mariblanca, 5",
+                    StreetMapUrl = GlobalConstants.StreetMapUrl.Madrid,
                 },
                 new Salon
                 {
@@ -88,7 +93,8 @@
                     PhoneNumber = "+34919933333",
                     RatersCount = 0,
                     Rating = 0.0,
-                    StreetAddress = "Carrer de Peracamps 20",
+                    StreetAddress = "Carrer del Bruc, 38",
+                    StreetMapUrl = GlobalConstants.StreetMapUrl.Barcelona,
                 },
             };
 

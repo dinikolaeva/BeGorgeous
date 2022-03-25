@@ -1,0 +1,35 @@
+﻿@using BeGorgeous.Web.ViewModels.Treatments
+@model TreatmentsListViewModel
+@{
+    this.ViewData["Title"] = "Treatments";
+}
+
+<partial name="_HeaderPartial" />
+
+<section class="bg-light wt-section" id="team">
+    <div class="container">
+        <div class="row justify-content-md-center text-center mb-lg-5 mb-4 pb-lg-5">
+            <div class="col-md-12">
+                <h2 class="h1">Our Treatments</h2>
+                <p>It’s the BeGorgeous’s goal to help you Be More Beautiful from the minute you leave us until you join us next time.</p>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var treatment in @Model.Treatments)
+            {
+                <div class="col-lg-6 col-sm-7 mb-6">
+                    <figure data-aos="fade-up" data-aos-easing="linear" data-aos-delay="100">
+                        <img class="w-100 rounded-top" src="@treatment.ImageUrl" alt="Image Description">
+                        <div class="wt-box-shadow-sm bg-white text-center rounded p-4">
+                            <div class="mb-3">
+                                <h5 class="mb-1">@treatment.Description</h5>
+                                <small class="d-block font-style-normal text-uppercase text-primary wt-letter-spacing-xs">@treatment.Category.Name</small>
+                                <small class="d-block font-style-normal text-primary wt-letter-spacing-xs">@treatment.Description</small>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+            }
+        </div>
+    </div>
+</section>

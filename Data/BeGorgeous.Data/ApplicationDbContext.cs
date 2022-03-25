@@ -38,6 +38,10 @@
 
         public DbSet<Treatment> Treatments { get; set; }
 
+        public DbSet<CategorySalon> CategoriesSalons { get; set; }
+
+        public DbSet<SalonTreatment> SalonsTreatments { get; set; }
+
         public override int SaveChanges() => this.SaveChanges(true);
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)

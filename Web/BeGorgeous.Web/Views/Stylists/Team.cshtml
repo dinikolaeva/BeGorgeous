@@ -1,0 +1,54 @@
+﻿@using BeGorgeous.Web.ViewModels.Stylists
+@model StylistsListViewModel
+@{
+    this.ViewData["Title"] = "Team";
+}
+
+<partial name="_HeaderPartial" />
+
+<section class="bg-light wt-section" id="team">
+    <div class="container">
+        <div class="row justify-content-md-center text-center mb-lg-5 mb-4 pb-lg-5">
+            <div class="col-md-12">
+                <h2 class="h1">Our Team</h2>
+                <p>It’s the BeGorgeous’s goal to help you Be More Beautiful from the minute you leave us until you join us next time.</p>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var stylist in @Model.Stylists)
+            {
+                <div class="col-lg-6 col-sm-7 mb-6">
+                    <figure data-aos="fade-up" data-aos-easing="linear" data-aos-delay="100">
+                        <img class="w-100 rounded-top" src="@stylist.ImageUrl" alt="Image Description">
+                        <div class="wt-box-shadow-sm bg-white text-center rounded p-4">
+                            <div class="mb-3">
+                                <h5 class="mb-1">@stylist.FullName</h5>
+                                <small class="d-block font-style-normal text-uppercase text-primary wt-letter-spacing-xs">@stylist.Category.Name</small>
+                                <small class="d-block font-style-normal text-primary wt-letter-spacing-xs">@stylist.ShortAutobiography</small>
+                            </div>
+                            <div class="team-dp">
+                                <ul>
+                                    <li class="list-inline-item mx-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
+                                        <a class="text-primary" target="_blank" href="https://www.facebook.com/Maxi">
+                                            <i class="fab fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item mx-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Instagram">
+                                        <a class="text-primary" target="_blank" href="https://www.instagram.com/Maxi">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item mx-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter">
+                                        <a class="text-primary" target="_blank" href="https://twitter.com/Maxi">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+            }
+        </div>
+    </div>
+</section>

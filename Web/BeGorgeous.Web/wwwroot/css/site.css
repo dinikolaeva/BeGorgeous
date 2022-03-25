@@ -159,7 +159,7 @@ a {
 
 .button {
     margin-top: 25px;
-    width: 137px;
+    width: 150px;
     height: 54px;
     background: #BA55D3;
     overflow: hidden;
@@ -1139,4 +1139,15 @@ a {
     letter-spacing: 0.2em;
     margin-top: 4px;
     cursor: pointer;
+}
+
+#info {
+    text-align: center;
+    margin: 50px;
+}
+
+/*Map*/
+
+#map {
+    margin: auto;
 }
