@@ -1,25 +1,32 @@
 ﻿namespace BeGorgeous.Web.Controllers
 {
+    using System.Linq;
     using System.Threading.Tasks;
 
-    using BeGorgeous.Services.Data.Treatments;
+    using BeGorgeous.Services.Data.SalonsTreatments;
     using BeGorgeous.Web.ViewModels.SalonsTreatments;
     using BeGorgeous.Web.ViewModels.Treatments;
     using Microsoft.AspNetCore.Mvc;
 
     public class TreatmentsController : BaseController
     {
-        private readonly ITreatmentsService treatmentsService;
+        private readonly ISalonsTreatmentsService salonsTreatmentsService;
 
-        public TreatmentsController(ITreatmentsService treatmentsService)
+        public TreatmentsController(ISalonsTreatmentsService salonsTreatmentsService)
         {
-            this.treatmentsService = treatmentsService;
+            this.salonsTreatmentsService = salonsTreatmentsService;
         }
 
         public async Task<IActionResult> All(int salonId)
         {
-            var viewModel = new SalonsTreatmentsViewModel
+            var salonTreatments = await this.salonsTreatmentsService
+                                             .GetByIdAsync<SalonsTreatmentsViewModel>(salonId);
+
+            var treatmentsIds = salonTreatments.Select(i => i.TreatmentId).ToList();
+
+            var viewModel = new TreatmentsListViewModel
             {
+                Treatments = await this.salonsTreatmentsService.GetAllByIdsAsync<TreatmentViewModel>(treatmentsIds),
             };
 
             return this.View(viewModel);

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BeGorgeous.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220324085809_AddInitialCreateAndAllEntities")]
+    [Migration("20220325143053_AddInitialCreateAndAllEntities")]
     partial class AddInitialCreateAndAllEntities
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -439,7 +439,7 @@ namespace BeGorgeous.Data.Migrations
                     b.Property<int>("SalonId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TreatmentId")
+                    b.Property<int>("TreatmentId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -525,6 +525,10 @@ namespace BeGorgeous.Data.Migrations
 
                     b.Property<TimeSpan>("Duration")
                         .HasColumnType("time");
+
+                    b.Property<string>("IconUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageUrl")
                         .IsRequired()
@@ -760,7 +764,9 @@ namespace BeGorgeous.Data.Migrations
 
                     b.HasOne("BeGorgeous.Data.Models.Treatment", "Treatment")
                         .WithMany("SalonsTreatments")
-                        .HasForeignKey("TreatmentId");
+                        .HasForeignKey("TreatmentId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Salon");
 

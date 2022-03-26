@@ -370,6 +370,7 @@ namespace BeGorgeous.Data.Migrations
                     CategoryId = table.Column<int>(type: "int", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(700)", maxLength: 700, nullable: false),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IconUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Duration = table.Column<TimeSpan>(type: "time", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     StylistId = table.Column<int>(type: "int", nullable: true),
@@ -426,7 +427,7 @@ namespace BeGorgeous.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     SalonId = table.Column<int>(type: "int", nullable: false),
-                    TreatmentId = table.Column<int>(type: "int", nullable: true),
+                    TreatmentId = table.Column<int>(type: "int", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),

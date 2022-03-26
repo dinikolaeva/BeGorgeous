@@ -1,7 +1,10 @@
 ﻿namespace BeGorgeous.Web.ViewModels.SalonsTreatments
 {
+    using System.Collections.Generic;
+
     using BeGorgeous.Data.Models;
     using BeGorgeous.Services.Mapping;
+    using BeGorgeous.Web.ViewModels.Treatments;
 
     public class SalonsTreatmentsViewModel : IMapFrom<SalonTreatment>
     {

@@ -24,6 +24,9 @@
         public string ImageUrl { get; set; }
 
         [Required]
+        public string IconUrl { get; set; }
+
+        [Required]
         public TimeSpan Duration { get; set; }
 
         public decimal Price { get; set; }

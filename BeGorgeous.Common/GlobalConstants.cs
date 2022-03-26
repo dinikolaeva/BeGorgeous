@@ -195,6 +195,51 @@
             public const string AlmaHernandez = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646917969/images/laser-skin-treatments_v2kzsk.jpg";
         }
 
+        public static class Icons
+        {
+            public const string LadyHaircut = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648216407/images/woman-hair-cut_zpqf1g.png";
+
+            public const string MenHaircut = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648216725/images/hairstyle-setting-hairstyle-male-icon-with-png-and-vector-format-19806_ddzt9w.png";
+
+            public const string ChildrenHaircut = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648216870/images/57172_zqostb.png";
+
+            public const string BlowDry = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648216996/images/blow-dryer-icon-28_wyt9kj.png";
+
+            public const string PressStraightening = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217115/images/img_15281_qkojxd.png";
+
+            public const string LadiesHairColoring = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217216/images/40587_q2efqj.png";
+
+            public const string BalayageHairColoring = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217355/images/126-1268835_woman-with-long-hair-hair-icon-png-free_e5tgqh.png";
+
+            public const string BotoxTherapy = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217437/images/Untitled-1-45-512_xlbzug.webp";
+
+            public const string Braids = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217530/images/braided-chic-hair-rapunzel-salon-style-tail-icon_cna2fz.jpg";
+
+            public const string Manicure = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217623/images/manicure-02-128_vhittm.webp";
+
+            public const string Pedicure = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217681/images/pedicure-icon-0_lhw3in.png";
+
+            public const string NailArt = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217769/images/65-650778_nail-art-painting-polish-beauty-manicure-cosmetics-icon_sqpszd.png";
+
+            public const string FullBodyWax = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217901/images/6599843_pvm1n6.png";
+
+            public const string BrazilianWax = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217860/images/istockphoto-1217751669-612x612_yfnti1.jpg";
+
+            public const string ProfessionalMakeup = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648218034/images/images_zlw68f.png";
+
+            public const string PermanentMakeup = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648218117/images/233012727Untitled-3-512_mt8mmb.webp";
+
+            public const string EyelashesExtension = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648218192/images/pngtree-eyelashes-logo-icon-design-template-vector-png-image_559600_ouq8ra.jpg";
+
+            public const string FacialCleaning = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648218340/images/828391_teyk1d.png";
+
+            public const string AntiAgeCareFacial = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648218422/images/cosmetic-surgery-beauty-clinic_16-512_2706_o51ar9.png";
+
+            public const string AntiAcneFacial = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648218496/images/woman-with-acne-clean-face-skin-line-icon-girl-before-after-skin-treatment-linear-pictogram_541122-284_essctw.webp";
+
+            public const string DiamondDermabrasion = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648218565/images/1005683_qgl6l5.png";
+        }
+
         public static class StreetMapUrl
         {
             public const string Sofia = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2932.8959906402165!2d23.31145021533323!3d42.68474547916646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa8510675b310d%3A0xf75472294d673f60!2sul.%20%22Tsar%20Asen%22%20125%2C%201463%20Sofia%20Center%2C%20Sofia!5e0!3m2!1sen!2sbg!4v1648110830864!5m2!1sen!2sbg";
