@@ -199,7 +199,7 @@
         {
             public const string LadyHaircut = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648216407/images/woman-hair-cut_zpqf1g.png";
 
-            public const string MenHaircut = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648216725/images/hairstyle-setting-hairstyle-male-icon-with-png-and-vector-format-19806_ddzt9w.png";
+            public const string MenHaircut = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648302356/images/a6572ee377d50e776ba1ab661808338b_yqutqg.png";
 
             public const string ChildrenHaircut = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648216870/images/57172_zqostb.png";
 
@@ -213,9 +213,9 @@
 
             public const string BotoxTherapy = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217437/images/Untitled-1-45-512_xlbzug.webp";
 
-            public const string Braids = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217530/images/braided-chic-hair-rapunzel-salon-style-tail-icon_cna2fz.jpg";
+            public const string Braids = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648300693/images/14-512_t4ke7i.webp";
 
-            public const string Manicure = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217623/images/manicure-02-128_vhittm.webp";
+            public const string Manicure = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648302554/images/download_eblde7.jpg";
 
             public const string Pedicure = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217681/images/pedicure-icon-0_lhw3in.png";
 

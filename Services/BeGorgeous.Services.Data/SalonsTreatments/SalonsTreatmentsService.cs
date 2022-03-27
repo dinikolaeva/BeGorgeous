@@ -37,10 +37,22 @@
             var treatments = await this.treatmentRepository
                                        .All()
                                        .Where(t => ids.Contains(t.Id))
+                                       .OrderBy(t => t.CategoryId)
                                        .To<T>()
                                        .ToListAsync();
 
             return treatments;
+        }
+
+        public async Task<T> GetTreatmentByIdAsync<T>(int treatmentId)
+        {
+            var treatment = await this.treatmentRepository
+                                      .All()
+                                      .Where(t => t.Id == treatmentId)
+                                      .To<T>()
+                                      .FirstOrDefaultAsync();
+
+            return treatment;
         }
     }
 }

@@ -8,5 +8,7 @@
         Task<IEnumerable<T>> GetByIdAsync<T>(int salonId);
 
         Task<IEnumerable<T>> GetAllByIdsAsync<T>(List<int> ids);
+
+        Task<T> GetTreatmentByIdAsync<T>(int treatmentId);
     }
 }

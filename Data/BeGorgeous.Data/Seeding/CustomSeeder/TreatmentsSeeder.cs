@@ -192,7 +192,7 @@
                     Description = "Eyelashes of strands and eyelashes \"hair by hair\" are glued with a special harmless and hypoallergenic adhesive. The lashes last from ten days to one month. The result is really unique!",
                     Duration = TimeSpan.FromMinutes(50),
                     ImageUrl = GlobalConstants.Images.EyelashesExtension,
-                    IconUrl = GlobalConstants.Images.EyelashesExtension,
+                    IconUrl = GlobalConstants.Icons.EyelashesExtension,
                     Price = GlobalConstants.Prices.EyelashesExtension,
                 },
 
@@ -214,7 +214,7 @@
                     Description = "If you want to fight the war against wrinkles, an anti-aging facial treatment at your favorite spa is a good strategy. Facials are designed to revive skin with all elements like exfoliation dead skin cells, improving circulation acting together to improve skin’s texture.",
                     Duration = TimeSpan.FromMinutes(60),
                     ImageUrl = GlobalConstants.Images.AntiAgeCareFacial,
-                    IconUrl= GlobalConstants.Images.AntiAgeCareFacial,
+                    IconUrl = GlobalConstants.Icons.AntiAgeCareFacial,
                     Price = GlobalConstants.Prices.AntiAgeCareFacial,
                 },
                 new Treatment
@@ -224,7 +224,7 @@
                     Description = "If you want to fight the war against wrinkles, an anti-aging facial treatment at your favorite spa is a good strategy. Facials are designed to revive skin with all elements like exfoliation dead skin cells, improving circulation acting together to improve skin’s texture.",
                     Duration = TimeSpan.FromMinutes(60),
                     ImageUrl = GlobalConstants.Images.AntiAcneFacial,
-                    IconUrl= GlobalConstants.Icons.AntiAcneFacial,
+                    IconUrl = GlobalConstants.Icons.AntiAcneFacial,
                     Price = GlobalConstants.Prices.AntiAcneFacial,
                 },
                 new Treatment

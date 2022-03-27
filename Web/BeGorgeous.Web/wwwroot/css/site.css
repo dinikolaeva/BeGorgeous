@@ -254,6 +254,10 @@ a {
         color: #404040;
     }
 
+#treatments {
+    margin-bottom: 35px;
+}
+
 #logo {
     max-width: 100%;
     height: auto;
@@ -1026,6 +1030,7 @@ a {
     color: #838383;
     line-height: 1.95;
     margin-top: 14px;
+    margin-bottom: 35px;
 }
 
 .info_button {
@@ -1141,13 +1146,65 @@ a {
     cursor: pointer;
 }
 
+#team {
+    padding: 20px;
+}
+
 #info {
     text-align: center;
     margin: 50px;
 }
 
-/*Map*/
+#title {
+    text-align: center;
+    padding: 0px;
+}
 
+#procedure {
+    padding: 10px;
+}
+
+.duration {
+    color: #f150bf;
+}
+
+#imgProcedure {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#rowCard {
+    display: flex;
+    margin-right: -15px;
+    margin-left: -15px;
+    align-items: center;
+    flex-direction: row;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+#card {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    justify-content: center;
+}
+
+.warning {
+    color: white;
+    text-align: center;
+    background: #a000a0
+}
+
+#infoImage {
+    width: 150%;
+    padding-left: 7px;
+    padding-bottom: 30px;
+}
+/*Map*/
 #map {
     margin: auto;
 }

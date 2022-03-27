@@ -31,5 +31,12 @@
 
             return this.View(viewModel);
         }
+
+        public async Task<IActionResult> Details(int treatmentId)
+        {
+            var viewModel = await this.salonsTreatmentsService.GetTreatmentByIdAsync<TreatmentViewModel>(treatmentId);
+
+            return this.View(viewModel);
+        }
     }
 }

@@ -1,0 +1,54 @@
+﻿@using BeGorgeous.Web.ViewModels.Treatments
+@model TreatmentViewModel
+@{
+    this.ViewData["Title"] = @Model.Name;
+}
+
+<partial name="_HeaderPartial" />
+
+<section class="bg-light wt-section" id="team">
+    <div class="row row-eq-height" id="rowCard">
+        <!-- Image Box -->
+        <div class="col-lg-4 info_box_col">
+            <div class="info_box">
+                <div class="info_image" id="infoImage"><img src="@Model.ImageUrl" alt=""></div>
+            </div>
+        </div>
+        <!-- Panel -->
+        <div class="col-lg-7" id="info">
+            <h2>@Model.Name:</h2>
+            <div class="tab_panel active">
+                <div class="tab_panel_content">
+                    <div class="tab_list">
+                        <div class="info_text"><strong>@Model.Description</strong></div>
+                        <div class="row" id="card">
+                            <div class="card text-center mb-md-0 mb-3" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="200">
+                                <div class="card-body py-5">
+                                    <div class="pricing-header mb-5">
+                                        <strong class="duration">Price *:</strong>
+                                        <h1>@Model.Price €</h1>
+                                    </div>
+                                    <strong class="duration">Duration *:</strong>
+                                    @if (@Model.Duration.TotalMinutes >= 60)
+                                    {
+                                        <p>@Model.Duration hour/s</p>
+                                    }
+                                    else
+                                    {
+                                        <p>@Model.Duration minutes</p>
+                                    }
+                                    <div class="button ml-auto mr-auto">
+                                        <a asp-area="" asp-controller="Appointments" asp-action="BookAppointment"><span>Book Appointment</span><span>Book Appointment</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <p class="warning"><strong>* All prices and durations are indicative. You will find out the final price after performing the service at the reception.</strong></p>
+    </div>
+</section>
