@@ -36,7 +36,7 @@
                     Description = "Fades, fuseys, buzzcuts, crew cuts, brush ups... these days men’s haircuts are as varied as women’s! Whichever hairstyle you go for though, the end result should always be the same when stepping out of the hair salon: a clean and tidy haircut. So fresh!",
                     Duration = TimeSpan.FromMinutes(20),
                     ImageUrl = GlobalConstants.Images.MansHaircuts,
-                    IconUrl= GlobalConstants.Icons.MenHaircut,
+                    IconUrl = GlobalConstants.Icons.MenHaircut,
                     Price = GlobalConstants.Prices.MansHaircuts,
                 },
                 new Treatment
@@ -86,7 +86,7 @@
                     Description = "Balayage hair color basically works for all lengths of hair, except perhaps very short-cropped hair. But best of all, It’s bespoke to you.",
                     Duration = TimeSpan.FromMinutes(45),
                     ImageUrl = GlobalConstants.Images.BalayageHairColoring,
-                    IconUrl= GlobalConstants.Icons.BalayageHairColoring,
+                    IconUrl = GlobalConstants.Icons.BalayageHairColoring,
                     Price = GlobalConstants.Prices.BalayageHairColoring,
                 },
                 new Treatment
@@ -128,7 +128,7 @@
                     Description = "Pedicure means taking care of your feet. The treatment includes removal of dead cells from the feet, cleaning and shaping the nails. The massage in turn improves blood circulation and acts to remove fatigue in the legs.",
                     Duration = TimeSpan.FromMinutes(60),
                     ImageUrl = GlobalConstants.Images.Pedicure,
-                    IconUrl= GlobalConstants.Icons.Pedicure,
+                    IconUrl = GlobalConstants.Icons.Pedicure,
                     Price = GlobalConstants.Prices.Pedicure,
                 },
                 new Treatment

@@ -43,4 +43,10 @@
     <Folder Include="Areas\Administration\Views\Dashboard\" />
     <Folder Include="wwwroot\plugins\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\css\site.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 </Project>

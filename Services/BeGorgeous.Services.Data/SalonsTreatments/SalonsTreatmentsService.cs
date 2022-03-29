@@ -20,7 +20,6 @@
             this.treatmentRepository = treatmentRepository;
         }
 
-
         public async Task<IEnumerable<T>> GetByIdAsync<T>(int salonId)
         {
             var salonsTreatment = await this.salonsTreatmentsRepository
