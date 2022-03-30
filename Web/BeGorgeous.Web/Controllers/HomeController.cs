@@ -30,7 +30,24 @@
                      await this.countriesService.GetAllAsync<IndexCountryViewModel>(),
             };
 
+            if (viewModel == null)
+            {
+                return new StatusCodeResult(404);
+            }
+
             return this.View(viewModel);
+        }
+
+        [Route("/Home/Error/404")]
+        public IActionResult Error404()
+        {
+            return this.View();
+        }
+
+        [Route("/Home/Error/{code:int}")]
+        public IActionResult Error(int code)
+        {
+            return this.View();
         }
 
         public IActionResult Privacy()

@@ -21,6 +21,7 @@
             {
                 Cities = await this.citiesService.GetAllCitiesByIdAsync<CityViewModel>(sortId),
             };
+
             return this.View(viewModel);
         }
     }

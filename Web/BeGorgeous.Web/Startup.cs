@@ -101,11 +101,13 @@
 
             if (env.IsDevelopment())
             {
+                app.UseStatusCodePagesWithReExecute("/Home/Error/{0}");
                 app.UseDeveloperExceptionPage();
                 app.UseMigrationsEndPoint();
             }
             else
             {
+                app.UseStatusCodePagesWithReExecute("/Home/Error/{0}");
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
@@ -126,6 +128,16 @@
                         endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
                         endpoints.MapRazorPages();
                     });
+
+            //app.Use(async (context, next) =>
+            //{
+            //    await next();
+            //    if (context.Response.StatusCode == 404)
+            //    {
+            //        context.Request.Path = "/NotFound";
+            //        await next();
+            //    }
+            //});
         }
     }
 }

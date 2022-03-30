@@ -1,0 +1,27 @@
+﻿@using BeGorgeous.Common
+@{
+    this.ViewData["Title"] = "Error 404";
+}
+<partial name="_HeaderPartial"></partial>
+
+<div class="container">
+    <div class="row mr-5">
+        <div class="col-8">
+            <div class="row" id="error">
+                <div class="col-10">
+                    <img src="@GlobalConstants.Images.Error404" class="img-thumbnail" />
+                </div>
+                <div class="col-8 pt-2">
+                    <h1 class="warning" id="errorH">Oops!</h1>
+                    <h2 id="errorH" style="color: #700a58">Did I do something wrong?</h2>
+                    <h3 id="errorH" style="color: #700a58">There is nothing on this page.</h3>
+                    <div class="button ml-auto mr-auto">
+                        <a asp-area="" asp-controller="Home" asp-action="Index"><span><strong>Home page</strong></span><span><strong>Home page</strong></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+        </div>
+    </div>
+</div>

@@ -21,6 +21,7 @@
             {
                 Categories = await this.categoriesService.GetAllAsync<CategoryViewModel>(),
             };
+
             return this.View(viewModel);
         }
     }

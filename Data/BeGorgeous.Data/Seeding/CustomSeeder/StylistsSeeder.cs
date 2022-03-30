@@ -208,11 +208,11 @@
                 // Sofia
                 new Stylist
                 {
-                    FullName = "Pepi Hristova",
+                    FullName = "Mei Vu",
                     CategoryId = 3,
                     SalonId = 1,
-                    ImageUrl = GlobalConstants.Images.PepiHristova,
-                    ShortAutobiography = "Pepi Hristova has a very loyal clientele and they book in advance to guarantee their appointments.",
+                    ImageUrl = GlobalConstants.Images.MeiVu,
+                    ShortAutobiography = "Mei Vu has a very loyal clientele and they book in advance to guarantee their appointments.",
                 },
 
                 // Plovdiv

@@ -16,7 +16,7 @@
         </div>
         <!-- Panel -->
         <div class="col-lg-7" id="info">
-            <h2>@Model.Name:</h2>
+            <h2 id="text">@Model.Name:</h2>
             <div class="tab_panel active">
                 <div class="tab_panel_content">
                     <div class="tab_list">
@@ -26,16 +26,16 @@
                                 <div class="card-body py-5">
                                     <div class="pricing-header mb-5">
                                         <strong class="duration">Price *:</strong>
-                                        <h1>@Model.Price €</h1>
+                                        <h1 id="text">@Model.Price €</h1>
                                     </div>
                                     <strong class="duration">Duration *:</strong>
                                     @if (@Model.Duration.TotalMinutes >= 60)
                                     {
-                                        <p>@Model.Duration hour/s</p>
+                                        <p id="text">@Model.Duration hour/s</p>
                                     }
                                     else
                                     {
-                                        <p>@Model.Duration minutes</p>
+                                        <p id="text">@Model.Duration minutes</p>
                                     }
                                     <div class="button ml-auto mr-auto">
                                         <a asp-area="" asp-controller="Appointments" asp-action="BookAppointment"><span>Book Appointment</span><span>Book Appointment</span></a>

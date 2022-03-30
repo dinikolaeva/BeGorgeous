@@ -25,6 +25,9 @@
             // Main
             public const string Background = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646932729/images/maxresdefault_nmgzv2.jpg";
 
+            // Error 404
+            public const string Error404 = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648541025/images/17305_97cf242d-e3e6-4056-ac0a-d12453a90b520_fdzbyv.jpg";
+
             // Categories
             public const string Hairdressing = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646671723/images/2892083_wzhfzc.jpg";
 
@@ -157,7 +160,7 @@
             public const string MariaYordanova = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646903665/images/istockphoto-937117716-612x612_nxqtaw.jpg";
 
             // Plovdiv
-            public const string PepiHristova = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646906968/images/waxing-hair-removal-1024x681_qplupo.jpg";
+            public const string MeiVu = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646906968/images/waxing-hair-removal-1024x681_qplupo.jpg";
 
             // Birmingham, UK
             public const string MariaGutenberg = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646916799/images/images1858-5c7e6ec1b0326-1024x683_km7mnq.jpg";
