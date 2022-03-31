@@ -5,6 +5,6 @@
 
     public interface ICitiesService
     {
-        Task<IEnumerable<T>> GetAllCitiesByIdAsync<T>(int sortId);
+        Task<IEnumerable<T>> GetAllAsync<T>();
     }
 }

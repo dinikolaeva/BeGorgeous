@@ -3,31 +3,31 @@
     using System.Diagnostics;
     using System.Threading.Tasks;
 
-    using BeGorgeous.Common;
-    using BeGorgeous.Services.Data.Categories;
+    using BeGorgeous.Services.Data.Cities;
     using BeGorgeous.Services.Data.Countries;
     using BeGorgeous.Web.ViewModels;
-    using BeGorgeous.Web.ViewModels.Categories;
+    using BeGorgeous.Web.ViewModels.Cities;
     using BeGorgeous.Web.ViewModels.Home;
     using Microsoft.AspNetCore.Mvc;
 
     public class HomeController : BaseController
     {
         private readonly ICountriesService countriesService;
-        private readonly ICategoriesService categoriesService;
+        private readonly ICitiesService citiesService;
 
-        public HomeController(ICountriesService countriesService, ICategoriesService categoriesService)
+        public HomeController(ICountriesService countriesService, ICitiesService citiesService)
         {
             this.countriesService = countriesService;
-            this.categoriesService = categoriesService;
+            this.citiesService = citiesService;
         }
 
         public async Task<IActionResult> Index()
         {
             var viewModel = new IndexViewModel
             {
-                Countries =
-                     await this.countriesService.GetAllAsync<IndexCountryViewModel>(),
+                Countries = await this.countriesService.GetAllAsync<IndexCountryViewModel>(),
+
+                Cities = await this.citiesService.GetAllAsync<CityViewModel>(),
             };
 
             if (viewModel == null)

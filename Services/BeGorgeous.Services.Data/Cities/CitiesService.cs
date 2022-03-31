@@ -18,11 +18,11 @@
             this.citiesRepository = citiesRepository;
         }
 
-        public async Task<IEnumerable<T>> GetAllCitiesByIdAsync<T>(int sortId)
+        public async Task<IEnumerable<T>> GetAllAsync<T>()
         {
             var cities = await this.citiesRepository
                                    .All()
-                                   .Where(c => c.CountryId == sortId)
+                                   .OrderBy(x => x.Id)
                                    .To<T>()
                                    .ToListAsync<T>();
 

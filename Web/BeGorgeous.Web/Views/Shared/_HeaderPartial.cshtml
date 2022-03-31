@@ -1,4 +1,7 @@
-﻿<!-- Header -->
+﻿@*@using BeGorgeous.Web.ViewModels.Home
+@model IndexViewModel*@
+
+<!-- Header -->
 <header class="header" id="header">
     <nav class="navbar navbar-expand-lg navbar-dark bg-white fixed-top" id="mainNav">
         <div class="container logo">
@@ -22,10 +25,27 @@
                     <li class="nav-item">
                         <a class="nav-link text-black-50 js-scroll-trigger" asp-area="" asp-controller="Categories" asp-action="Index">Categories</a>
                     </li>
+
+                    @await Component.InvokeAsync("TreatmentsSimpleList");
+                    @*<li class="dropdown">
+                        @*<li class="nav-item" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        <a href="#" class="dropdown-toggle, navText" data-toggle="dropdown" role="button" aria-expanded="true">Treatments<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu" style="overflow-y: scroll;">
+                            @foreach (var city in @Model.Cities)
+                            {
+                                <li><a class="nav-link text-black-50 js-scroll-trigger" asp-area="" asp-controller="Salons" asp-action="Index">@city.Name</a></li>
+                            }
+                        </ul>
+                    </li>
+                    <a href="#" class=<a href="#" class="dropdown-toggle, navText" data-toggle="dropdown"  role="button" aria-expanded="true" style="color: #2A4B7B;">Apps<span class="caret"></span></a>
+                    <li class="nav-item">
+                        <a class="nav-link text-black-50 js-scroll-trigger" asp-area="" asp-controller="Treatments" asp-action="All">Home</a>
+                        </li>*@
                     <li class="nav-item">
                         <a class="nav-link text-black-50 js-scroll-trigger" asp-area="" asp-controller="Appointments" asp-action="Index"><i class="fa fa-calendar" aria-hidden="true"></i> Appointments</a>
                     </li>
                 </ul>
+
             </div>
         </div>
     </nav>

@@ -1,4 +1,4 @@
-﻿namespace BeGorgeous.Web.Controllers
+﻿namespace BeGorgeous.Web.Infrastructure.ViewComponents
 {
     using System.Threading.Tasks;
 
@@ -6,20 +6,20 @@
     using BeGorgeous.Web.ViewModels.Cities;
     using Microsoft.AspNetCore.Mvc;
 
-    public class CitiesController : BaseController
+    public class TreatmentsSimpleListViewComponent : ViewComponent
     {
         private readonly ICitiesService citiesService;
 
-        public CitiesController(ICitiesService citiesService)
+        public TreatmentsSimpleListViewComponent(ICitiesService citiesService)
         {
             this.citiesService = citiesService;
         }
 
-        public async Task<IActionResult> Index(int sortId)
+        public async Task<IViewComponentResult> InvokeAsync()
         {
             var viewModel = new CitiesListViewModel
             {
-                Cities = await this.citiesService.GetAllCitiesByIdAsync<CityViewModel>(sortId),
+                Cities = await this.citiesService.GetAllAsync<CityViewModel>(),
             };
 
             return this.View(viewModel);
