@@ -20,6 +20,20 @@
             public const int ShortAutobiographyMaxLength = 300;
         }
 
+        public static class DateTimeFormats
+        {
+            public const string DateFormat = "dd-MM-yyyy";
+
+            public const string TimeFormat = "h:mmtt";
+
+            public const string DateTimeFormat = "dd-MM-yyyy h:mmtt";
+        }
+
+        public static class ErrorMessages
+        {
+            public const string DateTime = "Please select a valid DATE and TIME from the datepicker calendar on the left.";
+        }
+
         public static class Images
         {
             // Main
@@ -27,6 +41,9 @@
 
             // Error 404
             public const string Error404 = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648541025/images/17305_97cf242d-e3e6-4056-ac0a-d12453a90b520_fdzbyv.jpg";
+
+            // No appointments
+            public const string NoAppointments = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648541050/images/dubai-salon-1_tsby04.jpg";
 
             // Categories
             public const string Hairdressing = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646671723/images/2892083_wzhfzc.jpg";

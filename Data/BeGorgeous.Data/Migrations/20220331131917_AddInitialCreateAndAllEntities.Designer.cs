@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BeGorgeous.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220326135848_AddInitialCreateAndAllEntities")]
+    [Migration("20220331131917_AddInitialCreateAndAllEntities")]
     partial class AddInitialCreateAndAllEntities
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,21 +20,6 @@ namespace BeGorgeous.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.6")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("AppointmentTreatment", b =>
-                {
-                    b.Property<string>("AppointmentsId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("TreatmentsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("AppointmentsId", "TreatmentsId");
-
-                    b.HasIndex("TreatmentsId");
-
-                    b.ToTable("AppointmentTreatment");
-                });
 
             modelBuilder.Entity("BeGorgeous.Data.Models.ApplicationRole", b =>
                 {
@@ -188,6 +173,9 @@ namespace BeGorgeous.Data.Migrations
                     b.Property<int>("StylistId")
                         .HasColumnType("int");
 
+                    b.Property<int>("TreatmentId")
+                        .HasColumnType("int");
+
                     b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
@@ -199,6 +187,8 @@ namespace BeGorgeous.Data.Migrations
                     b.HasIndex("SalonId");
 
                     b.HasIndex("StylistId");
+
+                    b.HasIndex("TreatmentId");
 
                     b.HasIndex("UserId");
 
@@ -665,21 +655,6 @@ namespace BeGorgeous.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("AppointmentTreatment", b =>
-                {
-                    b.HasOne("BeGorgeous.Data.Models.Appointment", null)
-                        .WithMany()
-                        .HasForeignKey("AppointmentsId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("BeGorgeous.Data.Models.Treatment", null)
-                        .WithMany()
-                        .HasForeignKey("TreatmentsId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("BeGorgeous.Data.Models.Appointment", b =>
                 {
                     b.HasOne("BeGorgeous.Data.Models.Salon", "Salon")
@@ -694,8 +669,14 @@ namespace BeGorgeous.Data.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("BeGorgeous.Data.Models.Treatment", "Treatment")
+                        .WithMany("Appointments")
+                        .HasForeignKey("TreatmentId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("BeGorgeous.Data.Models.ApplicationUser", "User")
-                        .WithMany()
+                        .WithMany("Appointments")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -703,6 +684,8 @@ namespace BeGorgeous.Data.Migrations
                     b.Navigation("Salon");
 
                     b.Navigation("Stylist");
+
+                    b.Navigation("Treatment");
 
                     b.Navigation("User");
                 });
@@ -860,6 +843,8 @@ namespace BeGorgeous.Data.Migrations
 
             modelBuilder.Entity("BeGorgeous.Data.Models.ApplicationUser", b =>
                 {
+                    b.Navigation("Appointments");
+
                     b.Navigation("Claims");
 
                     b.Navigation("Logins");
@@ -906,6 +891,8 @@ namespace BeGorgeous.Data.Migrations
 
             modelBuilder.Entity("BeGorgeous.Data.Models.Treatment", b =>
                 {
+                    b.Navigation("Appointments");
+
                     b.Navigation("SalonsTreatments");
                 });
 #pragma warning restore 612, 618

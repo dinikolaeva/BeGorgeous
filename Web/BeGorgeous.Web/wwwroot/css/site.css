@@ -1,6 +1,8 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+/*NavBar*/
+
 a.navbar-brand {
     white-space: normal;
     text-align: center;
@@ -8,8 +10,8 @@ a.navbar-brand {
 }
 
 /* Provide sufficient contrast against white background */
-a {
-    color: #0366d6;
+.a {
+    color: #700a58 !important;
 }
 
 .btn-primary {
@@ -80,8 +82,8 @@ body {
     line-height: 60px; /* Vertically center the text there */
 }
 
-.title-privacy{
-    text-align:center;
+.title-privacy {
+    text-align: center;
 }
 
 #mainNav {
@@ -109,6 +111,33 @@ body {
     border-radius: 50px;
     font-family: 'Rubik', sans-serif;
     letter-spacing: 1px;
+}
+
+.dropdown-menu a
+
+#nav {
+    position: relative;
+    display: block;
+    float: right;
+}
+
+#dropdown {
+    background-color: #f150bf;
+    color: black;
+    /*right: 0px;*/    
+}
+.dropdown-menu{
+    left:auto !important;
+}
+
+.dropdown-menu a {
+    color: #700a58 !important;
+}
+
+
+.dropdown-item:hover {
+    background-color: #801276 !important;
+    color: white !important;
 }
 
 .header {
@@ -139,7 +168,6 @@ body {
     font-size: 35px;
     border-radius: 50%;
     color: white;
-    /*box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);*/
 }
 
 
@@ -1204,7 +1232,7 @@ a {
 }
 
 #text {
-   color: #700a58;
+    color: #700a58;
 }
 
 /*Error*/

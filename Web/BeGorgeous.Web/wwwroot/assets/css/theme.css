@@ -21,12 +21,12 @@ body {
 }
 
 a {
-  color: #490bf9;
+    color: #700a58 !important;
 }
 
-a:hover {
-  color: #490bf9;
-}
+    a:hover {
+        color: #700a58 !important;
+    }
 
 a:focus {
   outline: none;
@@ -75,8 +75,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-primary ::selection {
-  color: #490bf9;
-  background-color: #fff;
+    color: #700a58 !important;
+    background-color: #fff;
 }
 
 /*----------------------------------
@@ -1436,4 +1436,5 @@ ul.timeline > li:before {
     border-left: solid 1px #e6e7e9;
   }
 }
+
 

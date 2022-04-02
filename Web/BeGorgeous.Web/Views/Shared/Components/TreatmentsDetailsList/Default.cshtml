@@ -1,0 +1,10 @@
+﻿@using BeGorgeous.Web.ViewModels.Appointments
+@model AppointmentTreatmentsListViewModel
+
+<select class="form-select">
+    <option>Choose treatment:</option>
+    @foreach (var treatment in @Model.Treatments)
+    {
+        <option>@treatment.Name</option>
+    }
+</select>

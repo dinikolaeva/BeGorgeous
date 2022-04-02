@@ -11,11 +11,14 @@
     using BeGorgeous.Data.Seeding;
     using BeGorgeous.Services;
     using BeGorgeous.Services.Cloudinary;
+    using BeGorgeous.Services.Data.Appointments;
     using BeGorgeous.Services.Data.Categories;
     using BeGorgeous.Services.Data.Cities;
     using BeGorgeous.Services.Data.Countries;
+    using BeGorgeous.Services.Data.Salons;
     using BeGorgeous.Services.Data.SalonsTreatments;
     using BeGorgeous.Services.Data.Stylists;
+    using BeGorgeous.Services.DateTimeParser;
     using BeGorgeous.Services.Messaging;
     using BeGorgeous.Web.ViewModels;
     using CloudinaryDotNet;
@@ -84,6 +87,8 @@
             services.AddTransient<ISalonsService, SalonsService>();
             services.AddTransient<IStylistsService, StylistsService>();
             services.AddTransient<ISalonsTreatmentsService, SalonsTreatmentsService>();
+            services.AddTransient<IAppointmentsService, AppointmentsService>();
+            services.AddTransient<IDateTimeParserService, DateTimeParserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -128,16 +133,6 @@
                         endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
                         endpoints.MapRazorPages();
                     });
-
-            //app.Use(async (context, next) =>
-            //{
-            //    await next();
-            //    if (context.Response.StatusCode == 404)
-            //    {
-            //        context.Request.Path = "/NotFound";
-            //        await next();
-            //    }
-            //});
         }
     }
 }

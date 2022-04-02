@@ -2,7 +2,7 @@
 {
     using System.Threading.Tasks;
 
-    using BeGorgeous.Services.Data.Cities;
+    using BeGorgeous.Services.Data.Salons;
     using BeGorgeous.Web.ViewModels.Salons;
     using Microsoft.AspNetCore.Mvc;
 

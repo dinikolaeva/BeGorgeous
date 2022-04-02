@@ -1,4 +1,4 @@
-﻿namespace BeGorgeous.Services.Data.Cities
+﻿namespace BeGorgeous.Services.Data.Salons
 {
     using System.Collections.Generic;
     using System.Linq;

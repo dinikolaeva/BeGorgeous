@@ -1,13 +1,9 @@
 ﻿@using BeGorgeous.Web.ViewModels.Cities
 @model CitiesListViewModel
 
-<li class="dropdown">
-<li class="nav-item" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-    <a href="#" class="dropdown-toggle, navText" data-toggle="dropdown" role="button" aria-expanded="true">Treatments<span class="caret"></span></a>
-    <ul class="dropdown-menu" role="menu" style="overflow-y: scroll">
-        @foreach (var city in @Model.Cities)
-            {
-            <li><a class="nav-link text-black-50 js-scroll-trigger" asp-area="" asp-controller="Salons" asp-action="Details">@city.Name</a></li>
-            }
-    </ul>
-</li>
+<ul class="dropdown-menu" id="dropdown" role="menu" aria-labelledby="dropdownMenuButton">
+    @foreach (var city in @Model.Cities)
+    {
+        <li><a class="dropdown-item" asp-area="" asp-controller="Cities" asp-action="Index" asp-route-cityId="@city.Id">@city.Name</a></li>
+    }
+</ul>

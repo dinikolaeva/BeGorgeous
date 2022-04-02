@@ -20,7 +20,7 @@
         public async Task<IActionResult> All(int salonId)
         {
             var salonTreatments = await this.salonsTreatmentsService
-                                             .GetByIdAsync<SalonsTreatmentsViewModel>(salonId);
+                                            .GetByIdAsync<SalonsTreatmentsViewModel>(salonId);
 
             var treatmentsIds = salonTreatments.Select(i => i.TreatmentId).ToList();
 
