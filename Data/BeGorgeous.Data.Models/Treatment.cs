@@ -33,6 +33,6 @@
 
         public virtual ICollection<SalonTreatment> SalonsTreatments { get; set; } = new HashSet<SalonTreatment>();
 
-        public virtual ICollection<Appointment> Appointments { get; set; }
+        public virtual ICollection<Appointment> Appointments { get; set; } = new HashSet<Appointment>();
     }
 }

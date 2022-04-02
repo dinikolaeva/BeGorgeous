@@ -4,6 +4,7 @@
     using System.Linq;
     using System.Threading.Tasks;
 
+    using BeGorgeous.Data;
     using BeGorgeous.Data.Common.Repositories;
     using BeGorgeous.Data.Models;
     using BeGorgeous.Services.Mapping;
@@ -11,11 +12,13 @@
 
     public class SalonsTreatmentsService : ISalonsTreatmentsService
     {
+        private readonly ApplicationDbContext db;
         private readonly IDeletableEntityRepository<SalonTreatment> salonsTreatmentsRepository;
         private readonly IDeletableEntityRepository<Treatment> treatmentRepository;
 
-        public SalonsTreatmentsService(IDeletableEntityRepository<SalonTreatment> salonsTreatmentsRepository, IDeletableEntityRepository<Treatment> treatmentRepository)
+        public SalonsTreatmentsService(ApplicationDbContext db, IDeletableEntityRepository<SalonTreatment> salonsTreatmentsRepository, IDeletableEntityRepository<Treatment> treatmentRepository)
         {
+            this.db = db;
             this.salonsTreatmentsRepository = salonsTreatmentsRepository;
             this.treatmentRepository = treatmentRepository;
         }
@@ -52,6 +55,32 @@
                                       .FirstOrDefaultAsync();
 
             return treatment;
+        }
+
+        public async Task<T> GetSalonAndTreatmentByIdAsync<T>(int salonId, int treatmentId)
+        {
+            var salonService =
+                await this.salonsTreatmentsRepository.All()
+                          .Where(x => x.SalonId == salonId && x.TreatmentId == treatmentId)
+                          .To<T>()
+                          .FirstOrDefaultAsync();
+
+            return salonService;
+        }
+
+        public bool IsSalonIdValid(int salonId)
+        {
+            if (this.db.SalonsTreatments.Where(st => st.SalonId == salonId).Any())
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool IsTreatmentAndSalonIdValid(int salonId, int treatmentId)
+        {
+            return this.db.SalonsTreatments.Where(s => s.SalonId == salonId && s.TreatmentId == treatmentId).Any();
         }
     }
 }

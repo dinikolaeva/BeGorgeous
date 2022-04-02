@@ -1,27 +1,23 @@
-﻿@using BeGorgeous.Web.ViewModels.Appointments
-@model AppointmentSalonViewModel
+﻿@using BeGorgeous.Web.ViewModels.Treatments
+@model SalonsTreatmentsViewModel
 
 <div class="form-group row">
     <label class="col-sm-2 col-form-label">Salon</label>
     <div class="col-sm-10">
-        <div class="form-control">@Model.Name</div>
+        <div class="form-control">@Model.Salon.Name</div>
     </div>
 </div>
 <div class="form-group row">
     <label class="col-sm-2 col-form-label">Address</label>
     <div class="col-sm-10">
         <div class="form-control">
-            @Model.City.Name, @Model.StreetAddress
+            @Model.Salon.StreetAddress
         </div>
     </div>
 </div>
-@*<div class="form-group row">
+<div class="form-group row">
     <label class="col-sm-2 col-form-label">Treatment</label>
     <div class="col-sm-10">
-        <div class="form-control">
-            <a class="dropdown-toggle text-black-50 js-scroll-trigger" id="dropdownMenuButton" data-toggle="dropdown" role="button" aria-expanded="false">
-                @await Component.InvokeAsync("TreatmentsDetailsList", new { Model.Id})
-            </a>
-        </div>
+        <div class="form-control">@Model.Treatment.Name</div>
     </div>
-</div>*@
+</div>

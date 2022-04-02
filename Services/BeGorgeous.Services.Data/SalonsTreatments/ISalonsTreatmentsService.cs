@@ -10,5 +10,11 @@
         Task<IEnumerable<T>> GetAllByIdsAsync<T>(List<int> ids);
 
         Task<T> GetTreatmentByIdAsync<T>(int treatmentId);
+
+        Task<T> GetSalonAndTreatmentByIdAsync<T>(int salonId, int treatmentId);
+
+        bool IsSalonIdValid(int salonId);
+
+        bool IsTreatmentAndSalonIdValid(int salonId, int treatmentId);
     }
 }

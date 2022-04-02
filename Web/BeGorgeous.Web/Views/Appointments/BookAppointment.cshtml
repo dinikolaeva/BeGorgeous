@@ -107,7 +107,7 @@
 
         <div class="col-lg-6">
             <div>
-                @await Component.InvokeAsync("SalonsTreatmentsDetails", new { Model.SalonId })
+                @await Component.InvokeAsync("SalonsTreatmentsDetails", new { Model.SalonId,Model.TreatmentId })
             </div>
             <form method="post" enctype="multipart/form-data">
                 <input asp-for="@Model.SalonId" value="@Model.SalonId" class="form-control" hidden>
@@ -149,11 +149,11 @@
 </div>
 
 @section Scripts {
-    <script src="~/js/bootstrap-datepicker.js" asp-append-version="true"></script>
-    <script src="~/js/date-picker.js" asp-append-version="true"></script>
-    <script type="text/javascript">
-        $.validator.setDefaults({
-            ignore: ""
-        })
-    </script>
+<script src="~/js/bootstrap-datepicker.js" asp-append-version="true"></script>
+<script src="~/js/date-picker.js" asp-append-version="true"></script>
+<script type="text/javascript">
+    $.validator.setDefaults({
+        ignore: ""
+    })
+</script>
 }

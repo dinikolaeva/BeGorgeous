@@ -25,10 +25,6 @@
 
         public string TreatmentName { get; set; }
 
-        public int StylistId { get; set; }
-
-        public string StylistName { get; set; }
-
         public bool? Confirmed { get; set; }
 
         public bool? IsSalonRatedByTheUser { get; set; }

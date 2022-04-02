@@ -1,5 +1,6 @@
 ﻿namespace BeGorgeous.Web.Controllers
 {
+    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -20,21 +21,32 @@
         public async Task<IActionResult> All(int salonId)
         {
             var salonTreatments = await this.salonsTreatmentsService
-                                            .GetByIdAsync<SalonsTreatmentsViewModel>(salonId);
+                                            .GetByIdAsync<SalonsTreatmentsSimpleViewModel>(salonId);
 
             var treatmentsIds = salonTreatments.Select(i => i.TreatmentId).ToList();
 
+            if (!this.salonsTreatmentsService.IsSalonIdValid(salonId))
+            {
+                return this.View("UnavailableService");
+            }
+
             var viewModel = new TreatmentsListViewModel
             {
+                SalonId = salonId,
                 Treatments = await this.salonsTreatmentsService.GetAllByIdsAsync<TreatmentViewModel>(treatmentsIds),
             };
 
             return this.View(viewModel);
         }
 
-        public async Task<IActionResult> Details(int treatmentId)
+        public async Task<IActionResult> Details(int salonId, int treatmentId)
         {
-            var viewModel = await this.salonsTreatmentsService.GetTreatmentByIdAsync<TreatmentViewModel>(treatmentId);
+            if (!this.salonsTreatmentsService.IsTreatmentAndSalonIdValid(salonId, treatmentId))
+            {
+                return this.View("UnavailableService");
+            }
+
+            var viewModel = await this.salonsTreatmentsService.GetSalonAndTreatmentByIdAsync<SalonsTreatmentsViewModel>(salonId, treatmentId);
 
             return this.View(viewModel);
         }

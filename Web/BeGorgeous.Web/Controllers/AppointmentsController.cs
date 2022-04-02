@@ -8,6 +8,8 @@
     using BeGorgeous.Services.Data.SalonsTreatments;
     using BeGorgeous.Services.DateTimeParser;
     using BeGorgeous.Web.ViewModels.Appointments;
+    using BeGorgeous.Web.ViewModels.Salons;
+    using BeGorgeous.Web.ViewModels.Treatments;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
@@ -49,18 +51,19 @@
             return this.View(viewModel);
         }
 
-        public async Task<IActionResult> BookAppointment(int salonId)
+        public async Task<IActionResult> BookAppointment(int salonId, int treatmentId)
         {
-            var salon = await this.salonsService.GetByIdAsync<AppointmentSalonViewModel>(salonId);
+            var salonTreatment = await this.salonsTreatmentsService.GetSalonAndTreatmentByIdAsync<SalonsTreatmentsViewModel>(salonId, treatmentId);
 
-            if (salon == null)
+            if (salonTreatment == null)
             {
                 return this.View("UnavailableService");
             }
 
             var viewModel = new AppointmentInputModel
             {
-                SalonId = salon.Id,
+                SalonId = salonId,
+                TreatmentId = treatmentId,
             };
 
             return this.View(viewModel);

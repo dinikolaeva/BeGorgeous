@@ -20,18 +20,17 @@
             {
                 <div class="col-lg-4 mb-3 mb-lg-0 text-center" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="100">
                     <div class="d-block mb-4">
-                        <img src="@treatment.IconUrl" width="100px" class="pr-4" alt="">
+                        <img src="@treatment.IconUrl" style="width:100px;" class="pr-4" alt="">
                     </div>
                     <h4 class="h5" id="text">@treatment.Name</h4>
-                    <div class="row">
+                    <div class="row"> 
                         <div class="col">
                             <div class="button ml-auto mr-auto" id="treatments">
-                                <a asp-area="" asp-controller="Treatments" asp-action="Details" asp-route-treatmentId="@treatment.Id"><span>See details</span><span>See details</span></a>
+                                <a asp-area="" asp-controller="Treatments" asp-action="Details" asp-route-salonId="@Model.SalonId" asp-route-treatmentId="@treatment.Id"><span>See details</span><span>See details</span></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                //TODO: make SalonTreatmentsDetails component in salonId treatmentId to book appointment
 
                 <hr class="my-5">
             }

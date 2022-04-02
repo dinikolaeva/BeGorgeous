@@ -1,7 +1,5 @@
 ﻿namespace BeGorgeous.Web.ViewModels.Salons
 {
-    using System.Collections.Generic;
-
     using BeGorgeous.Data.Models;
     using BeGorgeous.Services.Mapping;
 
@@ -28,9 +26,5 @@
         public string Description { get; set; }
 
         public string StreetMapUrl { get; set; }
-
-        public virtual ICollection<Stylist> Stylists { get; set; }
-
-        public virtual ICollection<Treatment> Treatments { get; set; }
     }
 }
