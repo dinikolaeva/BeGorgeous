@@ -194,7 +194,8 @@ a {
 .button-large {
     width: 254px !important;
     height: 54px;
-    background: #BA55D3;
+    background: #a000a0 !important;
+    color:white;
     overflow: hidden;
 }
 

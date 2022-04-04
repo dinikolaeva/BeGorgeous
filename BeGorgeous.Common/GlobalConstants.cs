@@ -4,9 +4,24 @@
     {
         public const string SystemName = "BeGorgeous";
 
+        public const string UserRoleName = "User";
+
         public const string AdministratorRoleName = "Administrator";
 
+        public const string ManagerRoleName = "Manager";
+
         public const string CloudName = "be-gorgeous";
+
+        public static class AccountsSeeding
+        {
+            public const string Password = "123456";
+
+            public const string AdminEmail = "admin@begorgeous.com";
+
+            public const string ManagerEmail = "manager@begorgeous.com";
+
+            public const string UserEmail = "user@begorgeous.com";
+        }
 
         public static class StringLengthValidations
         {
@@ -32,6 +47,8 @@
         public static class ErrorMessages
         {
             public const string DateTime = "Please select a valid DATE and TIME from the datepicker calendar on the left.";
+
+            public const string Rating = "Please choose a valid number of stars from 1 to 5.";
         }
 
         public static class Images

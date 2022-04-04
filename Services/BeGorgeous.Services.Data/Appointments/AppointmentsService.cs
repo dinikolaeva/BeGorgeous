@@ -26,7 +26,7 @@
             var appointments =
                 await this.appointmentsRepository.All()
                           .Where(x => x.UserId == userId && x.DateTime.Date > DateTime.UtcNow.Date)
-                          .OrderBy(x => x.DateTime)
+                          .OrderBy(x => x.DateTime.Minute)
                           .To<T>()
                           .ToListAsync();
 
@@ -43,7 +43,7 @@
             return salon;
         }
 
-        public async Task AddAsync(string userId, int salonId, int treatmentId, int stylistId, DateTime dateTime)
+        public async Task AddAsync(string userId, int salonId, int treatmentId, DateTime dateTime)
         {
             await this.appointmentsRepository.AddAsync(new Appointment
             {
@@ -52,8 +52,51 @@
                 UserId = userId,
                 SalonId = salonId,
                 TreatmentId = treatmentId,
-                StylistId = stylistId,
             });
+
+            await this.appointmentsRepository.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<T>> GetPastAppointmentsOfUserAsync<T>(string userId)
+        {
+            var appointments = await this.appointmentsRepository.All()
+                                         .Where(x => x.UserId == userId
+                                                 && x.DateTime.Date < DateTime.UtcNow.Date
+                                                 && x.Confirmed == true)
+                                         .OrderBy(x => x.DateTime)
+                                         .To<T>()
+                                         .ToListAsync();
+
+            return appointments;
+        }
+
+        public async Task<T> GetAppointmentByIdAsync<T>(string id)
+        {
+            var appointment = await this.appointmentsRepository.All()
+                                        .Where(x => x.Id == id)
+                                        .To<T>().FirstOrDefaultAsync();
+
+            return appointment;
+        }
+
+        public async Task DeleteAsync(string id)
+        {
+            var appointment = await this.appointmentsRepository.AllAsNoTracking()
+                                                               .Where(x => x.Id == id)
+                                                               .FirstOrDefaultAsync();
+
+            this.appointmentsRepository.Delete(appointment);
+
+            await this.appointmentsRepository.SaveChangesAsync();
+        }
+
+        public async Task RateAppointmentAsync(string id)
+        {
+            var appointment = await this.appointmentsRepository.All()
+                                        .Where(x => x.Id == id)
+                                        .FirstOrDefaultAsync();
+
+            appointment.IsSalonRatedByTheUser = true;
 
             await this.appointmentsRepository.SaveChangesAsync();
         }

@@ -8,5 +8,7 @@
         Task<IEnumerable<T>> GetAllAsync<T>();
 
         Task<T> GetByIdAsync<T>(int id);
+
+        Task RateSalonAsync(int id, int rateValue);
     }
 }

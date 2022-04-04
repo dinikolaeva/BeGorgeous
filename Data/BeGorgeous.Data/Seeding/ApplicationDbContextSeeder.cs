@@ -27,6 +27,7 @@
             var seeders = new List<ISeeder>
                           {
                               new RolesSeeder(),
+                              new AccountsSeeder(),
                               new CountriesSeeder(),
                               new CitiesSeeder(),
                               new SalonsSeeder(),

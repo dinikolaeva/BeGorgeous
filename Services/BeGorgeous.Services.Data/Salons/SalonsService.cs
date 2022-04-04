@@ -32,5 +32,23 @@
 
             return await query.To<T>().FirstOrDefaultAsync();
         }
+
+        public async Task RateSalonAsync(int id, int rateValue)
+        {
+            var salon = await this.salonsRepository.All()
+                                  .Where(x => x.Id == id)
+                                  .FirstOrDefaultAsync();
+
+            var oldValueOfRating = salon.Rating;
+            var oldValueOfRatersCount = salon.RatersCount;
+
+            var newRatersCount = oldValueOfRatersCount + 1;
+            var newRating = (oldValueOfRating + rateValue) / newRatersCount;
+
+            salon.Rating = newRating;
+            salon.RatersCount = newRatersCount;
+
+            await this.salonsRepository.SaveChangesAsync();
+        }
     }
 }

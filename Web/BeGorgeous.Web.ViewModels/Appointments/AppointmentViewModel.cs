@@ -15,11 +15,7 @@
 
         public string SalonId { get; set; }
 
-        public string SalonName { get; set; }
-
-        public string SalonCityName { get; set; }
-
-        public string SalonAddress { get; set; }
+        public Salon Salon { get; set; }
 
         public int TreatmentId { get; set; }
 

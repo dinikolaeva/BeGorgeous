@@ -22,10 +22,6 @@
 
         public virtual Treatment Treatment { get; set; }
 
-        public int StylistId { get; set; }
-
-        public virtual Stylist Stylist { get; set; }
-
         // The salon can confirm or decline an appointment
         public bool? Confirmed { get; set; }
 

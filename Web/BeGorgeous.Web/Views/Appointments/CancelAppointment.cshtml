@@ -1,0 +1,48 @@
+﻿@using BeGorgeous.Web.ViewModels.Appointments
+@model AppointmentViewModel
+
+@{
+    this.ViewData["Title"] = "Cancel appointment";
+}
+
+<h3><strong>Are you sure you want to cancel this appointment?</strong></h3>
+<form class="col-6 mt-5">
+    <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Date and Time</label>
+        <div class="col-sm-7">
+            <div class="form-control">@Model.DateTime</div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Salon</label>
+        <div class="col-sm-7">
+            <div class="form-control">@Model.Salon.Name</div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Address</label>
+        <div class="col-sm-7">
+            <div class="form-control">@Model.Salon.StreetAddress</div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Service</label>
+        <div class="col-sm-7">
+            <div class="form-control">@Model.TreatmentName</div>
+        </div>
+    </div>
+</form>
+
+<div class="col-6 mt-5 ml-5">
+    <div class="row ml-5">
+        <form method="post">
+            <button type="submit" class="btn btn-outline-success"
+                    asp-area="" asp-controller="Appointments" asp-action="DeleteAppointment" asp-route-id="@Model.Id">
+                Yes, Cancel it!
+            </button>
+        </form>
+        <div class="ml-5">
+            <a class="btn btn-danger" asp-area="" asp-controller="Appointments" asp-action="Index">No! Go Back</a>
+        </div>
+    </div>
+</div>

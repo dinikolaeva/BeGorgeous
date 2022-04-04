@@ -1,5 +1,6 @@
 ﻿namespace BeGorgeous.Web.Controllers
 {
+    using System;
     using System.Threading.Tasks;
 
     using BeGorgeous.Data.Models;
@@ -67,6 +68,80 @@
             };
 
             return this.View(viewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> MakeAnAppointment(AppointmentInputModel input)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.RedirectToAction("MakeAnAppointment", new { input.SalonId, input.TreatmentId });
+            }
+
+            DateTime dateTime;
+
+            try
+            {
+                dateTime = this.dateTimeParserService.ConvertStrings(input.Date, input.Time);
+            }
+            catch (System.Exception)
+            {
+                return this.RedirectToAction("MakeAnAppointment", new { input.SalonId, input.TreatmentId });
+            }
+
+            var user = await this.userManager.GetUserAsync(this.HttpContext.User);
+            var userId = await this.userManager.GetUserIdAsync(user);
+
+            await this.appointmentsService.AddAsync(userId, input.SalonId, input.TreatmentId, dateTime);
+
+            return this.RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> CancelAppointment(string id)
+        {
+            var viewModel = await this.appointmentsService.GetAppointmentByIdAsync<AppointmentViewModel>(id);
+
+            if (viewModel == null)
+            {
+                return new StatusCodeResult(404);
+            }
+
+            return this.View(viewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteAppointment(string id)
+        {
+            await this.appointmentsService.DeleteAsync(id);
+
+            return this.RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> RatePastAppointment(string id)
+        {
+            var viewModel = await this.appointmentsService.GetAppointmentByIdAsync<RatingAppointmentsViewModel>(id);
+
+            return this.View(viewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RateSalon(RatingAppointmentsViewModel rating)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.RedirectToAction("RatePastAppointment", new { id = rating.Id });
+            }
+
+            if (rating.IsSalonRatedByTheUser == true)
+            {
+                return this.RedirectToAction("RatePastAppointment", new { id = rating.Id });
+            }
+
+            await this.appointmentsService.RateAppointmentAsync(rating.Id);
+
+            await this.salonsService.RateSalonAsync(rating.SalonId, rating.RateValue);
+
+            return this.RedirectToAction("Details", "Salons", new { id = rating.SalonId });
         }
     }
 }

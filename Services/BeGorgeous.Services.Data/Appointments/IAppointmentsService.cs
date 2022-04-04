@@ -6,10 +6,19 @@
 
     public interface IAppointmentsService
     {
-        Task<IEnumerable<T>> GetUpcomingByUserAsync<T>(string userId);
 
         Task<T> GetSalonByIdAsync<T>(int salonId);
 
-        Task AddAsync(string userId, int salonId, int treatmentId, int stylistId, DateTime dateTime);
+        Task<T> GetAppointmentByIdAsync<T>(string id);
+
+        Task<IEnumerable<T>> GetUpcomingByUserAsync<T>(string userId);
+
+        Task<IEnumerable<T>> GetPastAppointmentsOfUserAsync<T>(string userId);
+
+        Task AddAsync(string userId, int salonId, int treatmentId, DateTime dateTime);
+
+        Task DeleteAsync(string id);
+
+        Task RateAppointmentAsync(string id);
     }
 }

@@ -13,7 +13,5 @@
         public int TreatmentId { get; set; }
 
         public virtual Treatment Treatment { get; set; }
-
-        public virtual ICollection<Appointment> Appointments { get; set; } = new HashSet<Appointment>();
     }
 }

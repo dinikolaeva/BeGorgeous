@@ -14,7 +14,7 @@
                 <h2 class="h1" id="text">Your appointments</h2>
             </div>
         </div>
-    </div>
+    
 
     @if (@Model.Appointments.Count() == 0)
     {
@@ -47,7 +47,6 @@
             </div>
         </div>
     }
-   @* ----------------------!!!***!!!---------------*@
     @if (@Model.Appointments.Count() > 0)
     {
         <h2>Upcoming (@Model.Appointments.Count())</h2>
@@ -82,8 +81,8 @@
                                 <span class="badge badge-secondary">Pending</span>
                             }
                         </td>
-                        <td>@appointment.SalonName</td>
-                        <td>@appointment.SalonCityName, @appointment.SalonAddress</td>
+                        <td>@appointment.Salon.Name</td>
+                        <td>@appointment.Salon.StreetAddress</td>
                         <td>@appointment.TreatmentName</td>
                         <td>
                             <a class="btn btn-outline-danger btn-sm"
@@ -134,6 +133,10 @@
             </div>
         </div>
     }
-
+    </div>
     <hr class="bg-dark m-4" style="height: 6px;" />
 </section>
+
+<div>
+    @await Component.InvokeAsync("PastAppointments")
+</div>

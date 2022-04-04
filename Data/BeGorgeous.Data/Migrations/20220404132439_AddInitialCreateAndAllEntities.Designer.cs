@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BeGorgeous.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220331131917_AddInitialCreateAndAllEntities")]
+    [Migration("20220404132439_AddInitialCreateAndAllEntities")]
     partial class AddInitialCreateAndAllEntities
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -170,9 +170,6 @@ namespace BeGorgeous.Data.Migrations
                     b.Property<int>("SalonId")
                         .HasColumnType("int");
 
-                    b.Property<int>("StylistId")
-                        .HasColumnType("int");
-
                     b.Property<int>("TreatmentId")
                         .HasColumnType("int");
 
@@ -185,8 +182,6 @@ namespace BeGorgeous.Data.Migrations
                     b.HasIndex("IsDeleted");
 
                     b.HasIndex("SalonId");
-
-                    b.HasIndex("StylistId");
 
                     b.HasIndex("TreatmentId");
 
@@ -409,10 +404,11 @@ namespace BeGorgeous.Data.Migrations
 
             modelBuilder.Entity("BeGorgeous.Data.Models.SalonTreatment", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("SalonId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TreatmentId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -420,23 +416,18 @@ namespace BeGorgeous.Data.Migrations
                     b.Property<DateTime?>("DeletedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("SalonId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TreatmentId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
+                    b.HasKey("SalonId", "TreatmentId");
 
                     b.HasIndex("IsDeleted");
-
-                    b.HasIndex("SalonId");
 
                     b.HasIndex("TreatmentId");
 
@@ -663,12 +654,6 @@ namespace BeGorgeous.Data.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("BeGorgeous.Data.Models.Stylist", "Stylist")
-                        .WithMany("Appointments")
-                        .HasForeignKey("StylistId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("BeGorgeous.Data.Models.Treatment", "Treatment")
                         .WithMany("Appointments")
                         .HasForeignKey("TreatmentId")
@@ -682,8 +667,6 @@ namespace BeGorgeous.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Salon");
-
-                    b.Navigation("Stylist");
 
                     b.Navigation("Treatment");
 
@@ -884,8 +867,6 @@ namespace BeGorgeous.Data.Migrations
 
             modelBuilder.Entity("BeGorgeous.Data.Models.Stylist", b =>
                 {
-                    b.Navigation("Appointments");
-
                     b.Navigation("Treatments");
                 });
 
