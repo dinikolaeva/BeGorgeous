@@ -1173,6 +1173,13 @@ a {
     cursor: pointer;
 }
 
+#title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
 #team {
     padding: 20px;
 }

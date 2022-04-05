@@ -1,7 +1,10 @@
 ﻿namespace BeGorgeous.Web.ViewModels.Salons
 {
+    using System.Collections.Generic;
+
     using BeGorgeous.Data.Models;
     using BeGorgeous.Services.Mapping;
+    using BeGorgeous.Web.ViewModels.Treatments;
 
     public class SalonWithStylistsAndTreatmentsViewModel : IMapFrom<Salon>
     {
@@ -26,5 +29,7 @@
         public string Description { get; set; }
 
         public string StreetMapUrl { get; set; }
+
+        public ICollection<SalonTreatmentViewModel> Treatments { get; set; }
     }
 }

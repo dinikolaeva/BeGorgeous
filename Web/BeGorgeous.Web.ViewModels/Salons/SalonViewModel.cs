@@ -2,6 +2,7 @@
 {
     using BeGorgeous.Data.Models;
     using BeGorgeous.Services.Mapping;
+    using System.Collections.Generic;
 
     public class SalonViewModel : IMapFrom<Salon>
     {
@@ -20,5 +21,7 @@
         public double Rating { get; set; }
 
         public int RatersCount { get; set; }
+
+        public virtual ICollection<SalonTreatmentViewModel> Treatments { get; set; }
     }
 }

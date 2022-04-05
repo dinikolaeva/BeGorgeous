@@ -1,36 +1,25 @@
 ﻿@using BeGorgeous.Common
-
 <!DOCTYPE html>
-<html lang="en">
-<!-- Head -->
+<html>
 <head>
-    <!-- Meta -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    @if (this.ViewData["Title"].ToString() == "Home Page")
-    {
-        <title>@GlobalConstants.SystemName</title>
-    }
     <title>@this.ViewData["Title"]</title>
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
     @*<link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />*@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link href="~/css/sidebar.css" rel="stylesheet" asp-append-version="true" />
-
     <!-- Favicon -->
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" asp-append-version="true">
-
     <!-- Bootstrap Styles -->
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" asp-append-version="true">
-
     <!-- Vendor Styles -->
     <script src="https://kit.fontawesome.com/eedcfd73b3.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="~/assets/vendors/slick-carousel/slick.css" asp-append-version="true" />
     <link rel="stylesheet" type="text/css" href="~/assets/fonts/themify-icons.css" asp-append-version="true" />
     <link rel="stylesheet" type="text/css" href="~/assets/vendors/magnific-popup/magnific-popup.css" asp-append-version="true" />
     <link rel="stylesheet" type="text/css" href="~/assets/css/hovereffects.css" asp-append-version="true" />
-
     <!-- Theme Styles -->
     <link href="~/assets/css/scrolling-nav.css" rel="stylesheet" asp-append-version="true" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" asp-append-version="true" />
@@ -39,80 +28,80 @@
 
     @this.RenderSection("Styles", required: false)
 </head>
-<!-- End Head -->
 <body>
-
-    <partial name="_CookieConsentPartial" />
-
     <div class="super_container">
 
+        <!-- Home -->
+        <partial name="_ManagerHeaderPartial" />
 
-        <!-- Navbar -->
+        <div class="container">
+            <div style="padding-top: 90px;">
 
-        <partial name="_HeaderPartial" />
+                <div class="text-center">
+                    <a style="color: #BA55D3" asp-area="" asp-controller="Home" asp-action="Index"><strong>BACK TO HOME PAGE</strong></a>
+                </div>
+                <hr class="bg-dark mx-4" style="height: 6px;" />
+                <div class="d-flex" id="wrapper">
+                    <!-- Sidebar -->
+                    <partial name="_ManagerSidebarPartial" />
 
-        <!-- End Navbar -->
-
-        @if (this.ViewData["Title"].ToString() == "Home Page")
-        {
-            <section class="hero-large hero">
-                <div id="demo" class="carousel slide" data-ride="carousel">
-                    <ul class="carousel-indicators">
-                        <li data-target="#demo" data-slide-to="0" class="active"></li>
-                        <li data-target="#demo" data-slide-to="1"></li>
-                        <li data-target="#demo" data-slide-to="2"></li>
-                    </ul>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="assets/img/intro/banner-bg1.png" alt="Los Angeles" width="1100" height="500">
-                            <div class="container">
-                                <div class="carousel-caption">
-                                    <h2>Be Gorgeous</h2>
-                                    <p>Adding Care to your beauty</p>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="carousel-item">
-                            <img src="assets/img/intro/banner-bg2.png" alt="Chicago" width="1100" height="500">
-                            <div class="container">
-                                <div class="carousel-caption">
-                                    <h2>Come and feel beautiful</h2>
-                                    <p>Bring out the best in you</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="assets/img/intro/banner-bg3.png" alt="New York" width="1100" height="500">
-                            <div class="container">
-                                <div class="carousel-caption">
-                                    <h2>Give yourself the best services</h2>
-                                    <p>You deserve to be spoiled</p>
-                                </div>
+                    <!-- Page Content -->
+                    <div id="page-content-wrapper">
+                        <div class="container-fluid">
+                            <div class="col-12">
+                                <main role="main">
+                                    @this.RenderBody()
+                                </main>
                             </div>
                         </div>
                     </div>
-                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </a>
-                    <a class="carousel-control-next" href="#demo" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </a>
+
                 </div>
-            </section>
-        }
-
-        <div class="m-5">
-            <main role="main">
-                @this.RenderBody()
-            </main>
+            </div>
         </div>
-
+        <hr class="bg-dark mx-4" style="height: 6px;" />
         <!-- Footer -->
+        <footer class="bg-dark py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 text-center text-md-left mb-3 mb-md-0">
+                        <small class="text-white"><a class="text-white" href="">@GlobalConstants.SystemName</a> everywhere, every day! <br>© All Rights Reserved</small>
 
-        <partial name="_FooterPartial" />
+                    </div>
 
-        <!-- End Footer -->
+                    <div class="col-md-4 align-self-center">
+                        <ul class="list-inline text-center text-md-right mb-0">
+                            <li>
+                                <a class="text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy Policy</a>
+                            </li>
+                            <li class="list-inline-item mx-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
+                                <a class="text-white" target="_blank" href="https://www.facebook.com">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item mx-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Instagram">
+                                <a class="text-white" target="_blank" href="https://www.instagram.com">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item mx-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter">
+                                <a class="text-white" target="_blank" href="https://twitter.com">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item mx-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="GitHub">
+                                <div class="footer_phone ml-lg-auto">
+                                    <a class="text-white" target="_blank" href="https://github.com/dinikolaeva/BeGorgeous">
+                                        <i class="fab fa-github" aria-hidden="true"></i>
+                                        <span> Open Source System</span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <!-- JS Script Files -->
@@ -145,5 +134,4 @@
     <!-- END JAVASCRIPTS -->
     @this.RenderSection("Scripts", required: false)
 </body>
-<!-- End Body -->
 </html>

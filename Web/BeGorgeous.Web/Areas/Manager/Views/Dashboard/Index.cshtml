@@ -1,0 +1,18 @@
+﻿@*@using BeGorgeous.Web.ViewModels.Salons
+    @model SalonsListViewModel*@
+
+@{
+    this.ViewData["Title"] = "Manager dashboard";
+}
+
+<div class="container">
+    <div id="title">
+        <h1 class="my-3" id="text">Welcome to dashboard, menager!</h1>
+    </div>
+    <p class="lead text-muted" style="text-align:center">You may menage appointments for every BeGorgeus salon:</p>
+
+
+    <div>
+        @await Component.InvokeAsync("MangeSalonsDashboard")
+    </div>
+</div>

@@ -1,0 +1,77 @@
+﻿@using BeGorgeous.Web.ViewModels.Appointments
+@model AppointmentsListViewModel
+
+<div class="container">
+    <div class="row row-eq-height">
+        <div class="col-lg-12" id="errorH">
+            <h1 class="my-3" id="text">Appointments</h1>
+
+            <table class="table table-striped">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">DateTime</th>
+                        <th scope="col">Client</th>
+                        <th scope="col">Treatment</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Confirm</th>
+                        <th scope="col">Decline</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var appointment in this.Model.Appointments)
+                    {
+                        <tr>
+                            <th scope="row">@appointment.DateTime.ToString("f")</th>
+                            <td>@appointment.UserEmail</td>
+                            <td>@appointment.TreatmentName</td>
+                            <td>
+                                @if (appointment.Confirmed == true)
+                                {
+                                    <span class="badge badge-success">Confirmed</span>
+                                }
+                                else if (appointment.Confirmed == false)
+                                {
+                                    <span class="badge badge-danger">Declined</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-secondary">Pending</span>
+                                }
+                            </td>
+                            @if (appointment.DateTime.Date > DateTime.UtcNow.Date)
+                            {
+                                <td>
+                                    <form method="post">
+                                        <button type="submit" class="btn btn-success btn-sm"
+                                        asp-area="Manager" asp-controller="Salons" asp-action="ConfirmAppointment"
+                                        asp-route-id="@appointment.Id" asp-route-salonId="@appointment.SalonId">
+                                            Confirm
+                                        </button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form method="post">
+                                        <button type="submit" class="btn btn-danger btn-sm"
+                                        asp-area="Manager" asp-controller="Salons" asp-action="DeclineAppointment"
+                                        asp-route-id="@appointment.Id" asp-route-salonId="@appointment.SalonId">
+                                            Decline
+                                        </button>
+                                    </form>
+                                </td>
+                            }
+                            else
+                            {
+                                <td>
+                                    Past
+                                </td>
+                                <td>
+                                    Past
+                                </td>
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

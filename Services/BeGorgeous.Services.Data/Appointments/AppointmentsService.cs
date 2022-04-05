@@ -26,7 +26,8 @@
             var appointments =
                 await this.appointmentsRepository.All()
                           .Where(x => x.UserId == userId && x.DateTime.Date > DateTime.UtcNow.Date)
-                          .OrderBy(x => x.DateTime.Minute)
+                          .OrderBy(x => x.DateTime)
+                          .ThenBy(x => x.DateTime.Minute)
                           .To<T>()
                           .ToListAsync();
 
@@ -99,6 +100,40 @@
             appointment.IsSalonRatedByTheUser = true;
 
             await this.appointmentsRepository.SaveChangesAsync();
+        }
+
+        // only for managerRole
+        public async Task ConfirmAsync(string id)
+        {
+            var appointment = await this.appointmentsRepository.All()
+                                        .Where(x => x.Id == id)
+                                        .FirstOrDefaultAsync();
+
+            appointment.Confirmed = true;
+
+            await this.appointmentsRepository.SaveChangesAsync();
+        }
+
+        public async Task DeclineAsync(string id)
+        {
+            var appointment = await this.appointmentsRepository.All()
+                                        .Where(x => x.Id == id)
+                                        .FirstOrDefaultAsync();
+
+            appointment.Confirmed = false;
+
+            await this.appointmentsRepository.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<T>> GetAllAppointmentsBySalonAsync<T>(int salonId)
+        {
+            var appointments = await this.appointmentsRepository.All()
+                                         .Where(x => x.SalonId == salonId)
+                                         .OrderByDescending(x => x.DateTime)
+                                         .To<T>()
+                                         .ToListAsync();
+
+            return appointments;
         }
     }
 }
