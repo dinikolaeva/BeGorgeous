@@ -13,6 +13,8 @@
 
         Task<T> GetSalonAndTreatmentByIdAsync<T>(int salonId, int treatmentId);
 
+        Task AddAsync(int salonId, IEnumerable<int> treatmentsIds);
+
         bool IsSalonIdValid(int salonId);
 
         bool IsTreatmentAndSalonIdValid(int salonId, int treatmentId);

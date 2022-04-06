@@ -1,0 +1,50 @@
+﻿@using BeGorgeous.Common
+@using BeGorgeous.Web.ViewModels.Countries
+@model CountriesListViewModel
+
+@{
+    this.ViewData["Title"] = "Countries";
+}
+
+<h2>
+    All Countries (@Model.Countries.Count())
+    <span>
+        <a class="btn btn-info" asp-area="Administration" asp-controller="Countries" asp-action="AddCountry">Add new Country</a>
+    </span>
+</h2>
+
+<table class="table table-bordered table-striped">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Cities</th>
+            <th scope="col">Delete Button</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var country in this.Model.Countries)
+        {
+            <tr>
+                <th scope="row">@country.Name</th>
+                <td>@country.CitiesCount</td>
+                <td>
+                    @if (country.Id <= GlobalConstants.SeededDataCounts.Countries)
+                    {
+                        <div class="text-muted" style="font-size:smaller">
+                            Seeded data <br />cannot be Deleted
+                        </div>
+                    }
+                    else
+                    {
+                        <form method="post">
+                            <button type="submit" class="btn btn-danger btn-sm"
+                                    asp-area="Administration" asp-controller="Countries" asp-action="DeleteCountry" asp-route-id="@country.Id">
+                                Delete
+                            </button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

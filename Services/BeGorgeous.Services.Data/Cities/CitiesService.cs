@@ -41,5 +41,28 @@
 
             return salons;
         }
+
+        public async Task AddAsync(string name, int countryId)
+        {
+            await this.citiesRepository.AddAsync(new City
+            {
+                Name = name,
+                CountryId = countryId,
+            });
+
+            await this.citiesRepository.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            var city = await this.citiesRepository
+                                 .AllAsNoTracking()
+                                 .Where(x => x.Id == id)
+                                 .FirstOrDefaultAsync();
+
+            this.citiesRepository.Delete(city);
+
+            await this.citiesRepository.SaveChangesAsync();
+        }
     }
 }

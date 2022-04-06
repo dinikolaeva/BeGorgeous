@@ -23,10 +23,16 @@
             public const string UserEmail = "user@begorgeous.com";
         }
 
+        public static class RegularExpretions
+        {
+            public const string PhoneNUmber = @"^\+?[0-9]{9,13}$";
+        }
+
         public static class StringLengthValidations
         {
             public const int NameMinLength = 3;
             public const int NameMaxLength = 40;
+            public const int Name = 100;
             public const int DescriptionMinLength = 50;
             public const int DescriptionMaxLength = 700;
             public const int AddressMinLength = 5;
@@ -49,12 +55,27 @@
             public const string DateTime = "Please select a valid DATE and TIME from the datepicker calendar on the left.";
 
             public const string Rating = "Please choose a valid number of stars from 1 to 5.";
+
+            public const string Name = "Name must be between 3 and 100 characters.";
+
+            public const string Address = "Address must be between 5 and 100 characters.";
+
+            public const string Image = "Please select a JPG, JPEG or PNG image smaller than 1MB.";
+
+            public const string Description = "Description must be between 50 and 700 characters.";
+
+            public const string PhoneNumber = "Please enter valid phone number!";
+
+            public const string Url = "Please enter valid URL from Google Map!";
         }
 
         public static class Images
         {
             // Main
             public const string Background = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646932729/images/maxresdefault_nmgzv2.jpg";
+
+            // Missing image
+            public const string MissingUploadImage = "https://res.cloudinary.com/be-gorgeous/image/upload/v1649187840/images/download_xp6r8o.png";
 
             // Error 404
             public const string Error404 = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648541025/images/17305_97cf242d-e3e6-4056-ac0a-d12453a90b520_fdzbyv.jpg";
@@ -330,6 +351,16 @@
         public static class SeededDataCounts
         {
             public const int Countries = 3;
+
+            public const int Cities = 6;
+
+            public const int Categories = 5;
+
+            public const int Treatments = 21;
+
+            public const int Salons = 6;
+
+            public const int Stylists = 33;
         }
     }
 }

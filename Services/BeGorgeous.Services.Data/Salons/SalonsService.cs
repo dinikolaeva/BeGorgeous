@@ -50,5 +50,37 @@
 
             await this.salonsRepository.SaveChangesAsync();
         }
+
+        public async Task<int> AddAsync(string name, int countryId, int cityId, string description, string streetAddress, string imageUrl, string phoneNumber, string streetMapUrl)
+        {
+            var salon = new Salon
+            {
+                Name = name,
+                CountryId = countryId,
+                CityId = cityId,
+                Description = description,
+                StreetAddress = streetAddress,
+                ImageUrl = imageUrl,
+                PhoneNumber = phoneNumber,
+                StreetMapUrl = streetMapUrl,
+            };
+
+            await this.salonsRepository.AddAsync(salon);
+
+            await this.salonsRepository.SaveChangesAsync();
+
+            return salon.Id;
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            var salon = await this.salonsRepository.AllAsNoTracking()
+                                                   .Where(x => x.Id == id)
+                                                   .FirstOrDefaultAsync();
+
+            this.salonsRepository.Delete(salon);
+
+            await this.salonsRepository.SaveChangesAsync();
+        }
     }
 }

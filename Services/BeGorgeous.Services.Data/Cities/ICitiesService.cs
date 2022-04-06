@@ -8,5 +8,9 @@
         Task<IEnumerable<T>> GetAllAsync<T>();
 
         Task<IEnumerable<T>> GetAllSalonsByCityIdAsync<T>(int cityId);
+
+        Task AddAsync(string name, int countryId);
+
+        Task DeleteAsync(int id);
     }
 }

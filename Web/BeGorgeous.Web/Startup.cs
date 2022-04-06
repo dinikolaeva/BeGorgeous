@@ -18,6 +18,7 @@
     using BeGorgeous.Services.Data.Salons;
     using BeGorgeous.Services.Data.SalonsTreatments;
     using BeGorgeous.Services.Data.Stylists;
+    using BeGorgeous.Services.Data.Treatments;
     using BeGorgeous.Services.DateTimeParser;
     using BeGorgeous.Services.Messaging;
     using BeGorgeous.Web.ViewModels;
@@ -84,6 +85,7 @@
             services.AddTransient<ICountriesService, CountriesService>();
             services.AddTransient<ICitiesService, CitiesService>();
             services.AddTransient<ICategoriesService, CategoriesService>();
+            services.AddTransient<ITreatmentsService, TreatmentsService>();
             services.AddTransient<ISalonsService, SalonsService>();
             services.AddTransient<IStylistsService, StylistsService>();
             services.AddTransient<ISalonsTreatmentsService, SalonsTreatmentsService>();

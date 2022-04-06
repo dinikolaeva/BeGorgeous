@@ -1262,4 +1262,7 @@ a {
 /*Map*/
 #map {
     margin: auto;
+    width: 97%;
+    height: 320px;
+    border: 0px;
 }

@@ -9,7 +9,7 @@
     public class Salon : BaseDeletableModel<int>
     {
         [Required]
-        [MaxLength(GlobalConstants.StringLengthValidations.AddressMaxLength)]
+        [MaxLength(GlobalConstants.StringLengthValidations.Name)]
         public string Name { get; set; }
 
         [Required]
@@ -28,7 +28,7 @@
         public string StreetAddress { get; set; }
 
         [Required]
-        [RegularExpression(@"^\+?[0-9]{9,13}$", ErrorMessage = "Please enter valid phone number!")]
+        [RegularExpression(GlobalConstants.RegularExpretions.PhoneNUmber)]
         public string PhoneNumber { get; set; }
 
         public double Rating { get; set; }

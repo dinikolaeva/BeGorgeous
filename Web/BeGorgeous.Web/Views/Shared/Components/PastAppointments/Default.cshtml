@@ -1,6 +1,10 @@
 ﻿@using BeGorgeous.Web.ViewModels.Appointments
 @model AppointmentsListViewModel
 
+@{
+    this.ViewData["Title"] = "Default";
+}
+
 @if (@Model.Appointments.Count() > 0)
 {
     <h2>Past (@Model.Appointments.Count())</h2>

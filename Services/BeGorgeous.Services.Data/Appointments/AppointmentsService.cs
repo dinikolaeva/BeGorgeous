@@ -44,20 +44,6 @@
             return salon;
         }
 
-        public async Task AddAsync(string userId, int salonId, int treatmentId, DateTime dateTime)
-        {
-            await this.appointmentsRepository.AddAsync(new Appointment
-            {
-                Id = Guid.NewGuid().ToString(),
-                DateTime = dateTime,
-                UserId = userId,
-                SalonId = salonId,
-                TreatmentId = treatmentId,
-            });
-
-            await this.appointmentsRepository.SaveChangesAsync();
-        }
-
         public async Task<IEnumerable<T>> GetPastAppointmentsOfUserAsync<T>(string userId)
         {
             var appointments = await this.appointmentsRepository.All()
@@ -78,6 +64,20 @@
                                         .To<T>().FirstOrDefaultAsync();
 
             return appointment;
+        }
+
+        public async Task AddAsync(string userId, int salonId, int treatmentId, DateTime dateTime)
+        {
+            await this.appointmentsRepository.AddAsync(new Appointment
+            {
+                Id = Guid.NewGuid().ToString(),
+                DateTime = dateTime,
+                UserId = userId,
+                SalonId = salonId,
+                TreatmentId = treatmentId,
+            });
+
+            await this.appointmentsRepository.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(string id)

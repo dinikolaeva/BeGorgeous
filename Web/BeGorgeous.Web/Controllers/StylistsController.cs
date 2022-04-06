@@ -1,7 +1,7 @@
 ﻿namespace BeGorgeous.Web.Controllers
 {
     using System.Threading.Tasks;
-    using BeGorgeous.Services.Data.Cities;
+
     using BeGorgeous.Services.Data.Stylists;
     using BeGorgeous.Web.ViewModels.Stylists;
     using Microsoft.AspNetCore.Mvc;

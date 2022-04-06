@@ -43,6 +43,10 @@
                                     .AllAsNoTracking()
                                     .Where(c => c.Id == id)
                                     .FirstOrDefaultAsync();
+
+            this.countriesRepository.Delete(country);
+
+            await this.countriesRepository.SaveChangesAsync();
         }
     }
 }

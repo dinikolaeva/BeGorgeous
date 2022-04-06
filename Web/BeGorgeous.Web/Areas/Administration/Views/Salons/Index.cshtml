@@ -1,0 +1,60 @@
+﻿@using BeGorgeous.Common
+@using BeGorgeous.Web.ViewModels.Salons
+@model SalonsListViewModel
+
+@{
+    this.ViewData["Title"] = "Salons";
+}
+
+<h2>
+    All Salons (@Model.Salons.Count())
+    <span>
+        <a class="btn btn-info" asp-area="Administration" asp-controller="Salons" asp-action="AddSalon">Add new Salon</a>
+    </span>
+</h2>
+
+<table class="table table-bordered table-striped">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Image</th>
+            <th scope="col">City</th>
+            <th scope="col">Address</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Appointments</th>
+            <th scope="col">Delete Button</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var salon in this.Model.Salons)
+        {
+            <tr>
+                <th scope="row">@salon.Name</th>
+                <td>
+                    <img class="align-self-center" src="@salon.ImageUrl" style="width:180px;height:120px;">
+                </td>
+                <td>@salon.CityName</td>
+                <td>@salon.StreetAddress</td>
+                <td><strong>@salon.Rating.ToString("F") / 5.00</strong> from <strong>@salon.RatersCount</strong> votes</td>
+                <td>@salon.AppointmentsCount</td>
+                <td>
+                    @if (salon.Id <= GlobalConstants.SeededDataCounts.Salons)
+                    {
+                        <div class="text-muted" style="font-size:smaller">
+                            Seeded Data <br />Cannot Be Deleted
+                        </div>
+                    }
+                    else
+                    {
+                        <form method="post">
+                            <button type="submit" class="btn btn-danger btn-sm"
+                            asp-area="Administration" asp-controller="Salons" asp-action="DeleteSalon" asp-route-id="@salon.Id">
+                                Delete
+                            </button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

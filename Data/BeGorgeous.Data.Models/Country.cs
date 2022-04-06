@@ -9,7 +9,7 @@
     public class Country : BaseDeletableModel<int>
     {
         [Required]
-        [MaxLength(GlobalConstants.StringLengthValidations.AddressMaxLength)]
+        [MaxLength(GlobalConstants.StringLengthValidations.Name)]
         public string Name { get; set; }
 
         public virtual ICollection<City> Cities { get; set; } = new HashSet<City>();

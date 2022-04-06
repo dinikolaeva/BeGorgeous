@@ -1,0 +1,96 @@
+﻿@using BeGorgeous.Web.ViewModels.Salons
+@model SalonInputModel
+
+@{
+    this.ViewData["Title"] = "Add Salon";
+    var countries = this.ViewData["Countries"] as SelectList;
+    var cities = this.ViewData["Cities"] as SelectList;
+    var treatments = this.ViewData["Treatments"] as SelectList;
+}
+
+<div class="col-lg-6">
+    <h2>New Salon</h2>
+    <form method="post" enctype="multipart/form-data" class="pt-4">
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="@Model.Name" class="form-control" required="required">
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Image</label>
+            <div class="col-sm-10">
+                <input type="file" asp-for="@Model.Image" class="form-control-file image-upload" required="required" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Country</label>
+            <div class="col-sm-10">
+                <select asp-for="@Model.CountryId" class="form-control" asp-items="@countries">
+                </select>
+                <span asp-validation-for="CountryId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">City</label>
+            <div class="col-sm-10">
+                <select asp-for="@Model.CityId" class="form-control" asp-items="@cities">
+                </select>
+                <span asp-validation-for="CityId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Despription</label>
+            <div class="col-sm-10">
+                <textarea type="text" asp-for="@Model.Description" class="form-control" required="required"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Address</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="@Model.StreetAddress" class="form-control" required="required">
+                <span asp-validation-for="StreetAddress" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Phone number</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="@Model.PhoneNumber" class="form-control" required="required">
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Map Url</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="@Model.StreetMapUrl" class="form-control" required="required">
+                <span asp-validation-for="StreetMapUrl" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Treatments</label>
+            <div class="col-sm-10">
+                <select multiple="multiple" class="form-control" id="treatment_select" asp-for="TreatmentsIds" asp-items="@treatments">
+                </select>
+                <span asp-validation-for="TreatmentsIds" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-6 text-right">
+                <button type="submit" class="btn btn-success"
+                        asp-area="Administration" asp-controller="Salons" asp-action="AddSalon">
+                    Add Salon
+                </button>
+            </div>
+            <div class="col-sm-6">
+                <a class="btn btn-danger" asp-area="Administration" asp-controller="Salons" asp-action="Index">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script src="~/js/upload-image.js" asp-append-version="true"></script>
+}

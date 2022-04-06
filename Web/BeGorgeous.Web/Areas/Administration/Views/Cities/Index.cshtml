@@ -1,0 +1,50 @@
+﻿@using BeGorgeous.Common
+@using BeGorgeous.Web.ViewModels.Cities
+@model CitiesListViewModel
+
+@{
+    this.ViewData["Title"] = "Cities";
+}
+
+<h2>
+    All Cities (@Model.Cities.Count())
+    <span>
+        <a class="btn btn-info" asp-area="Administration" asp-controller="Cities" asp-action="AddCity">Add new City</a>
+    </span>
+</h2>
+
+<table class="table table-bordered table-striped">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Salons</th>
+            <th scope="col">Delete Button</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var city in this.Model.Cities)
+        {
+            <tr>
+                <th scope="row">@city.Name</th>
+                <td>@city.Salons.Count()</td>
+                <td>
+                    @if (city.Id <= GlobalConstants.SeededDataCounts.Cities)
+                    {
+                        <div class="text-muted" style="font-size:smaller">
+                            Seeded data <br />cannot be Deleted
+                        </div>
+                    }
+                    else
+                    {
+                        <form method="post">
+                            <button type="submit" class="btn btn-danger btn-sm"
+                                    asp-area="Administration" asp-controller="Cities" asp-action="DeleteCity" asp-route-id="@city.Id">
+                                Delete
+                            </button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

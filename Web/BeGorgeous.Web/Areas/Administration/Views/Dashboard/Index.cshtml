@@ -1,0 +1,55 @@
+﻿@{
+    this.ViewData["Title"] = "Admin dashboard";
+}
+
+<div class="container">
+    <div id="title">
+        <h1 class="my-3" id="text">Welcome to dashboard, admin!</h1>
+    </div>
+    <p class="lead text-muted" style="text-align:center">Here is a quick navigation:</p>
+
+    <a asp-area="Administration" asp-controller="Countries" asp-action="Index"
+       class="list-group-item list-group-item-action bg-light">Countries</a>
+
+    <div class="ml-5 my-2">
+        <a class="btn btn-outline-info btn-sm" asp-area="Administration" asp-controller="Countries" asp-action="AddCountry">Add new Country</a>
+    </div>
+
+    <a asp-area="Administration" asp-controller="Cities" asp-action="Index"
+       class="list-group-item list-group-item-action bg-light">Cities</a>
+
+    <div class="ml-5 my-2">
+        <a class="btn btn-outline-info btn-sm" asp-area="Administration" asp-controller="Cities" asp-action="AddCity">Add new City</a>
+    </div>
+
+    <a asp-area="Administration" asp-controller="Salons" asp-action="Index"
+       class="list-group-item list-group-item-action bg-light">Salons</a>
+
+    <div class="ml-5 my-2">
+        <a class="btn btn-outline-info btn-sm" asp-area="Administration" asp-controller="Salons" asp-action="AddSalon">Add new Salon</a>
+    </div>
+
+    <a asp-area="Administration" asp-controller="Categories" asp-action="Index"
+       class="list-group-item list-group-item-action bg-light">Categories</a>
+
+    <div class="ml-5 my-2">
+        <a class="btn btn-outline-info btn-sm" asp-area="Administration" asp-controller="Categories" asp-action="AddCategory">Add new Category</a>
+    </div>
+
+    <a asp-area="Administration" asp-controller="Treatments" asp-action="Index"
+       class="list-group-item list-group-item-action bg-light">Treatments</a>
+
+    <div class="ml-5 my-2">
+        <a class="btn btn-outline-info btn-sm" asp-area="Administration" asp-controller="Treatments" asp-action="AddTreatment">Add new Treatment</a>
+    </div>
+
+    <a asp-area="Administration" asp-controller="Stylists" asp-action="Index"
+       class="list-group-item list-group-item-action bg-light">Stylists</a>
+
+    <div class="ml-5 my-2">
+        <a class="btn btn-outline-info btn-sm" asp-area="Administration" asp-controller="Stylists" asp-action="AddStylist">Add new Stylist</a>
+    </div>
+
+    <a asp-area="Administration" asp-controller="Appointments" asp-action="Index"
+       class="list-group-item list-group-item-action bg-light">Appointments</a>
+</div>

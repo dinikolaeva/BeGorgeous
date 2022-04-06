@@ -2,7 +2,6 @@
 {
     using BeGorgeous.Data.Models;
     using BeGorgeous.Services.Mapping;
-    using System.Collections.Generic;
 
     public class SalonViewModel : IMapFrom<Salon>
     {
@@ -14,6 +13,8 @@
 
         public string Description { get; set; }
 
+        public string CityName { get; set; }
+
         public string StreetAddress { get; set; }
 
         public string PhoneNumber { get; set; }
@@ -22,6 +23,6 @@
 
         public int RatersCount { get; set; }
 
-        public virtual ICollection<SalonTreatmentViewModel> Treatments { get; set; }
+        public int AppointmentsCount { get; set; }
     }
 }

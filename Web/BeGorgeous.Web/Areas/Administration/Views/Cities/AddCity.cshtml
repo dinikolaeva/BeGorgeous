@@ -1,0 +1,39 @@
+﻿@using BeGorgeous.Web.ViewModels.Cities
+@model CityInputModel
+
+@{
+    this.ViewData["Title"] = "Add City";
+    var countries = this.ViewData["Countries"] as SelectList;
+}
+
+<div class="col-lg-6">
+    <h2>New City</h2>
+    <form method="post" enctype="multipart/form-data" class="pt-4">
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="@Model.Name" class="form-control" required="required">
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Country</label>
+            <div class="col-sm-10">
+                <select asp-for="@Model.CountryId" class="form-control" asp-items="@countries">
+                </select>
+                <span asp-validation-for="CountryId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-6 text-right">
+                <button type="submit" class="btn btn-success"
+                        asp-area="Administration" asp-controller="Cities" asp-action="AddCity">
+                    Add City
+                </button>
+            </div>
+            <div class="col-sm-6">
+                <a class="btn btn-danger" asp-area="Administration" asp-controller="Cities" asp-action="Index">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>

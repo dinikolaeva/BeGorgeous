@@ -16,7 +16,10 @@
         private readonly IDeletableEntityRepository<SalonTreatment> salonsTreatmentsRepository;
         private readonly IDeletableEntityRepository<Treatment> treatmentRepository;
 
-        public SalonsTreatmentsService(ApplicationDbContext db, IDeletableEntityRepository<SalonTreatment> salonsTreatmentsRepository, IDeletableEntityRepository<Treatment> treatmentRepository)
+        public SalonsTreatmentsService(
+            ApplicationDbContext db,
+            IDeletableEntityRepository<SalonTreatment> salonsTreatmentsRepository,
+            IDeletableEntityRepository<Treatment> treatmentRepository)
         {
             this.db = db;
             this.salonsTreatmentsRepository = salonsTreatmentsRepository;
@@ -68,6 +71,20 @@
             return salonService;
         }
 
+        public async Task AddAsync(int salonId, IEnumerable<int> treatmentsIds)
+        {
+            foreach (var treatmentId in treatmentsIds)
+            {
+                await this.salonsTreatmentsRepository.AddAsync(new SalonTreatment
+                {
+                    SalonId = salonId,
+                    TreatmentId = treatmentId,
+                });
+            }
+
+            await this.salonsTreatmentsRepository.SaveChangesAsync();
+        }
+
         public bool IsSalonIdValid(int salonId)
         {
             if (this.db.SalonsTreatments.Where(st => st.SalonId == salonId).Any())
@@ -80,7 +97,9 @@
 
         public bool IsTreatmentAndSalonIdValid(int salonId, int treatmentId)
         {
-            return this.db.SalonsTreatments.Where(s => s.SalonId == salonId && s.TreatmentId == treatmentId).Any();
+            return this.db.SalonsTreatments
+                          .Where(s => s.SalonId == salonId && s.TreatmentId == treatmentId)
+                          .Any();
         }
     }
 }
