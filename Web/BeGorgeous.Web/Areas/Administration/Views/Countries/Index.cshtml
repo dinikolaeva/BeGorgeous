@@ -6,16 +6,16 @@
     this.ViewData["Title"] = "Countries";
 }
 
-<h2>
+<h2 id="text">
     All Countries (@Model.Countries.Count())
     <span>
-        <a class="btn btn-info" asp-area="Administration" asp-controller="Countries" asp-action="AddCountry">Add new Country</a>
+        <a class="btn btn-info" id="button" asp-area="Administration" asp-controller="Countries" asp-action="AddCountry">Add new Country</a>
     </span>
 </h2>
 
 <table class="table table-bordered table-striped">
     <thead class="thead-light">
-        <tr>
+        <tr id="content">
             <th scope="col">Name</th>
             <th scope="col">Cities</th>
             <th scope="col">Delete Button</th>
@@ -24,7 +24,7 @@
     <tbody>
         @foreach (var country in this.Model.Countries)
         {
-            <tr>
+            <tr id="content">
                 <th scope="row">@country.Name</th>
                 <td>@country.CitiesCount</td>
                 <td>
@@ -37,7 +37,7 @@
                     else
                     {
                         <form method="post">
-                            <button type="submit" class="btn btn-danger btn-sm"
+                            <button type="submit" class="btn btn-sm" id="button"
                                     asp-area="Administration" asp-controller="Countries" asp-action="DeleteCountry" asp-route-id="@country.Id">
                                 Delete
                             </button>

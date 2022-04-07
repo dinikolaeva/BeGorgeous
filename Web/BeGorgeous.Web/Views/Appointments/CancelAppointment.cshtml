@@ -5,44 +5,58 @@
     this.ViewData["Title"] = "Cancel appointment";
 }
 
-<h3><strong>Are you sure you want to cancel this appointment?</strong></h3>
-<form class="col-6 mt-5">
-    <div class="form-group row">
-        <label class="col-sm-3 col-form-label">Date and Time</label>
-        <div class="col-sm-7">
-            <div class="form-control">@Model.DateTime</div>
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-sm-3 col-form-label">Salon</label>
-        <div class="col-sm-7">
-            <div class="form-control">@Model.Salon.Name</div>
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-sm-3 col-form-label">Address</label>
-        <div class="col-sm-7">
-            <div class="form-control">@Model.Salon.StreetAddress</div>
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-sm-3 col-form-label">Service</label>
-        <div class="col-sm-7">
-            <div class="form-control">@Model.TreatmentName</div>
-        </div>
-    </div>
-</form>
+<partial name="_HeaderPartial" />
 
-<div class="col-6 mt-5 ml-5">
-    <div class="row ml-5">
-        <form method="post">
-            <button type="submit" class="btn btn-outline-success"
-                    asp-area="" asp-controller="Appointments" asp-action="DeleteAppointment" asp-route-id="@Model.Id">
-                Yes, Cancel it!
-            </button>
+<div class="container" id="content">
+    <h1 class="h1" id="text">Are you sure you want to cancel this appointment?</h1>
+
+    <div class="col-lg-12" id="content">
+        <form class="col-10 mt-5">
+            <div div class="row my-3" id="content">
+                <label class="col-sm-3 col-form-label">Date and Time</label>
+                <div class="col-sm-7">
+                    <div class="form-control">@Model.DateTime</div>
+                </div>
+            </div>
+            <div div class="row my-3" id="content">
+                <label class="col-sm-3 col-form-label">Salon</label>
+                <div class="col-sm-7">
+                    <div class="form-control">@Model.Salon.Name</div>
+                </div>
+            </div>
+            <div div class="row my-3" id="content">
+                <label class="col-sm-3 col-form-label">Address</label>
+                <div class="col-sm-7">
+                    <div class="form-control">@Model.Salon.StreetAddress</div>
+                </div>
+            </div>
+            <div div class="row my-3" id="content">
+                <label class="col-sm-3 col-form-label">Service</label>
+                <div class="col-sm-7">
+                    <div class="form-control">@Model.TreatmentName</div>
+                </div>
+            </div>
         </form>
-        <div class="ml-5">
-            <a class="btn btn-danger" asp-area="" asp-controller="Appointments" asp-action="Index">No! Go Back</a>
+    </div>
+
+    <div class="col-lg-12" id="content">
+        <div class="col-lg-12">
+            <form method="post">
+                <div class="row my-3" id="content">
+                    <button type="submit" class="button button-large"
+                            asp-area="" asp-controller="Appointments" asp-action="DeleteAppointment" asp-route-id="@Model.Id">
+                        <span>Yes, cancel it!</span>
+                    </button>
+                </div>
+                <div class="row my-3" id="content">
+                    <div class="button button-large my-3">
+                        <a asp-area="" asp-controller="Appointments" asp-action="Index">
+                            <span>No! Go back</span>
+                            <span>No! Go back</span>
+                        </a>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>

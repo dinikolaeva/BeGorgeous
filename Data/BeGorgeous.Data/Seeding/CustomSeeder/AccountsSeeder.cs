@@ -17,6 +17,12 @@
 
             if (!userManager.Users.Any())
             {
+                var user = new ApplicationUser()
+                {
+                    UserName = GlobalConstants.AccountsSeeding.UserEmail,
+                    Email = GlobalConstants.AccountsSeeding.UserEmail,
+                };
+
                 var admin = new ApplicationUser()
                 {
                     UserName = GlobalConstants.AccountsSeeding.AdminEmail,
@@ -30,6 +36,8 @@
                 };
 
                 var password = GlobalConstants.AccountsSeeding.Password;
+
+                await userManager.CreateAsync(user, password);
 
                 var roleAdmin = await userManager.CreateAsync(admin, password);
                 var roleManager = await userManager.CreateAsync(manager, password);

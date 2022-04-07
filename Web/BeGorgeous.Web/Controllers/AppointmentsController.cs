@@ -71,11 +71,11 @@
         }
 
         [HttpPost]
-        public async Task<IActionResult> MakeAnAppointment(AppointmentInputModel input)
+        public async Task<IActionResult> BookAppointment(AppointmentInputModel input)
         {
             if (!this.ModelState.IsValid)
             {
-                return this.RedirectToAction("MakeAnAppointment", new { input.SalonId, input.TreatmentId });
+                return this.RedirectToAction("BookAppointment", new { input.SalonId, input.TreatmentId });
             }
 
             DateTime dateTime;
@@ -86,7 +86,7 @@
             }
             catch (System.Exception)
             {
-                return this.RedirectToAction("MakeAnAppointment", new { input.SalonId, input.TreatmentId });
+                return this.RedirectToAction("BookAppointment", new { input.SalonId, input.TreatmentId });
             }
 
             var user = await this.userManager.GetUserAsync(this.HttpContext.User);

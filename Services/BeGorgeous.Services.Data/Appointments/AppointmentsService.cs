@@ -25,7 +25,8 @@
         {
             var appointments =
                 await this.appointmentsRepository.All()
-                          .Where(x => x.UserId == userId && x.DateTime.Date > DateTime.UtcNow.Date)
+                          .Where(x => x.UserId == userId
+                                   && x.DateTime.Date > DateTime.UtcNow.Date)
                           .OrderBy(x => x.DateTime)
                           .ThenBy(x => x.DateTime.Minute)
                           .To<T>()
@@ -46,15 +47,15 @@
 
         public async Task<IEnumerable<T>> GetPastAppointmentsOfUserAsync<T>(string userId)
         {
-            var appointments = await this.appointmentsRepository.All()
+           var appointments = await this.appointmentsRepository.All()
                                          .Where(x => x.UserId == userId
                                                  && x.DateTime.Date < DateTime.UtcNow.Date
-                                                 && x.Confirmed == true)
+                                                 && x.Confirmed.Value)
                                          .OrderBy(x => x.DateTime)
                                          .To<T>()
                                          .ToListAsync();
 
-            return appointments;
+           return appointments;
         }
 
         public async Task<T> GetAppointmentByIdAsync<T>(string id)

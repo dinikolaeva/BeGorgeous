@@ -30,18 +30,18 @@
                 </div>
             </div>
             <!-- Panel -->
-        <div class="col-lg-6">
-                <h2>
+        <div class="col-lg-6" id="content">
+                <h2 id="text">
                     How would you rate
                     <br />experience at this salon:
                 </h2>
-                <div class="col-lg-6">
+                <div class="row my-3" id="content">
+                    <p class="lead text-muted">Choose here:</p>
+                </div>
+                <div class="col-lg-12" id="content">
                     <form method="post">
-                        <div class="row my-3">
-                            <p>Choose here:</p>
-                        </div>
-                        <div class="row my-3">
-                            <div class="star-rating">
+                        <div class="row my-3" id="content">
+                            <div class="star-rating" id="star">
                                 <span class="fa fa-star-o" data-rating="1"></span>
                                 <span class="fa fa-star-o" data-rating="2"></span>
                                 <span class="fa fa-star-o" data-rating="3"></span>
@@ -57,17 +57,20 @@
                             <input asp-for="@Model.SalonId" value="@Model.SalonId" class="form-control" hidden>
                             <input asp-for="@Model.Id" value="@Model.Id" class="form-control" hidden>
                         </div>
-                        <div class="row my-3">
-                            <button type="submit" class="btn btn-outline-success"
+                        <div class="row my-3" id="content">
+                            <button type="submit" class="button button-large" id="btn"
                                 asp-area="" asp-controller="Appointments" asp-action="RateSalon">
-                                Rate!
+                                <span>Rate!</span>
                             </button>
                         </div>
-                        <div class="row my-3">
+                        <div class="row my-3" id="content">
                             <div>
-                                <a class="btn btn-outline-dark" asp-area="" asp-controller="Appointments" asp-action="Index">
-                                    Not Now
-                                </a>
+                                <div class="button button-large" id="btn">
+                                    <a asp-area="" asp-controller="Appointments" asp-action="Index">
+                                        <span>Not Now</span>
+                                        <span>Not Now</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </form>

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BeGorgeous.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220404132439_AddInitialCreateAndAllEntities")]
-    partial class AddInitialCreateAndAllEntities
+    [Migration("20220407074527_AddInitialCreateWithAllEntities")]
+    partial class AddInitialCreateWithAllEntities
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

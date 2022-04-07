@@ -28,6 +28,7 @@
                           {
                               new RolesSeeder(),
                               new AccountsSeeder(),
+                              new AppointmentsSeeder(),
                               new CountriesSeeder(),
                               new CitiesSeeder(),
                               new SalonsSeeder(),

@@ -6,19 +6,20 @@
     this.ViewData["Title"] = "Salons";
 }
 
-<h2>
+<h2 id="text">
     All Salons (@Model.Salons.Count())
     <span>
-        <a class="btn btn-info" asp-area="Administration" asp-controller="Salons" asp-action="AddSalon">Add new Salon</a>
+        <a class="btn btn-info" id="button" asp-area="Administration" asp-controller="Salons" asp-action="AddSalon">Add new Salon</a>
     </span>
 </h2>
 
 <table class="table table-bordered table-striped">
     <thead class="thead-light">
-        <tr>
+        <tr id="content">
             <th scope="col">Name</th>
             <th scope="col">Image</th>
             <th scope="col">City</th>
+            <th scope="col">Description</th>
             <th scope="col">Address</th>
             <th scope="col">Rating</th>
             <th scope="col">Appointments</th>
@@ -28,12 +29,38 @@
     <tbody>
         @foreach (var salon in this.Model.Salons)
         {
-            <tr>
+            <tr id="content">
                 <th scope="row">@salon.Name</th>
                 <td>
                     <img class="align-self-center" src="@salon.ImageUrl" style="width:180px;height:120px;">
                 </td>
                 <td>@salon.CityName</td>
+                <td>
+                    <!-- Button trigger modal -->
+                <button type="button" id="button" data-toggle="modal" data-target="#description-@salon.Id">
+                        See Full Content
+                    </button>
+
+                    <!-- Modal -->
+                <div class="modal fade" id="description-@salon.Id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header" id="text">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">@salon.Name</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body" id="text">
+                                    @salon.Description
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" id="button" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
                 <td>@salon.StreetAddress</td>
                 <td><strong>@salon.Rating.ToString("F") / 5.00</strong> from <strong>@salon.RatersCount</strong> votes</td>
                 <td>@salon.AppointmentsCount</td>
@@ -47,7 +74,7 @@
                     else
                     {
                         <form method="post">
-                            <button type="submit" class="btn btn-danger btn-sm"
+                            <button type="submit" class="btn btn-info" id="button"
                             asp-area="Administration" asp-controller="Salons" asp-action="DeleteSalon" asp-route-id="@salon.Id">
                                 Delete
                             </button>

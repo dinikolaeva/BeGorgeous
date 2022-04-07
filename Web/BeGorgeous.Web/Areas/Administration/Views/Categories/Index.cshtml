@@ -1,0 +1,54 @@
+﻿@using BeGorgeous.Common
+@using BeGorgeous.Web.ViewModels.Categories
+@model CategoriesListViewModel
+
+@{
+    this.ViewData["Title"] = "Categories";
+}
+
+<h2 id="text">
+    All Categories (@Model.Categories.Count())
+    <span>
+        <a class="btn btn-info" id="button" asp-area="Administration" asp-controller="Categories" asp-action="AddCategory">Add new Category</a>
+    </span>
+</h2>
+
+<table class="table table-bordered table-striped">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Image</th>
+            <th scope="col">Description</th>
+            <th scope="col">Delete Button</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in this.Model.Categories)
+        {
+            <tr>
+                <th scope="row">@category.Name</th>
+                <td>
+                    <img class="align-self-center" src="@category.ImageUrl" style="width:180px;height:120px;">
+                </td>
+                <td>@category.Description</td>
+                <td>
+                    @if (category.Id <= GlobalConstants.SeededDataCounts.Categories)
+                    {
+                        <div class="text-muted" style="font-size:smaller">
+                            Seeded Data <br />Cannot Be Deleted
+                        </div>
+                    }
+                    else
+                    {
+                        <form method="post">
+                            <button type="submit" class="btn btn-info" id="button"
+                                    asp-area="Administration" asp-controller="Categories" asp-action="DeleteCategory" asp-route-id="@category.Id">
+                                Delete
+                            </button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

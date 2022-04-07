@@ -26,7 +26,7 @@
 
 @media (min-width: 768px) {
     #sidebar-wrapper {
-        margin-left: 0;
+        margin-left: -100px;
     }
 
     #page-content-wrapper {

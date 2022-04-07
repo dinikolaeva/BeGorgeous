@@ -6,7 +6,7 @@
 }
 
 <div class="col-lg-6">
-    <h2>New Country</h2>
+    <h2 id="text">New Country</h2>
     <form method="post" enctype="multipart/form-data" class="pt-4">
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Name</label>
@@ -17,13 +17,13 @@
         </div>
         <div class="form-group row">
             <div class="col-sm-6 text-right">
-                <button type="submit" class="btn btn-success"
+                <button type="submit" class="btn btn-info" id="button"
                         asp-area="Administration" asp-controller="Countries" asp-action="AddCountry">
                     Add City
                 </button>
             </div>
             <div class="col-sm-6">
-                <a class="btn btn-danger" asp-area="Administration" asp-controller="Countries" asp-action="Index">Cancel</a>
+                <a class="btn btn-info" id="button" asp-area="Administration" asp-controller="Countries" asp-action="Index">Cancel</a>
             </div>
         </div>
     </form>
