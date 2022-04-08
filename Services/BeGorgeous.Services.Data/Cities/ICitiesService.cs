@@ -12,5 +12,7 @@
         Task AddAsync(string name, int countryId);
 
         Task DeleteAsync(int id);
+
+        Task<int> GetCitiesCountAsync();
     }
 }

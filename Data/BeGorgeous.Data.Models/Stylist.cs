@@ -27,6 +27,6 @@
         [Required]
         public string ImageUrl { get; set; }
 
-        public virtual ICollection<Treatment> Treatments { get; set; } = new HashSet<Treatment>();
+        public virtual ICollection<StylistTreatment> Treatments { get; set; } = new HashSet<StylistTreatment>();
     }
 }

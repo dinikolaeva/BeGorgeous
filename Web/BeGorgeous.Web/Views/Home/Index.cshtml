@@ -35,3 +35,43 @@
         </div>
     </div>
 </div>
+
+@await Component.InvokeAsync("GetCountOfCountriesCitiesSalonsStylists")
+
+<section class="wt-section bg-light" id="about">
+    <div class="container">
+        <div class="row justify-content-md-center text-center pb-lg-4 mb-lg-5 mb-4">
+            <div class="col-md-8 text-center w-md-50 mx-auto mb-0">
+                <h2 class="mb-md-2" id="text">About BeGorgeous</h2>
+                <p class="lead text-muted">Today BeGorgeous has beauty salons in countries all of the world.</p>
+            </div>
+        </div>
+        <div class="row justify-content-between align-items-center" data-aos="fade-right" data-aos-easing="linear" data-aos-delay="200">
+            <div class="col-md-5">
+                <img src=@GlobalConstants.Images.AboutUs width="90%" class="rounded-md" alt="">
+            </div>
+            <div class="col-md-7">
+                <h3 class="mb-4" id="text" style="text-align: center">Who we are</h3>
+                <p class="text-muted" id="content">
+                    The salons in the chain work only with high quality and proven on the European and world market cosmetic products and technologies. Professionals working in the beauty salon chain have the ambition and skills to raise the level of cosmetic procedures at world-wide level.
+
+                    The beauty salons are entirely designed according to a design project, using the most up-to-date and luxurious materials combined in style and color.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="wt-section">
+    <div class="container">
+        <div class="row justify-content-between align-items-center" data-aos="fade-left" data-aos-easing="linear" data-aos-delay="400">
+            <div class="col-md-7">
+                <h3 class="mb-4" id="text" style="text-align: center">Our mission and goals</h3>
+                <p class="text-muted" id="content">We extend with every passing year the perimeter of the offered services, which completely closes the aesthetics cycle: hairdressing, face procedures, aesthetic medicine, general restorative and curative body massages, anti-cellulite programs, SPA therapies, sauna, solarium, manicure, pedicure, nailplastics, professional makeup, permanent makeup, thickening of eyelashes ...</p>
+            </div>
+
+            <div class="col-md-5">
+                <img src=@GlobalConstants.Images.MissionsAndGoals width="90%" class="rounded-md" alt="">
+            </div>
+        </div>
+    </div>
+</section>

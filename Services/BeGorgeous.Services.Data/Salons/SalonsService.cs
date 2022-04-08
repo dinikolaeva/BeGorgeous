@@ -82,5 +82,12 @@
 
             await this.salonsRepository.SaveChangesAsync();
         }
+
+        public async Task<int> GetSalonsCountAsync()
+        {
+            var salons = await this.salonsRepository.All().ToListAsync();
+
+            return salons.Count;
+        }
     }
 }

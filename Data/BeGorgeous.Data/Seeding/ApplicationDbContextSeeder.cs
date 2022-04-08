@@ -37,6 +37,7 @@
                               new TreatmentsSeeder(),
                               new CategoriesSalonsSeeder(),
                               new SalonsTreatmentsSeeder(),
+                              new StylistsTreatmentsSeeder(),
                           };
 
             foreach (var seeder in seeders)

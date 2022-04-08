@@ -26,6 +26,10 @@
         public static class RegularExpretions
         {
             public const string PhoneNUmber = @"^\+?[0-9]{9,13}$";
+
+            public const string Duration = @"^(0[0-9]|1[0-9]|2[0-3]|[0-9]):[0-5][0-9]:[0-0][0-0]$";
+
+            public const string Price = @"^\d+.\d{0,2}$";
         }
 
         public static class StringLengthValidations
@@ -37,7 +41,7 @@
             public const int DescriptionMaxLength = 700;
             public const int AddressMinLength = 5;
             public const int AddressMaxLength = 100;
-            public const int ShortAutobiographyMixLength = 20;
+            public const int ShortAutobiographyMinLength = 20;
             public const int ShortAutobiographyMaxLength = 300;
         }
 
@@ -58,6 +62,8 @@
 
             public const string Name = "Name must be between 3 and 100 characters.";
 
+            public const string StylistName = "Name must be between 3 and 40 characters.";
+
             public const string Address = "Address must be between 5 and 100 characters.";
 
             public const string Image = "Please select a JPG, JPEG or PNG image smaller than 1MB.";
@@ -67,12 +73,22 @@
             public const string PhoneNumber = "Please enter valid phone number!";
 
             public const string Url = "Please enter valid URL from Google Map!";
+
+            public const string Duration = "Invalid time format and hh:mm:ss values.";
+
+            public const string Price = "Invalid price";
+
+            public const string ShortAutobiography = "Short autobiography must be between 20 and 300 characters.";
         }
 
         public static class Images
         {
             // Main
             public const string Background = "https://res.cloudinary.com/be-gorgeous/image/upload/v1646932729/images/maxresdefault_nmgzv2.jpg";
+
+            public const string AboutUs = "https://res.cloudinary.com/be-gorgeous/image/upload/v1649422121/images/istockphoto-169951897-612x612_sctkr5.jpg";
+
+            public const string MissionsAndGoals = "https://res.cloudinary.com/be-gorgeous/image/upload/v1649422794/images/52419339-beauty-salon-workers-with-professional-tools_x3wwfo.webp";
 
             // Missing image
             public const string MissingUploadImage = "https://res.cloudinary.com/be-gorgeous/image/upload/v1649187840/images/download_xp6r8o.png";

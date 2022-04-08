@@ -64,5 +64,12 @@
 
             await this.citiesRepository.SaveChangesAsync();
         }
+
+        public async Task<int> GetCitiesCountAsync()
+        {
+            var cities = await this.citiesRepository.All().ToListAsync();
+
+            return cities.Count;
+        }
     }
 }

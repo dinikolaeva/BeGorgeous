@@ -1288,3 +1288,10 @@ a {
     height: 320px;
     border: 0px;
 }
+
+/*Counter*/
+
+#counter {
+    height: auto;
+    margin-top: 100px;
+}

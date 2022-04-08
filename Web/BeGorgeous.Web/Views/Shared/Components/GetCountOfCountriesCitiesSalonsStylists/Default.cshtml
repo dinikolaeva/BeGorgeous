@@ -1,0 +1,28 @@
+﻿@using BeGorgeous.Web.ViewModels.Common.CountsForIndexPage
+@model CountViewModel
+
+<section class="bg-dark position-relative pt-5" id="counter">
+    <div class="container">
+        <div class="row text-center text-uppercase text-white">
+            <div class="col-lg-3 col-sm-6 pb-5">
+                <h5 class="js-counter display-4 mb-1">@Model.CountriesCount</h5>
+                <small class="d-block font-style-normal text-uppercase wt-letter-spacing-sm">Countries</small>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 pb-5">
+                <h5 class="js-counter display-4 mb-1">@Model.CitiesCount</h5>
+                <small class="d-block font-style-normal text-uppercase wt-letter-spacing-sm">Cities</small>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 pb-5">
+                <h5 class="js-counter display-4 mb-1">@Model.SalonsCount</h5>
+                <small class="d-block font-style-normal text-uppercase wt-letter-spacing-sm">Salons</small>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 pb-5">
+                <h5 class="js-counter display-4 mb-1">@Model.StylistsCount</h5>
+                <small class="d-block font-style-normal text-uppercase wt-letter-spacing-sm">Stylists</small>
+            </div>
+        </div>
+    </div>
+</section>

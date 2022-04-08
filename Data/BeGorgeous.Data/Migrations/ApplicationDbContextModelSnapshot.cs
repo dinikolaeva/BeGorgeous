@@ -481,6 +481,42 @@ namespace BeGorgeous.Data.Migrations
                     b.ToTable("Stylists");
                 });
 
+            modelBuilder.Entity("BeGorgeous.Data.Models.StylistTreatment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("StylistId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TreatmentId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.HasIndex("StylistId");
+
+                    b.HasIndex("TreatmentId");
+
+                    b.ToTable("StylistsTreatments");
+                });
+
             modelBuilder.Entity("BeGorgeous.Data.Models.Treatment", b =>
                 {
                     b.Property<int>("Id")
@@ -521,21 +557,17 @@ namespace BeGorgeous.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
-
-                    b.Property<int?>("StylistId")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
 
                     b.HasIndex("IsDeleted");
-
-                    b.HasIndex("StylistId");
 
                     b.ToTable("Treatments");
                 });
@@ -756,6 +788,23 @@ namespace BeGorgeous.Data.Migrations
                     b.Navigation("Salon");
                 });
 
+            modelBuilder.Entity("BeGorgeous.Data.Models.StylistTreatment", b =>
+                {
+                    b.HasOne("BeGorgeous.Data.Models.Stylist", "Stylist")
+                        .WithMany("Treatments")
+                        .HasForeignKey("StylistId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("BeGorgeous.Data.Models.Treatment", "Treatment")
+                        .WithMany("StylistsTreatments")
+                        .HasForeignKey("TreatmentId");
+
+                    b.Navigation("Stylist");
+
+                    b.Navigation("Treatment");
+                });
+
             modelBuilder.Entity("BeGorgeous.Data.Models.Treatment", b =>
                 {
                     b.HasOne("BeGorgeous.Data.Models.Category", "Category")
@@ -763,10 +812,6 @@ namespace BeGorgeous.Data.Migrations
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.HasOne("BeGorgeous.Data.Models.Stylist", null)
-                        .WithMany("Treatments")
-                        .HasForeignKey("StylistId");
 
                     b.Navigation("Category");
                 });
@@ -873,6 +918,8 @@ namespace BeGorgeous.Data.Migrations
                     b.Navigation("Appointments");
 
                     b.Navigation("SalonsTreatments");
+
+                    b.Navigation("StylistsTreatments");
                 });
 #pragma warning restore 612, 618
         }

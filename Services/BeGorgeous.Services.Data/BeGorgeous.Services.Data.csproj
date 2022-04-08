@@ -22,6 +22,7 @@
     <ProjectReference Include="..\..\Data\BeGorgeous.Data.Common\BeGorgeous.Data.Common.csproj" />
     <ProjectReference Include="..\..\Data\BeGorgeous.Data.Models\BeGorgeous.Data.Models.csproj" />
     <ProjectReference Include="..\..\Data\BeGorgeous.Data\BeGorgeous.Data.csproj" />
+    <ProjectReference Include="..\..\Web\BeGorgeous.Web.ViewModels\BeGorgeous.Web.ViewModels.csproj" />
     <ProjectReference Include="..\BeGorgeous.Services.Mapping\BeGorgeous.Services.Mapping.csproj" />
   </ItemGroup>
 

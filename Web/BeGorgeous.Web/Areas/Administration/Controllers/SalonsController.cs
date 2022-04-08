@@ -45,6 +45,7 @@
             {
                 Salons = await this.salonsService.GetAllAsync<SalonViewModel>(),
             };
+
             return this.View(viewModel);
         }
 

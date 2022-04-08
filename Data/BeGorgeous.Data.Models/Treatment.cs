@@ -10,6 +10,7 @@
     public class Treatment : BaseDeletableModel<int>
     {
         [Required]
+        [MaxLength(GlobalConstants.StringLengthValidations.Name)]
         public string Name { get; set; }
 
         public int CategoryId { get; set; }
@@ -30,6 +31,8 @@
         public TimeSpan Duration { get; set; }
 
         public decimal Price { get; set; }
+
+        public virtual ICollection<StylistTreatment> StylistsTreatments { get; set; } = new HashSet<StylistTreatment>();
 
         public virtual ICollection<SalonTreatment> SalonsTreatments { get; set; } = new HashSet<SalonTreatment>();
 

@@ -48,5 +48,12 @@
 
             await this.countriesRepository.SaveChangesAsync();
         }
+
+        public async Task<int> GetCountriesCountAsync()
+        {
+            var countries = await this.countriesRepository.All().ToListAsync();
+
+            return countries.Count;
+        }
     }
 }

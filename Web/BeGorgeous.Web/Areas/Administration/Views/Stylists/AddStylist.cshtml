@@ -1,0 +1,66 @@
+﻿@using BeGorgeous.Web.ViewModels.Stylists
+@model StylistInputModel
+
+@{
+    this.ViewData["Title"] = "Add Stylist";
+    var salons = this.ViewData["Salons"] as SelectList;
+    var categories = this.ViewData["Categories"] as SelectList;
+}
+
+<div class="col-lg-10">
+    <h2  id="text">New Stylist</h2>
+    <form method="post" enctype="multipart/form-data" class="pt-4">
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="@Model.FullName" class="form-control" required="required">
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Salon</label>
+            <div class="col-sm-10">
+                <select asp-for="@Model.SalonId" class="form-control" asp-items="@salons">
+                </select>
+                <span asp-validation-for="SalonId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Category</label>
+            <div class="col-sm-10">
+                <select asp-for="@Model.CategoryId" class="form-control" asp-items="@categories">
+                </select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Image</label>
+            <div class="col-sm-10">
+                <input type="file" asp-for="@Model.ImageUrl" class="form-control-file image-upload" required="required" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Short Autobiography</label>
+            <div class="col-sm-10">
+                <textarea type="text" asp-for="@Model.ShortAutobiography" class="form-control" required="required"></textarea>
+                <span asp-validation-for="ShortAutobiography" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-6 text-right">
+                <button type="submit" class="btn btn-info" id="button"
+                        asp-area="Administration" asp-controller="Stylists" asp-action="AddStylist">
+                   Add Stylist
+                </button>
+            </div>
+            <div class="col-sm-6">
+                <a class="btn btn-info" id="button" asp-area="Administration" asp-controller="Stylists" asp-action="Index">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script src="~/js/upload-image.js" asp-append-version="true"></script>
+}

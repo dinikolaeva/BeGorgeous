@@ -1,0 +1,89 @@
+﻿@using BeGorgeous.Common
+@using BeGorgeous.Web.ViewModels.Treatments
+@model TreatmentsListViewModel
+
+@{
+    this.ViewData["Title"] = "Treatments";
+}
+
+<h2 id="text">
+    All Treatments (@Model.Treatments.Count())
+    <span>
+        <a class="btn btn-info" id="button" asp-area="Administration" asp-controller="Treatments" asp-action="AddTreatment">Add new Treatment</a>
+    </span>
+</h2>
+
+<table class="table table-bordered table-striped">
+    <thead class="thead-light">
+        <tr id="content">
+            <th scope="col">Name</th>
+            <th scope="col">Category</th>
+            <th scope="col">Image</th>
+            <th scope="col">Icon</th>
+            <th scope="col">Description</th>
+            <th scope="col">Duration</th>
+            <th scope="col">Price</th>
+            <th scope="col">Delete Button</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var treatment in this.Model.Treatments)
+        {
+            <tr id="content">
+                <th scope="row">@treatment.Name</th>
+                <td>@treatment.Category.Name</td>
+                <td>
+                    <img class="align-self-center" src="@treatment.ImageUrl" style="width:180px;height:120px;">
+                </td>
+                <td>
+                    <img class="align-self-center" src="@treatment.IconUrl" style="height:120px;">
+                </td>
+                <td>
+                    <!-- Button trigger modal -->
+                <button type="button" id="button" data-toggle="modal" data-target="#description-@treatment.Id">
+                        See Full Content
+                    </button>
+
+                    <!-- Modal -->
+                <div class="modal fade" id="description-@treatment.Id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header" id="text">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">@treatment.Name</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body" id="text">
+                                    @treatment.Description
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" id="button" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>@treatment.Duration <br />min <br /> or h</td>
+                <td>@treatment.Price <br />€</td>
+                <td>
+                    @if (treatment.Id <= GlobalConstants.SeededDataCounts.Treatments)
+                    {
+                        <div class="text-muted" style="font-size:smaller">
+                            Seeded Data <br />Cannot Be Deleted
+                        </div>
+                    }
+                    else
+                    {
+                        <form method="post">
+                            <button type="submit" class="btn btn-info" id="button"
+                            asp-area="Administration" asp-controller="Treatments" asp-action="DeleteTreatment" asp-route-id="@treatment.Id">
+                                Delete
+                            </button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

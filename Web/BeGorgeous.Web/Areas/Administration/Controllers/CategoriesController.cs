@@ -1,11 +1,12 @@
 ﻿namespace BeGorgeous.Web.Areas.Administration.Controllers
 {
+    using System.Threading.Tasks;
+
     using BeGorgeous.Common;
     using BeGorgeous.Services.Cloudinary;
     using BeGorgeous.Services.Data.Categories;
     using BeGorgeous.Web.ViewModels.Categories;
     using Microsoft.AspNetCore.Mvc;
-    using System.Threading.Tasks;
 
     public class CategoriesController : AdministrationController
     {
@@ -55,6 +56,7 @@
             }
 
             await this.categoriesService.AddAsync(input.Name, input.Description, imageUrl);
+
             return this.RedirectToAction("Index");
         }
 
