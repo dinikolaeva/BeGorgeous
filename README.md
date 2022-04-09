@@ -40,18 +40,21 @@ My project for the ASP.NET Core course at SoftUni. (April 2022)
 - Bootstrap
 - jQuery
 
-### 3. Seeding sample data
-would happen once you run the application, including Test Accounts:
+## 📎 Seeding sample data
+
+Would happen once you run the application, including Test Accounts:
   - User: user@begorgeous.com
   - Manager: manager@begorgeous.com
   - Admin: admin@begorgeous.com
 
   - password: 123456
  
-### 4. Cloudinary Setup - optionally
+## ☁️ Cloudinary Setup - optionally
+
 #### Running without it:
 You won't get an error for missing Cloudinary Credentials - it is handled by using predefined (already uploaded) image, when Cloudinary configuration is missing. So when you are creating content in admin panel, it will be added but not with the image you have chosen.
 #### If you want to actually upload images, you should:
+
 1. Add Cloudinary Credentials in `appsettings.json` in the format:
 ```json
   "Cloudinary": {
