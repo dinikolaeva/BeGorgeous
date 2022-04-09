@@ -78,7 +78,7 @@ You won't get an error for missing Cloudinary Credentials - it is handled by usi
 <img src="https://res.cloudinary.com/be-gorgeous/image/upload/v1649461131/images/BeGorgeous-HomePage_gr37op.png" />
 <img src="https://res.cloudinary.com/be-gorgeous/image/upload/v1649461834/images/BeGorgeous-SalonView_emew1e.png" />
 <img src="https://res.cloudinary.com/be-gorgeous/image/upload/v1649461833/images/BeGorgeous-TreatmentsView_vbwr7l.png" />
-<img src="https://res.cloudinary.com/be-gorgeous/image/upload/v1649461833/images/BeGorgeous-AppointmentsView_gpw3lt.png" />
+<img src="https://res.cloudinary.com/be-gorgeous/image/upload/v1649536027/images/BeGorgeous-AppointmentsView_ltxqnp.png" />
 <img src="https://res.cloudinary.com/be-gorgeous/image/upload/v1649461967/images/BeGorgeous-ManagerView_xpezcs.png" />
 <img src="https://res.cloudinary.com/be-gorgeous/image/upload/v1649462093/images/BeGorgeous-AdminView_vsvapg.png" />
 
