@@ -1,9 +1,8 @@
 ﻿namespace BeGorgeous.Services.Data.Tests.UseInMemoryDatabase
 {
-    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-    using AutoMapper;
+
     using BeGorgeous.Data.Models;
     using BeGorgeous.Services.Data.Countries;
     using BeGorgeous.Web.ViewModels.Countries;
@@ -18,7 +17,6 @@
         [Fact]
         public async Task GetAllAsyncCountriesWorkCorrectly()
         {
-
             AutoMapperConfig.RegisterMappings(typeof(CountryViewModel).Assembly, typeof(Country).Assembly);
 
             await this.Service.AddAsync("France");
@@ -27,7 +25,7 @@
             var expect = this.DbContext.Countries;
             var countries = await this.Service.GetAllAsync<CountryViewModel>();
 
-            Assert.Equal(2, countries.Count());
+            Assert.Equal(expect.Count(), countries.Count());
         }
 
         [Fact]
@@ -58,10 +56,10 @@
 
             var deletedCountry = await this.DbContext.Countries
                                                      .FirstOrDefaultAsync(x => x.Id == country.Id);
+
             Assert.Equal(0, countriesCount);
             Assert.Null(deletedCountry);
         }
-      
 
         [Fact]
         public async Task GetCountriesCountAsyncWorkCorrectly()
@@ -69,11 +67,8 @@
             await this.CreateCountryAsync();
             await this.CreateCountryAsync();
 
-            var expect = this.DbContext.Countries
-                                       .ToList()
-                                       .Count();
-
-           var actual = await this.Service.GetCountriesCountAsync();
+            var expect = this.DbContext.Countries.ToList().Count();
+            var actual = await this.Service.GetCountriesCountAsync();
 
             Assert.Equal(expect, actual);
         }

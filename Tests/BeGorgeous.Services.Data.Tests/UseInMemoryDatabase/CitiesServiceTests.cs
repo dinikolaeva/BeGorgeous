@@ -6,6 +6,7 @@
 
     using BeGorgeous.Data.Models;
     using BeGorgeous.Services.Data.Cities;
+    using BeGorgeous.Web.ViewModels.Cities;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.DependencyInjection;
     using Xunit;
@@ -14,21 +15,8 @@
     {
         private ICitiesService Service => this.ServiceProvider.GetRequiredService<ICitiesService>();
 
-        [Fact]
-        public async Task GetAllAsyncCitiesWorkCorrectly()
-        {
-            List<City> citiesList = new List<City>();
-
-            var city1 = await this.CreateCityAsync();
-            var city2 = await this.CreateCityAsync();
-
-            citiesList.Add(city1);
-            citiesList.Add(city2);
-
-            var cities = this.DbContext.Cities.ToList();
-
-            Assert.Equal(citiesList.Any(), cities.Any());
-        }
+        // TODO: Task<IEnumerable<T>> GetAllAsync<T>();
+        // TODO: Task<IEnumerable<T>> GetAllSalonsByCityIdAsync<T>(int cityId);
 
         [Fact]
         public async Task AddAsyncShouldAddCorrectly()

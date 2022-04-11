@@ -18,7 +18,6 @@
             this.categoriesRepository = categoryRepository;
         }
 
-
         public async Task<IEnumerable<T>> GetAllAsync<T>()
         {
             IQueryable<Category> query = this.categoriesRepository.All();
