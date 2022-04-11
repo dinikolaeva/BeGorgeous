@@ -7,6 +7,7 @@
 
     using BeGorgeous.Data.Models;
     using BeGorgeous.Services.Data.SalonsTreatments;
+    using BeGorgeous.Web.ViewModels.Treatments;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.DependencyInjection;
     using Xunit;
@@ -23,8 +24,34 @@
 
         private ISalonsTreatmentsService Service => this.ServiceProvider.GetRequiredService<ISalonsTreatmentsService>();
 
+        // TODO: Task<T> GetSalonAndTreatmentByIdAsync<T>(int salonId, int treatmentId);
+
+        //[Fact]
+        //public async Task GetSalonAndTreatmentByIdAsyncWorkCorrectly()
+        //{
+        //    //var salon = await this.CreateSalonAsync();
+        //    //var treatment = await this.CreateTreatmentAsync();
+        //    //var treatment1 = await this.CreateTreatmentAsync();
+        //    //var treatment2 = await this.CreateTreatmentAsync();
+
+        //    //var treatmentsIds = new List<int> { treatment.Id, treatment1.Id, treatment2.Id };
+
+        //    //await this.Service.AddAsync(salon.Id, treatmentsIds);
+
+        //    AutoMapperConfig.RegisterMappings(typeof(SalonsTreatmentsViewModel).Assembly, typeof(SalonTreatment).Assembly);
+
+        //    await this.CreateSalonTreatmentAsync(1, 2);
+
+        //    var expect = this.DbContext.SalonsTreatments;
+
+        //    var actual = 
+        //        await this.Service.GetSalonAndTreatmentByIdAsync<SalonsTreatmentsViewModel>(1, 2);
+
+        //    Assert.Equal(expect.ToQueryString(), actual.ToString());
+        //}
+
         [Fact]
-        public async Task AddAsyncShouldWorkCorrectlyWithManySalonsAndOneService()
+        public async Task AddAsyncShouldWorkCorrectlyWithManyTreatmentsAndOneSalon()
         {
             var salon = await this.CreateSalonAsync();
             var treatment = await this.CreateTreatmentAsync();
@@ -122,20 +149,20 @@
             return treatment;
         }
 
-        //private async Task<SalonTreatment> CreateSalonTreatmentAsync(int salonId, int treatmentId)
-        //{
-        //    // Add SalonService
-        //    var salonTreatment = new SalonTreatment
-        //    {
-        //        SalonId = salonId,
-        //        TreatmentId = treatmentId,
-        //    };
+        private async Task<SalonTreatment> CreateSalonTreatmentAsync(int salonId, int treatmentId)
+        {
+            var salonTreatment = new SalonTreatment
+            {
+                SalonId = salonId,
+                TreatmentId = treatmentId,
+            };
 
-        //    await this.DbContext.SalonsTreatments.AddAsync(salonTreatment);
-        //    await this.DbContext.SaveChangesAsync();
-        //    this.DbContext.Entry<SalonTreatment>(salonTreatment).State = EntityState.Detached;
+            await this.DbContext.SalonsTreatments.AddAsync(salonTreatment);
+            await this.DbContext.SaveChangesAsync();
 
-        //    return salonTreatment;
-        //}
+            this.DbContext.Entry<SalonTreatment>(salonTreatment).State = EntityState.Detached;
+
+            return salonTreatment;
+        }
     }
 }
