@@ -10,7 +10,7 @@
     {
         public async Task SeedAsync(ApplicationDbContext dbContext, IServiceProvider serviceProvider)
         {
-            if (dbContext.Countres.Any())
+            if (dbContext.Countries.Any())
             {
                 return;
             }
@@ -24,7 +24,7 @@
 
             foreach (var country in countries)
             {
-                await dbContext.Countres.AddAsync(country);
+                await dbContext.Countries.AddAsync(country);
                 await dbContext.SaveChangesAsync();
             }
         }

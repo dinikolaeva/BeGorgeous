@@ -42,17 +42,14 @@
 <!-- End Head -->
 <body>
 
-    <partial name="_CookieConsentPartial" />
-
     <div class="super_container">
-
 
         <!-- Navbar -->
 
         <partial name="_HeaderPartial" />
+        <partial name="_CookieConsentPartial" />
 
         <!-- End Navbar -->
-
         @if (this.ViewData["Title"].ToString() == "Home Page")
         {
             <section class="hero-large hero">
@@ -132,7 +129,7 @@
     <script src="~/assets/vendors/counters/counterup.min.js" asp-append-version="true"></script>
 
     @*<script src="~/assets/contact/jqBootstrapValidation.js" asp-append-version="true"></script>
-    <script src="~/assets/contact/contact_me.js" asp-append-version="true"></script>*@
+        <script src="~/assets/contact/contact_me.js" asp-append-version="true"></script>*@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" asp-append-version="true"></script>
     <script src="~/assets/js/scrolling-nav.js" asp-append-version="true"></script>
     <!--Plugin Initialize-->

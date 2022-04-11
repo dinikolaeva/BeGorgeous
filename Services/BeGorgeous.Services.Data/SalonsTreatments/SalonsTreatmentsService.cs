@@ -87,12 +87,7 @@
 
         public bool IsSalonIdValid(int salonId)
         {
-            if (this.db.SalonsTreatments.Where(st => st.SalonId == salonId).Any())
-            {
-                return true;
-            }
-
-            return false;
+            return this.db.SalonsTreatments.Where(st => st.SalonId == salonId).Any();
         }
 
         public bool IsTreatmentAndSalonIdValid(int salonId, int treatmentId)

@@ -20,11 +20,13 @@
 
         public async Task<IEnumerable<T>> GetAllAsync<T>()
         {
-            IQueryable<Country> query = this.countriesRepository
-                                            .All()
-                                            .OrderBy(x => x.Id);
+            var countries = await this.countriesRepository
+                                      .All()
+                                      .OrderBy(x => x.Id)
+                                      .To<T>()
+                                      .ToListAsync<T>();
 
-            return await query.To<T>().ToListAsync();
+            return countries;
         }
 
         public async Task AddAsync(string name)

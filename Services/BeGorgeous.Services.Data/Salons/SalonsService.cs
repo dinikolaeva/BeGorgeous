@@ -20,17 +20,22 @@
 
         public async Task<IEnumerable<T>> GetAllAsync<T>()
         {
-            IQueryable<Salon> query = this.salonsRepository.All();
 
-            return await query.To<T>().ToListAsync();
+            var salons = await this.salonsRepository.All()
+                                                    .To<T>()
+                                                    .ToListAsync();
+
+            return salons;
         }
 
         public async Task<T> GetByIdAsync<T>(int id)
         {
-            IQueryable<Salon> query = this.salonsRepository.All()
-                                                           .Where(s => s.Id == id);
+            var salon = await this.salonsRepository.All()
+                                                   .Where(s => s.Id == id)
+                                                   .To<T>()
+                                                   .FirstOrDefaultAsync();
 
-            return await query.To<T>().FirstOrDefaultAsync();
+            return salon;
         }
 
         public async Task RateSalonAsync(int id, int rateValue)

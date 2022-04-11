@@ -30,7 +30,7 @@
 
         public DbSet<City> Cities { get; set; }
 
-        public DbSet<Country> Countres { get; set; }
+        public DbSet<Country> Countries { get; set; }
 
         public DbSet<Salon> Salons { get; set; }
 

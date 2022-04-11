@@ -330,7 +330,7 @@ namespace BeGorgeous.Data.Migrations
 
                     b.HasIndex("IsDeleted");
 
-                    b.ToTable("Countres");
+                    b.ToTable("Countries");
                 });
 
             modelBuilder.Entity("BeGorgeous.Data.Models.Salon", b =>
