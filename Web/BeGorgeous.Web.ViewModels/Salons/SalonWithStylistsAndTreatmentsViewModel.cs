@@ -4,7 +4,6 @@
 
     using BeGorgeous.Data.Models;
     using BeGorgeous.Services.Mapping;
-    using BeGorgeous.Web.ViewModels.Treatments;
 
     public class SalonWithStylistsAndTreatmentsViewModel : IMapFrom<Salon>
     {

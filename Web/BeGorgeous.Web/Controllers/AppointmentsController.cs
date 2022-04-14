@@ -9,7 +9,6 @@
     using BeGorgeous.Services.Data.SalonsTreatments;
     using BeGorgeous.Services.DateTimeParser;
     using BeGorgeous.Web.ViewModels.Appointments;
-    using BeGorgeous.Web.ViewModels.Salons;
     using BeGorgeous.Web.ViewModels.Treatments;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;

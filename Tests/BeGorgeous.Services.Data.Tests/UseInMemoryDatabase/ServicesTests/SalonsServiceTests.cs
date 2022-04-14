@@ -1,11 +1,12 @@
 ﻿namespace BeGorgeous.Services.Data.Tests.UseInMemoryDatabase
 {
+    using System.Linq;
+    using System.Threading.Tasks;
+
     using BeGorgeous.Data.Models;
     using BeGorgeous.Services.Data.Salons;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.DependencyInjection;
-    using System.Linq;
-    using System.Threading.Tasks;
     using Xunit;
 
     public class SalonsServiceTests : BaseServiceTests
@@ -30,7 +31,7 @@
             var sreetMapUrl = new NLipsum.Core.Word().ToString();
             var description = new NLipsum.Core.Sentence().ToString();
 
-            await this.Service.AddAsync(name, countryId, cityId, description, streetAddress,imageUrl, phoneNumber, sreetMapUrl);
+            await this.Service.AddAsync(name, countryId, cityId, description, streetAddress, imageUrl, phoneNumber, sreetMapUrl);
 
             var salonsCount = await this.DbContext.Salons.CountAsync();
 

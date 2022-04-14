@@ -6,7 +6,6 @@
     using BeGorgeous.Services.Data.Countries;
     using BeGorgeous.Services.Data.Salons;
     using BeGorgeous.Services.Data.Stylists;
-    using BeGorgeous.Web.ViewModels.Cities;
     using BeGorgeous.Web.ViewModels.Common.CountsForIndexPage;
     using Microsoft.AspNetCore.Mvc;
 

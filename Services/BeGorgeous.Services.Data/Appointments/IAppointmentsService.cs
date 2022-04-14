@@ -6,8 +6,6 @@
 
     public interface IAppointmentsService
     {
-        Task<T> GetSalonByIdAsync<T>(int salonId);
-
         Task<T> GetAppointmentByIdAsync<T>(string id);
 
         Task<IEnumerable<T>> GetAllAppointmentsBySalonAsync<T>(int salonId);

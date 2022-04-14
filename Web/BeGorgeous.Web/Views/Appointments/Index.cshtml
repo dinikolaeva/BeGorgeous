@@ -19,122 +19,121 @@
 
         @if (@Model.Appointments.Count() == 0)
         {
-            <div class="container">
-                <div class="row mr-5">
-                    <div class="col-10">
-                        <div class="row" id="error">
-                            <div class="col-6">
-                                <img src="@GlobalConstants.Images.NoAppointments" class="img-thumbnail" />
-                            </div>
-                            <div class="col-8 pt-2">
-                                <h1 class="warning" id="errorH">Oh, no! Nothing booked yet...</h1>
-                                <h2 id="errorH" style="color: #700a58">Book an appointment in 3 easy steps:</h2>
-                                <div id="errorH">
-                                    <ol style="color: #700a58">
-                                        <li>Choose a salon.</li>
-                                        <li>Choose a beauty service.</li>
-                                        <li>Pick date and time.</li>
-                                    </ol>
+                <div class="container">
+                    <div class="row mr-5">
+                        <div class="col-10">
+                            <div class="row" id="error">
+                                <div class="col-6">
+                                    <img src="@GlobalConstants.Images.NoAppointments" class="img-thumbnail" />
                                 </div>
-                                <h2 id="errorH" style="color: #700a58">Waiting you back here. :)</h2>
-                                <div class="button ml-auto mr-auto">
-                                    <a asp-area="" asp-controller="Salons" asp-action="Index"><span><strong>Salons</strong></span><span><strong>Salons</strong></span></a>
+                                <div class="col-8 pt-2">
+                                    <h1 class="warning" id="errorH">Oh, no! Nothing booked yet...</h1>
+                                    <h2 id="errorH" style="color: #700a58">Book an appointment in 3 easy steps:</h2>
+                                    <div id="errorH">
+                                        <ol style="color: #700a58">
+                                            <li>Choose a salon.</li>
+                                            <li>Choose a beauty service.</li>
+                                            <li>Pick date and time.</li>
+                                        </ol>
+                                    </div>
+                                    <h2 id="errorH" style="color: #700a58">Waiting you back here. :)</h2>
+                                    <div class="button ml-auto mr-auto">
+                                        <a asp-area="" asp-controller="Salons" asp-action="Index"><span><strong>Salons</strong></span><span><strong>Salons</strong></span></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-6">
+                        <div class="col-6">
+                        </div>
                     </div>
                 </div>
-            </div>
         }
         @if (@Model.Appointments.Count() > 0)
         {
-            <h2 id="text">Upcoming (@Model.Appointments.Count())</h2>
+                <h2 id="text">Upcoming (@Model.Appointments.Count())</h2>
 
-            <table class="table table-bordered table-striped">
-                <thead class="thead-light" id="content">
-                    <tr>
-                        <th scope="col">Date and Time</th>
-                        <th scope="col">Status <span id="text">*</span></th>
-                        <th scope="col">Salon</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">Service</th>
-                        <th scope="col">Cancelation</th>
-                    </tr>
-                </thead>
-                <tbody>
+                <table class="table table-bordered table-striped">
+                    <thead class="thead-light" id="content">
+                        <tr>
+                            <th scope="col">Date and Time</th>
+                            <th scope="col">Status <span id="text">*</span></th>
+                            <th scope="col">Salon</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Service</th>
+                            <th scope="col">Cancelation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                     @foreach (var appointment in this.Model.Appointments)
                     {
-                        <tr>
-                            <th scope="row">@appointment.DateTime.ToString("f")</th>
-                            <td>
+                                <tr>
+                                    <th scope="row">@appointment.DateTime.ToString("f")</th>
+                                    <td>
                                 @if (appointment.Confirmed == true)
                                 {
-                                    <span class="badge badge-success">Confirmed</span>
+                                                <span class="badge badge-success">Confirmed</span>
                                 }
                                 else if (appointment.Confirmed == false)
                                 {
-                                    <span class="badge badge-danger">Declined</span>
+                                                <span class="badge badge-danger">Declined</span>
                                 }
                                 else
                                 {
-                                    <span class="badge badge-secondary">Pending</span>
+                                                <span class="badge badge-secondary">Pending</span>
                                 }
-                            </td>
-                            <td>@appointment.Salon.Name</td>
-                            <td>@appointment.Salon.StreetAddress</td>
-                            <td>@appointment.TreatmentName</td>
-                            <td>
-                                <div class="button button-large" id="btn">
-                                <a asp-area="" asp-controller="Appointments" asp-action="CancelAppointment" asp-route-id="@appointment.Id">
-                                    <span>Cancel</span>
-                                    <span>Cancel</span>
-                                </a>
-                                </div>
-                            </td>
-                        </tr>
+                                    </td>
+                                    <td>@appointment.Salon.Name</td>
+                                    <td>@appointment.Salon.StreetAddress</td>
+                                    <td>@appointment.TreatmentName</td>
+                                    <td>
+                                        <div class="button button-large" id="btn">
+                                        <a asp-area="" asp-controller="Appointments" asp-action="CancelAppointment" asp-route-id="@appointment.Id">
+                                            <span>Cancel</span>
+                                            <span>Cancel</span>
+                                        </a>
+                                        </div>
+                                    </td>
+                                </tr>
                     }
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
 
 
-            <div class="row" id="content">
-                <div class="col-lg-10 ml-lg-5">
-                    <div class="about_text_highlight">
-                        <div class="warning">
-                            <span>*</span> Status
+                <div class="row" id="content">
+                    <div class="col-lg-10 ml-lg-5">
+                        <div class="about_text_highlight">
+                            <div class="warning">
+                                <span>*</span> Status
+                            </div>
                         </div>
-                    </div>
-                    <div class="about_text_2" id="btn">
-                        <div>
-                            <span class="badge badge-secondary">Pending</span>
-                            - Waiting for the Salon's reply.
-                        </div>
-                        <div>
-                            <span class="badge badge-success">Confirmed</span>
-                            - Good! Your appointment is confirmed.
-                            They are expecting you on the set date and time.
-                        </div>
-                        <div>
-                            <span class="badge badge-danger">Declined</span>
-                            - Sorry, the appointment can't happen on the set date and time.
-                            Please, contact us for more information.
-                        </div>
-                        <div>
-                            Or you can just <strong>book again.</strong> Remember the steps, right?
-                            Choose a salon, choose a service and pick date and time.
-                        </div>
-                        <div class="button button-large button_1 elements_button mt-4" id="btn">
-                            <a asp-area="" asp-controller="Salons" asp-action="Index">
-                                <span>Find Salons</span>
-                                <span>Find Salons</span>
-                            </a>
+                        <div class="about_text_2" id="btn">
+                            <div>
+                                <span class="badge badge-secondary">Pending</span>
+                                - Waiting for the Salon's reply.
+                            </div>
+                            <div>
+                                <span class="badge badge-success">Confirmed</span>
+                                - Good! Your appointment is confirmed.
+                                They are expecting you on the set date and time.
+                            </div>
+                            <div>
+                                <span class="badge badge-danger">Declined</span>
+                                - Sorry, the appointment can't happen on the set date and time.
+                                Please, contact us for more information.
+                            </div>
+                            <div>
+                                Or you can just <strong>book again.</strong> Remember the steps, right?
+                                Choose a salon, choose a service and pick date and time.
+                            </div>
+                            <div class="button button-large button_1 elements_button mt-4" id="btn">
+                                <a asp-area="" asp-controller="Salons" asp-action="Index">
+                                    <span>Find Salons</span>
+                                    <span>Find Salons</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            @*</div>*@
         }
     </div>
     <hr class="bg-dark m-4" style="height: 6px;" />

@@ -48,12 +48,12 @@
         public async Task<IEnumerable<T>> GetPastAppointmentsOfUserAsync<T>(string userId)
         {
            var appointments = await this.appointmentsRepository.All()
-                                         .Where(x => x.UserId == userId
-                                                 && x.DateTime.Date < DateTime.UtcNow.Date
-                                                 && x.Confirmed.Value)
-                                         .OrderBy(x => x.DateTime)
-                                         .To<T>()
-                                         .ToListAsync();
+                                        .Where(x => x.UserId == userId
+                                                && x.DateTime.Date < DateTime.UtcNow.Date
+                                                && x.Confirmed.Value)
+                                        .OrderBy(x => x.DateTime)
+                                        .To<T>()
+                                        .ToListAsync();
 
            return appointments;
         }

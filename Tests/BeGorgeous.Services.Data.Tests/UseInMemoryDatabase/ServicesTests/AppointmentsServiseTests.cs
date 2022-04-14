@@ -14,8 +14,6 @@
     {
         private IAppointmentsService Service => this.ServiceProvider.GetRequiredService<IAppointmentsService>();
 
-        // TODO: Task<T> GetSalonByIdAsync<T>(int salonId);
-
         // TODO: Task<T> GetAppointmentByIdAsync<T>(string id);
 
         // TODO: Task<IEnumerable<T>> GetAllAppointmentsBySalonAsync<T>(int salonId);

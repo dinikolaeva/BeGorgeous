@@ -14,7 +14,9 @@
         private readonly IDeletableEntityRepository<City> citiesRepository;
         private readonly IDeletableEntityRepository<Salon> salonsRepository;
 
-        public CitiesService(IDeletableEntityRepository<City> citiesRepository, IDeletableEntityRepository<Salon> salonsRepository)
+        public CitiesService(
+            IDeletableEntityRepository<City> citiesRepository,
+            IDeletableEntityRepository<Salon> salonsRepository)
         {
             this.citiesRepository = citiesRepository;
             this.salonsRepository = salonsRepository;

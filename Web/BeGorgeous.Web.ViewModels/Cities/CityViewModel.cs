@@ -11,8 +11,9 @@
 
         public string Name { get; set; }
 
-        // For tests
         public int CountryId { get; set; }
+
+        public Country Country { get; set; }
 
         public virtual ICollection<Salon> Salons { get; set; }
     }

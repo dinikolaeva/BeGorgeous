@@ -44,12 +44,6 @@
             return this.View();
         }
 
-        [Route("/Home/Error/{code:int}")]
-        public IActionResult Error(int code)
-        {
-            return this.View();
-        }
-
         public IActionResult Privacy()
         {
             return this.View();

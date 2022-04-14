@@ -1,12 +1,10 @@
 ﻿namespace BeGorgeous.Services.Data.Tests.UseInMemoryDatabase
 {
-    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
     using BeGorgeous.Data.Models;
     using BeGorgeous.Services.Data.Cities;
-    using BeGorgeous.Web.ViewModels.Cities;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.DependencyInjection;
     using Xunit;
@@ -14,9 +12,6 @@
     public class CitiesServiceTests : BaseServiceTests
     {
         private ICitiesService Service => this.ServiceProvider.GetRequiredService<ICitiesService>();
-
-        // TODO: Task<IEnumerable<T>> GetAllAsync<T>();
-        // TODO: Task<IEnumerable<T>> GetAllSalonsByCityIdAsync<T>(int cityId);
 
         [Fact]
         public async Task AddAsyncShouldAddCorrectly()
@@ -29,7 +24,7 @@
 
             var citiesCount = await this.DbContext.Cities.CountAsync();
 
-            Assert.Equal(2, citiesCount);
+            Xunit.Assert.Equal(2, citiesCount);
         }
 
         [Fact]
@@ -46,8 +41,8 @@
 
             var deletedCity = await this.DbContext.Cities
                                                   .FirstOrDefaultAsync(x => x.Id == city.Id);
-            Assert.Equal(0, citiesCount);
-            Assert.Null(deletedCity);
+            Xunit.Assert.Equal(0, citiesCount);
+            Xunit.Assert.Null(deletedCity);
         }
 
         [Fact]
@@ -62,7 +57,7 @@
 
             var actual = await this.Service.GetCitiesCountAsync();
 
-            Assert.Equal(expect, actual);
+            Xunit.Assert.Equal(expect, actual);
         }
 
         private async Task<City> CreateCityAsync()

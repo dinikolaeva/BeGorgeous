@@ -1,5 +1,6 @@
 ﻿namespace BeGorgeous.Services.Data.Salons
 {
+    using BeGorgeous.Web.ViewModels.Salons;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 

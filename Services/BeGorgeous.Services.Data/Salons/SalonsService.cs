@@ -20,7 +20,6 @@
 
         public async Task<IEnumerable<T>> GetAllAsync<T>()
         {
-
             var salons = await this.salonsRepository.All()
                                                     .To<T>()
                                                     .ToListAsync();
