@@ -19,7 +19,6 @@
         // TODO: Task<T> GetTreatmentByIdAsync<T>(int treatmentId);
 
         // TODO: Task<T> GetSalonAndTreatmentByIdAsync<T>(int salonId, int treatmentId);
-
         private ISalonsTreatmentsService Service => this.ServiceProvider.GetRequiredService<ISalonsTreatmentsService>();
 
         [Fact]
