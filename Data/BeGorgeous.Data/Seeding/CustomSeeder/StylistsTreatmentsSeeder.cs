@@ -18,7 +18,7 @@
 
             var stylistsTreatments = new List<StylistTreatment>();
 
-            foreach (var stylist in dbContext.Stylists)
+            foreach (var stylist in dbContext.Stylists.ToList())
             {
                 var stylistId = stylist.Id;
 

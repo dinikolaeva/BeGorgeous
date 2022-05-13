@@ -18,7 +18,7 @@
 
             var salonTreatments = new List<SalonTreatment>();
 
-            foreach (var categorySalon in dbContext.CategoriesSalons)
+            foreach (var categorySalon in dbContext.CategoriesSalons.ToList())
             {
                 var salonId = categorySalon.SalonId;
                 var categoryId = categorySalon.CategoryId;

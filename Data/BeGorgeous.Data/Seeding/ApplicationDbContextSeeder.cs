@@ -28,16 +28,16 @@
                           {
                               new RolesSeeder(),
                               new AccountsSeeder(),
-                              new AppointmentsSeeder(),
                               new CountriesSeeder(),
                               new CitiesSeeder(),
                               new SalonsSeeder(),
-                              new CategoriesSeeder(),
                               new StylistsSeeder(),
+                              new CategoriesSeeder(),
                               new TreatmentsSeeder(),
                               new CategoriesSalonsSeeder(),
                               new SalonsTreatmentsSeeder(),
                               new StylistsTreatmentsSeeder(),
+                              new AppointmentsSeeder(),
                           };
 
             foreach (var seeder in seeders)
