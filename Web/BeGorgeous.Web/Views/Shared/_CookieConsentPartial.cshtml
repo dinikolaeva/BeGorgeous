@@ -8,9 +8,9 @@
 
 @if (showBanner)
 {
-    <div id="cookieConsent" class="alert alert-info alert-dismissible fade show" role="alert">
-        We use cookies to understand how you use our site and to improve your experience. <a asp-area="" asp-controller="Home" asp-action="Privacy">Learn More</a>.
-        <button type="button" class="accept-policy close" data-dismiss="alert" aria-label="Close" data-cookie-string="@cookieString">
+    <div id="cookieConsent" class="alert alert-info alert-dismissible fade show" role="alert" style="color: #700a58;background: #f150bf;">
+        We use cookies to understand how you use our site and to improve your experience. <a asp-area="" asp-controller="Home" asp-action="Privacy" style="font-weight: bold;color: white !important;">Learn More</a>.
+        <button type="button" class="accept-policy close" id="button" data-dismiss="alert" aria-label="Close" data-cookie-string="@cookieString">
             <span aria-hidden="true">Accept</span>
         </button>
     </div>
