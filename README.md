@@ -1,7 +1,12 @@
-<img src="https://res.cloudinary.com/be-gorgeous/image/upload/v1649460011/images/BeGorgeousLogo_z8gcrb.png" /> - https://be-gorgeous.azurewebsites.net/
+<img src="https://res.cloudinary.com/be-gorgeous/image/upload/v1649460011/images/BeGorgeousLogo_z8gcrb.png" />
+
 Web application for booking :calendar: appointments in beauty :nail_care: parlours (ASP.NET 5.0).
 
 My project for the ASP.NET Core course at SoftUni. (April 2022)
+
+## 🔗 See live DEMO:
+
+https://be-gorgeous.azurewebsites.net/
 
 ## :information_source: How It Works
 
