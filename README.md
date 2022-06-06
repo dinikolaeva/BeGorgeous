@@ -4,10 +4,6 @@ Web application for booking :calendar: appointments in beauty :nail_care: parlou
 
 My project for the ASP.NET Core course at SoftUni. (April 2022)
 
-## 🔗 See live DEMO:
-
-https://be-gorgeous.azurewebsites.net/
-
 ## :information_source: How It Works
 
 - Guest visitor: 
