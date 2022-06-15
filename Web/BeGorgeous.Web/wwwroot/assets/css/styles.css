@@ -183,14 +183,13 @@ header{
     /* color: #fff; */
 }
 .bg-dark {
-    /*background-color: #552882 !important;*/
     height: 100px;
-    background-image: url('https://res.cloudinary.com/be-gorgeous/image/upload/v1647259764/images/cover-bg_nnwh6d_cui4dr.jpg');
+    background-image: url('https://res.cloudinary.com/be-gorgeous/image/upload/v1647259764/images/BeGorgeous/cover-bg_nnwh6d_cui4dr.jpg');
     background-attachment: fixed;
     background-position: center top;
 }
 .header {
-    background-image: url('https://res.cloudinary.com/be-gorgeous/image/upload/v1647259764/images/cover-bg_nnwh6d_cui4dr.jpg');
+    background-image: url('https://res.cloudinary.com/be-gorgeous/image/upload/v1647259764/images/BeGorgeous/cover-bg_nnwh6d_cui4dr.jpg');
 }
 .navbar-dark .navbar-toggler {
     color: #3c3c3c;

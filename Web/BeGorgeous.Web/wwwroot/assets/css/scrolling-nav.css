@@ -1,12 +1,11 @@
 .navbar {
-	background-image: linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.3)), url('https://res.cloudinary.com/be-gorgeous/image/upload/v1647259764/images/cover-bg_nnwh6d_cui4dr.jpg');
+	background-image: linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.3)), url('https://res.cloudinary.com/be-gorgeous/image/upload/v1647259764/images/BeGorgeous/cover-bg_nnwh6d_cui4dr.jpg');
 	background-attachment: fixed;
 	background-position: center top;
 }
 
 .bgimg {
 	height: 600px;
-	/*background-image: url('https://res.cloudinary.com/be-gorgeous/image/upload/v1647259764/images/cover-bg_nnwh6d_cui4dr.jpg')*/;
 	background-attachment: fixed;
 	background-position: center top;
 }
@@ -31,7 +30,7 @@
 	color:#fff;
 }
 .navbar-bg-onscroll {
-	background-image: url('https://res.cloudinary.com/be-gorgeous/image/upload/v1647259764/images/cover-bg_nnwh6d_cui4dr.jpg');
+	background-image: url('https://res.cloudinary.com/be-gorgeous/image/upload/v1647259764/images/BeGorgeous/cover-bg_nnwh6d_cui4dr.jpg');
 	background-attachment: fixed;
 	background-position: center top;
 }
