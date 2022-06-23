@@ -271,47 +271,47 @@
 
         public static class Icons
         {
-            public const string LadyHaircut = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648216407/images/BeGorgeous/woman-hair-cut_zpqf1g.png";
+            public const string LadyHaircut = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648216407/images/woman-hair-cut_zpqf1g.png";
 
-            public const string MenHaircut = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648302356/images/BeGorgeous/a6572ee377d50e776ba1ab661808338b_yqutqg.png";
+            public const string MenHaircut = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648302356/images/a6572ee377d50e776ba1ab661808338b_yqutqg.png";
 
-            public const string ChildrenHaircut = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648216870/images/BeGorgeous/57172_zqostb.png";
+            public const string ChildrenHaircut = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648216870/images/57172_zqostb.png";
 
-            public const string BlowDry = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648216996/images/BeGorgeous/blow-dryer-icon-28_wyt9kj.png";
+            public const string BlowDry = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648216996/images/blow-dryer-icon-28_wyt9kj.png";
 
-            public const string PressStraightening = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217115/images/BeGorgeous/img_15281_qkojxd.png";
+            public const string PressStraightening = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217115/images/img_15281_qkojxd.png";
 
-            public const string LadiesHairColoring = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217216/images/BeGorgeous/40587_q2efqj.png";
+            public const string LadiesHairColoring = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217216/images/40587_q2efqj.png";
 
-            public const string BalayageHairColoring = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217355/images/BeGorgeous/126-1268835_woman-with-long-hair-hair-icon-png-free_e5tgqh.png";
+            public const string BalayageHairColoring = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217355/images/126-1268835_woman-with-long-hair-hair-icon-png-free_e5tgqh.png";
 
-            public const string BotoxTherapy = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217437/images/BeGorgeous/Untitled-1-45-512_xlbzug.webp";
+            public const string BotoxTherapy = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217437/images/Untitled-1-45-512_xlbzug.webp";
 
-            public const string Braids = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648300693/images/BeGorgeous/14-512_t4ke7i.webp";
+            public const string Braids = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648300693/images/14-512_t4ke7i.webp";
 
-            public const string Manicure = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648302554/images/BeGorgeous/download_eblde7.jpg";
+            public const string Manicure = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648302554/images/download_eblde7.jpg";
 
-            public const string Pedicure = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217681/images/BeGorgeous/pedicure-icon-0_lhw3in.png";
+            public const string Pedicure = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217681/images/pedicure-icon-0_lhw3in.png";
 
-            public const string NailArt = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217769/images/BeGorgeous/65-650778_nail-art-painting-polish-beauty-manicure-cosmetics-icon_sqpszd.png";
+            public const string NailArt = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217769/images/65-650778_nail-art-painting-polish-beauty-manicure-cosmetics-icon_sqpszd.png";
 
-            public const string FullBodyWax = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217901/images/BeGorgeous/6599843_pvm1n6.png";
+            public const string FullBodyWax = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217901/images/6599843_pvm1n6.png";
 
-            public const string BrazilianWax = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217860/images/BeGorgeous/istockphoto-1217751669-612x612_yfnti1.jpg";
+            public const string BrazilianWax = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648217860/images/istockphoto-1217751669-612x612_yfnti1.jpg";
 
-            public const string ProfessionalMakeup = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648218034/images/BeGorgeous/images_zlw68f.png";
+            public const string ProfessionalMakeup = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648218034/images/images_zlw68f.png";
 
-            public const string PermanentMakeup = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648218117/images/BeGorgeous/233012727Untitled-3-512_mt8mmb.webp";
+            public const string PermanentMakeup = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648218117/images/233012727Untitled-3-512_mt8mmb.webp";
 
-            public const string EyelashesExtension = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648218192/images/BeGorgeous/pngtree-eyelashes-logo-icon-design-template-vector-png-image_559600_ouq8ra.jpg";
+            public const string EyelashesExtension = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648218192/images/pngtree-eyelashes-logo-icon-design-template-vector-png-image_559600_ouq8ra.jpg";
 
-            public const string FacialCleaning = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648218340/images/BeGorgeous/828391_teyk1d.png";
+            public const string FacialCleaning = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648218340/images/828391_teyk1d.png";
 
-            public const string AntiAgeCareFacial = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648218422/images/BeGorgeous/cosmetic-surgery-beauty-clinic_16-512_2706_o51ar9.png";
+            public const string AntiAgeCareFacial = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648218422/images/cosmetic-surgery-beauty-clinic_16-512_2706_o51ar9.png";
 
-            public const string AntiAcneFacial = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648218496/images/BeGorgeous/woman-with-acne-clean-face-skin-line-icon-girl-before-after-skin-treatment-linear-pictogram_541122-284_essctw.webp";
+            public const string AntiAcneFacial = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648218496/images/woman-with-acne-clean-face-skin-line-icon-girl-before-after-skin-treatment-linear-pictogram_541122-284_essctw.webp";
 
-            public const string DiamondDermabrasion = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648218565/images/BeGorgeous/1005683_qgl6l5.png";
+            public const string DiamondDermabrasion = "https://res.cloudinary.com/be-gorgeous/image/upload/v1648218565/images/1005683_qgl6l5.png";
         }
 
         public static class StreetMapUrl
