@@ -1,4 +1,4 @@
-<img src="https://res.cloudinary.com/be-gorgeous/image/upload/v1649460011/images/BeGorgeous/BeGorgeousLogo_z8gcrb.png" />
+<img src="https://res.cloudinary.com/be-gorgeous/image/upload/v1658831764/images/BeGorgeous/BeGorgeousLogo_z8gcrb.png" />
 
 Web application for booking :calendar: appointments in beauty :nail_care: parlours (ASP.NET 5.0).
 
